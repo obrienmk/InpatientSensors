@@ -1,13 +1,33 @@
 clc
 clear all
 close all
+% *************************************************************************
+% main_DataStruct.m
+%
+% Load and clean all sensor data from selected subjects for a desired
+% activity (e.g. 10MWT or TUG). Save data structure to folder in current directory.
+%
+%   ACTIVITY NAMES
+% -------------------
+%  - 'MAS     - 'MWT10_SSV'    - 'TUG'           - AR (controls only)
+%  - 'MMT'    - 'MWT10_FV'     - 'Resting_ECG'
+%  - 'BBS'    - 'MWT6'         - 'PT'
+% -------------------
+% (names taken from folders in Z:\Inpatient Sensors -Stroke\MC10 Study\Data analysis\Segmented_Data\
+%
+%
+% Megan O'Brien
+% Version date 02-19-2020
+% *************************************************************************
 
+%% ------------------------------- INPUT ----------------------------------
+% Select data to load
 
-Subject_type = 'cva';   % cva or controls
+Subject_type = 'cva';    % cva or controls
+Activity = 'MWT10_SSV';  % Select one from list of nicknames below
+Subj2Load = [1:4];   % Subject numbers to load (1:55)
 
-Activity = 'MWT10_SSV'; % Select one from list of nicknames below
-
-Subj2Load = [1:4];      %1:55
+saveon = 0;              % flag to save data structure
 
 %% ---------------------------- INITIALIZE --------------------------------
 % Directories
@@ -15,12 +35,6 @@ dirMfile = pwd;
 dirData = ['Z:\Inpatient Sensors -Stroke\MC10 Study\Data analysis\Segmented_Data\' Subject_type filesep Activity filesep];  % Segmented sensor data
 dirMeta = 'Z:\Inpatient Sensors -Stroke\MC10 Study\Outcome Measures\';              % Metadata for participants
 addpath([dirMfile filesep 'clean'])
-
-% Activities
-ActivitiesAll = {'Clinical - MAS','Clinical - MMT','Clinical - BBS','Clinical - 10MWT SSV','Clinical - 10MWT FV',...
-    'Clinical - 6MWT','Clinical - TUG','Activity Recognition','Physical Therapy'}; 
-ActivitiesAll_nickname = {'MAS','MMT','BBS','MWT10_SSV','MWT10_FV',...
-    'MWT6','TUG','AR','PT'};
 
 % Initialize structure
 DataStruct=struct('SubjID', '', 'Timepoint','','Activity', '', 'Trial', '', 'Location', '', 'SensorData', []);
@@ -150,6 +164,18 @@ for indSub = 1:length(Subj2Load)
     end %Dates
  end %Subj
 
+%% ------------------------------- OUTPUT ---------------------------------
+% Save structure
+if saveon
+    dirSave = [dirMfile filesep 'Saved' filesep];
+    if ~exist(dirSave, 'dir'); mkdir(dirSave); end
+    
+    filenameSave = ['DataStruct' Subject_type '_' Activity '.mat'];
+    
+    save([dirSave filenameSave],'DataStruct')
+end
+
+% % Plot (final loaded subject)
 % figure; hold on;
-% plot(SensorData.time,SensorData.dataClean,'k-');
+% plot(SensorData.time,SensorData.dataClean);
 % xlabel('Time (s)');
