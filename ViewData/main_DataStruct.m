@@ -15,6 +15,7 @@ close all
 % -------------------
 % (names taken from folders in Z:\Inpatient Sensors -Stroke\MC10 Study\Data analysis\Segmented_Data\
 %
+% Run after segmenting data using Lars' code.
 %
 % Megan O'Brien
 % Version date 02-19-2020
@@ -32,7 +33,7 @@ saveon = 0;              % flag to save data structure
 %% ---------------------------- INITIALIZE --------------------------------
 % Directories
 dirMfile = pwd;
-dirData = ['Z:\Inpatient Sensors -Stroke\MC10 Study\Data analysis\Segmented_Data\' Subject_type filesep Activity filesep];  % Segmented sensor data
+dirData = ['Z:\Inpatient Sensors -Stroke\MC10 Study\Data analysis\1_Segmented_Data\' Subject_type filesep Activity filesep];  % Segmented sensor data
 dirMeta = 'Z:\Inpatient Sensors -Stroke\MC10 Study\Outcome Measures\';              % Metadata for participants
 addpath([dirMfile filesep 'clean'])
 

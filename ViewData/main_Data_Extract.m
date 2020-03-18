@@ -2,10 +2,12 @@ clc
 clear all
 close all
 % *************************************************************************
-% main_DataStruct.m
+% main_Data_Extract.m
 %
 % Load and clean all sensor data from selected subjects for a desired
-% activity (e.g. 10MWT or TUG). Save data structure to folder in current directory.
+% activity (e.g. 10MWT or TUG). Save data structure to a specified folder.
+%
+% Run after segmenting data using Lars' code.
 %
 %   ACTIVITY NAMES
 % -------------------
@@ -15,26 +17,28 @@ close all
 % -------------------
 % (names taken from folders in Z:\Inpatient Sensors -Stroke\MC10 Study\Data analysis\Segmented_Data\
 %
+%   OUTPUT: structure with
+% -------------------
+%   Subject            % Session_trials (cell of trials from each Activity)
+%   Admission_date
+%   Final_date
+% -------------------
 %
-% Megan O'Brien
-% Version date 02-19-2020
+% Version date 03-18-2020
 % *************************************************************************
 
 %% ------------------------------- INPUT ----------------------------------
 % Select data to load
 
-Subject_type = 'cva';    % cva or controls
-Activity = 'MWT10_SSV';  % Select one from list of nicknames below
-Subj2Load = [1];   % Subject numbers to load (1:55)
-
-
-saveon = 0;              % flag to save data structure
+Subject_type = 'controls';    % cva or controls
+Activity = 'BBS';     % Select one from list of nicknames above
+Subj2Load = [1:51];   % Subject numbers to load (1:55 cva, 1:51 controls)
 
 %% ---------------------------- INITIALIZE --------------------------------
 % Directories
 dirMfile = pwd;
-dirData = ['Y:\Inpatient Sensors -Stroke\MC10 Study\Data analysis\Segmented_Data\' Subject_type filesep Activity filesep];  % Segmented sensor data
-dirMeta = 'Y:\Inpatient Sensors -Stroke\MC10 Study\Outcome Measures\';              % Metadata for participants
+dirData = ['Z:\Inpatient Sensors -Stroke\MC10 Study\Data analysis\1_Segmented_Data\' Subject_type filesep Activity filesep];  % Segmented sensor data
+dirMeta = 'Z:\Inpatient Sensors -Stroke\MC10 Study\Outcome Measures\';              % Metadata for participants
 addpath([dirMfile filesep 'clean'])
 
 % Initialize structure
@@ -47,7 +51,7 @@ struct_counter = 1;
 for indSub = 1:length(Subj2Load)
     
     % Data out folder, filename (Sung)
-    file_out = ['./Data_out/' upper(Subject_type) '_' Activity '_ID' sprintf('%02d',Subj2Load(indSub)) '.mat']
+    file_out = ['C:\Users\mobrien\Desktop\Data_out\' upper(Subject_type) '_' Activity '_ID' sprintf('%02d',Subj2Load(indSub)) '.mat']
 
     
     Subject_num = Subj2Load(indSub);
@@ -111,6 +115,7 @@ for indSub = 1:length(Subj2Load)
 
                     % TRIALS / TASKS
                     Trials = fieldnames(TempStruct.(Subject).(Date).(Act).(Loc));
+                    data.Session_trials(NoS) = {Trials};
                     for indTrial = 1:numel(Trials)
                         Trial = Trials{indTrial};
 
@@ -125,7 +130,7 @@ for indSub = 1:length(Subj2Load)
 
                         for indMod = 1:numel(Mods)
                             Mod = Mods{indMod};
-                            if contains(Mod,'accel_error')
+                            if contains(Mod,'error')
                                 % skip
                             else
                                 % 2. ----------------------------- CLEAN DATA -----------------------------
@@ -422,7 +427,7 @@ for indSub = 1:length(Subj2Load)
 
     
     save(file_out,'data')
-    NoS = 1
+    NoS = 1;
     clear data 
     
 
