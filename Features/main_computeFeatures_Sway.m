@@ -97,4 +97,29 @@ end %indSub
 % *****************************
 
 %% ANALYSIS
-AllFeatures.STANDUNSUPPORTEDS1{:}.data.length_swayMLAcc
+
+% load('features_sway_BBS.mat')
+
+C = [AllFeatures.STANDUNSUPPORTEDS1];
+for indSub=1:length(Subj2Load)
+    % Find first available datapoint (Admission time-point if they could
+    % complete test)
+    col_adm = find(~cellfun(@isempty,C(indSub,:)),1,'first');
+    if isempty(col_adm) % No time-points available, so admission is NaN
+        Feat_adm(indSub) = NaN;
+    else
+        Feat_adm(indSub) = C{indSub,col_adm}.data.length_swayAPAcc;
+    end
+
+    
+    % Find last available datapoint (Discharge time-point)
+    col_dis = find(~cellfun(@isempty,C(indSub,:)),1,'last');
+    if isempty(col_dis) || col_dis == 1 % No time-points available, or Single time-point only, so discharge is NaN
+        Feat_dis(indSub) = NaN;
+    else
+        Feat_dis(indSub) = C{indSub,col_dis}.data.length_swayAPAcc;
+    end
+end
+
+figure;
+boxplot([Feat_adm' Feat_dis'],'Labels',{'Adm','Dis'})
