@@ -24,18 +24,28 @@ close all
 % Select data to load
 
 Subject_type = 'cva';    % cva or controls
-Activity = 'MWT10_SSV';  % Select one from list of nicknames below
-Subj2Load = [1];   % Subject numbers to load (1:55)
+Activity = 'MAS';  % Select one from list of nicknames below
+Subj2Load = [1:55];   % Subject numbers to load (1:55)
 
 
 saveon = 0;              % flag to save data structure
 
 %% ---------------------------- INITIALIZE --------------------------------
 % Directories
+if ~exist('RTOdir.mat','file') % Have user select path to RTO drive and save it for later use
+    RTOdir = uigetdir(matlabroot,'Choose Local Path to RTO Drive'); 
+    save('RTOdir.mat','RTOdir')
+else
+    load('RTOdir.mat') % Load stored loca path to drive
+end
+
 dirMfile = pwd;
-dirData = ['Y:\Inpatient Sensors -Stroke\MC10 Study\Data analysis\Segmented_Data\' Subject_type filesep Activity filesep];  % Segmented sensor data
-dirMeta = 'Y:\Inpatient Sensors -Stroke\MC10 Study\Outcome Measures\';              % Metadata for participants
+dirData = fullfile(RTOdir,'Inpatient Sensors -Stroke','MC10 Study','Data analysis','1_Segmented_Data',Subject_type,Activity,filesep);  % Segmented sensor data
+dirMeta = fullfile(RTOdir,'Inpatient Sensors -Stroke','MC10 Study','Outcome Measures',filesep);              % Metadata for participants
 addpath([dirMfile filesep 'clean'])
+if ~exist('Data_out','dir')
+    mkdir('Data_out')
+end
 
 % Initialize structure
 DataStruct=struct('SubjID', '', 'Timepoint','','Activity', '', 'Trial', '', 'Location', '', 'SensorData', []);

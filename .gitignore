@@ -18,6 +18,14 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# Local directory variable
+*RTOdir.mat
+
+# Data Outputs
+*Data_out*
+*Saved*
+
+
 # =========================
 # Operating System Files
 # =========================
