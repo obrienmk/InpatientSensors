@@ -64,13 +64,32 @@ for n = 1:1:length(ID)
     load(file_input);
     data
     
+    %Get Subject ID
+    if isnumeric(ID(n))
+        str = num2str(ID(n));
+        if length(str) == 1
+            if strcmp(Type_of_Subject,'CVA')
+                Subject=['CVA0' str];
+            else strcmp(Type_of_Subject,'CONTROLS')
+                Subject=['HC0' str];
+            end
+        else
+            if strcmp(Type_of_Subject,'CVA')
+                Subject=['CVA' str];
+            else strcmp(Type_of_Subject,'CONTROLS')
+                Subject=['HC' str];
+            end
+        end
+    end
+    
     for g = 1:1:length(TrialNames)
         
         %Trial N
         N_index = find(strcmp(data.Session_trials{SN}, TrialNames(g)));
         if isempty(N_index) == 1
+            
             %Trial Information
-            subject(g,:) = ID(n);
+            subject(g,:) = Subject;
             group(g,:) = Type_of_Subject;
             activity(g,:) = Activity;
             trial_No(g,:) = TrialNumbers(g);
@@ -193,7 +212,7 @@ for n = 1:1:length(ID)
             
         else
             %Trial Information
-            subject(g,:) = ID(n);
+            subject(g,:) = Subject;
             group(g,:) = Type_of_Subject;
             activity(g,:) = Activity;
             trial_No(g,:) = TrialNumbers(g);
@@ -394,8 +413,8 @@ variableList = {'trialtime',...
     'SC_Gyr_y_DAmp', 'SC_Gyr_y_DFreq', 'SC_Gyr_y_PSD_mean', 'SC_Gyr_y_PSD_std', 'SC_Gyr_y_PSD_skew', 'SC_Gyr_y_PSD_kurtosis', ...
     'SC_Gyr_z_DAmp', 'SC_Gyr_z_DFreq', 'SC_Gyr_z_PSD_mean', 'SC_Gyr_z_PSD_std', 'SC_Gyr_z_PSD_skew', 'SC_Gyr_z_PSD_kurtosis', ...
     'SC_Gyr_norm_DAmp', 'SC_Gyr_norm_DFreq', 'SC_Gyr_norm_PSD_mean', 'SC_Gyr_norm_PSD_std', 'SC_Gyr_norm_PSD_skew', 'SC_Gyr_norm_PSD_kurtosis'};
-    BBS_table_wide = unstack(BBS_table,variableList,'trial_No')
+BBS_table_wide = unstack(BBS_table,variableList,'trial_No')
 
-writetable(BBS_table,'General_Feature_Matrix_Admission_BBS_CVA_longformat_061720.csv','Delimiter',',','QuoteStrings',true)
-writetable(BBS_table_wide,'General_Feature_Matrix_Admission_CVA_061720.csv','Delimiter',',','QuoteStrings',true)
+% writetable(BBS_table,'General_Feature_Matrix_Admission_BBS_CVA_longformat_061720.csv','Delimiter',',','QuoteStrings',true)
+% writetable(BBS_table_wide,'General_Feature_Matrix_Admission_CVA_061720.csv','Delimiter',',','QuoteStrings',true)
 
