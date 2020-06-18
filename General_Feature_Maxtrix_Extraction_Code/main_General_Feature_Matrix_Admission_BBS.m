@@ -12,7 +12,7 @@ clear all
 close all
 
 
-ID = [1:55]; %enter ID or range of ID's to be processed CONTROLS [1:25,27:51]; CVA [1:55]
+ID = [1:2]; %enter ID or range of ID's to be processed CONTROLS [1:51]; CVA [1:55]
 Type_of_Subject = 'CVA'; % enter CONTROLS or CVA
 
 
@@ -85,7 +85,12 @@ for n = 1:1:length(ID)
     for g = 1:1:length(TrialNames)
         
         %Trial N
-        N_index = find(strcmp(data.Session_trials{SN}, TrialNames(g)));
+        if isfield(data, 'Session_trials') == 0
+            N_index = [];
+        else
+            N_index = find(strcmp(data.Session_trials{SN}, TrialNames(1)));
+        end
+        
         if isempty(N_index) == 1
             
             %Trial Information
