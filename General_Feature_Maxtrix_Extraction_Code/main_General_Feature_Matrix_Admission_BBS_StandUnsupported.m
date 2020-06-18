@@ -12,8 +12,8 @@ clear all
 close all
 
 
-ID = [1:55]; %enter ID or range of ID's to be processed CONTROLS [1:25,27:51]; CVA [1:55]
-Type_of_Subject = 'CVA'; % enter CONTROLS or CVA
+ID = [1:51]; %enter ID or range of ID's to be processed CONTROLS [1:51]; CVA [1:55]
+Type_of_Subject = 'CONTROLS'; % enter CONTROLS or CVA
 
 
 %Activity Selection
@@ -59,7 +59,12 @@ for n = 1:1:length(ID)
     for g = 1:1:length(TrialTimes)
         
         %Trial N
-        N_index = find(strcmp(data.Session_trials{SN}, TrialNames(1)));
+        if isfield(data, 'Session_trials') == 0
+            N_index = [];
+        else
+            N_index = find(strcmp(data.Session_trials{SN}, TrialNames(1)));
+        end
+        
         if isempty(N_index) == 1
             
             %Trial Information
@@ -402,6 +407,6 @@ variableList = {'trialtime',...
     'SC_Gyr_norm_DAmp', 'SC_Gyr_norm_DFreq', 'SC_Gyr_norm_PSD_mean', 'SC_Gyr_norm_PSD_std', 'SC_Gyr_norm_PSD_skew', 'SC_Gyr_norm_PSD_kurtosis'};
 BBS_table_wide = unstack(BBS_table,variableList,'cutoff')
 
-writetable(BBS_table,'General_Feature_Matrix_Admission_BBS_CVA_Times_longformat_061820.csv','Delimiter',',','QuoteStrings',true)
-writetable(BBS_table_wide,'General_Feature_Matrix_Admission_BBS_CVA_Times_061820.csv','Delimiter',',','QuoteStrings',true)
+writetable(BBS_table,'General_Feature_Matrix_Admission_BBS_HC_Times_longformat_061820.csv','Delimiter',',','QuoteStrings',true)
+writetable(BBS_table_wide,'General_Feature_Matrix_Admission_BBS_HC_Times_061820.csv','Delimiter',',','QuoteStrings',true)
 
