@@ -1,28 +1,34 @@
-%------------------------%
+%-------------------------------------------------------
 %
-% BBS Feature Matrix
+% BBS Feature Extraction for Inpatient Sensor Data
 % Adam P. Horin
-% 06/08/2020
+% June 22, 2020
 %
-%-------------------------%
-
-
+% Functions needed:
+%   FFeatures.m
+%   FFT_data.m
+%   acctransformation.m
+%   ellipsoid.m
+%   sampen.m
+%   staticBalance.m
+%
+% This script processes features related to the BBS from the Inpatient
+% Sensor Data.
+%
+%------------------------------------------------------------------
+%%
 clc
 clear all
 close all
 
-
+% Input parameters
 ID = [1:2]; %enter ID or range of ID's to be processed CONTROLS [1:51]; CVA [1:55]
 Type_of_Subject = 'CVA'; % enter CONTROLS or CVA
+Activity = 'BBS'; %Activity Selection
+SN=1; %session Admission = 1
 
-
-%Activity Selection
-Activity = 'BBS';
-
-Hz = 31.25;
-dt = 1/Hz;
-k = 1;
-BBS_table = [];
+%%
+% Trial Names and Numbers
 TrialNames = {'N1_SIT_TO_STAND_S1', ...
     'N2_STAND_UNSUPPORTED_S1', ...
     'N3_SIT_W__BACK_S1', ...
@@ -37,7 +43,6 @@ TrialNames = {'N1_SIT_TO_STAND_S1', ...
     'N12_FOOT_ON_STEP_STOOL_S1', ...
     'N13_STAND_W__ONE_FOOT_IN_Tr_S1', ...
     'N14_STAND_ON_ONE_LEG_S1'};
-
 
 TrialNumbers = {'N01', ...
     'N02', ...
@@ -54,11 +59,18 @@ TrialNumbers = {'N01', ...
     'N13', ...
     'N14'};
 
+%%
+% Initialize variables
+Hz = 31.25;
+dt = 1/Hz;
+k = 1;
+BBS_table = [];
+
+%%
 %directory
 path = '\\fs2.smpp.local\RTO\Inpatient Sensors -Stroke\MC10 Study\Data analysis\2_Clean_Data_Extracted\';
 
-SN=1; %admission session
-
+%%
 for n = 1:1:length(ID)
     file_input = [path Activity '\' Type_of_Subject '_' Activity '_ID' sprintf('%.2d',ID(n)) '.mat'];
     load(file_input);
@@ -88,7 +100,7 @@ for n = 1:1:length(ID)
         if isfield(data, 'Session_trials') == 0
             N_index = [];
         else
-            N_index = find(strcmp(data.Session_trials{SN}, TrialNames(1)));
+            N_index = find(strcmp(data.Session_trials{SN}, TrialNames(g)));
         end
         
         if isempty(N_index) == 1
@@ -214,6 +226,26 @@ for n = 1:1:length(ID)
             SC_Gyr_norm_PSD_skew(g,:) = nan;
             SC_Gyr_norm_PSD_kurtosis(g,:) = nan;
             
+            %Balance Features
+            f50_ML(g,:) = nan;
+            f50_AP(g,:) = nan;
+            f95_ML(g,:) = nan;
+            f95_AP(g,:) = nan;
+            spectral_centroid_AP(g,:) = nan;
+            spectral_centroid_ML(g,:) = nan;
+            max_accAP(g,:) = nan;
+            max_accML(g,:) = nan;
+            mean_accAP(g,:) = nan;
+            mean_accML(g,:) = nan;
+            rms_AP(g,:) = nan;
+            rms_ML(g,:) = nan;
+            jerk_AP(g,:) = nan;
+            jerk_ML(g,:) = nan;
+            mean_velAP(g,:) = nan;
+            mean_velML(g,:) = nan;
+            length_swayAPAcc(g,:) = nan;
+            length_swayMLAcc(g,:) = nan;
+            
             
         else
             %Trial Information
@@ -221,8 +253,7 @@ for n = 1:1:length(ID)
             group(g,:) = Type_of_Subject;
             activity(g,:) = Activity;
             trial_No(g,:) = TrialNumbers(g);
-            
-            
+
             % Gyroscope data
             SC_Gyr = data.Session{SN}.Motion.SC.Gyr{N_index};
             
@@ -369,8 +400,48 @@ for n = 1:1:length(ID)
             
             
             trialtime(g,:) = data.Session{SN}.Motion.Time{N_index}(final,:)-data.Session{SN}.Motion.Time{N_index}(1,:);
+            
+            % To compute balance features
+            %Code from main_computeFeatures_Sway
+            t = Time;
+            AccData_sacrum = data.Session{SN}.Motion.SC.Acc{N_index};
+            Acc.x = AccData_sacrum(:,1);
+            Acc.y = AccData_sacrum(:,2);
+            Acc.z = AccData_sacrum(:,3);
+            
+            GyrData_sacrum = data.Session{SN}.Motion.SC.Gyr{N_index};
+            Gyr.x = GyrData_sacrum(:,1);
+            Gyr.y = GyrData_sacrum(:,2);
+            Gyr.z = GyrData_sacrum(:,3);
+            
+            temp.Acc = Acc;
+            temp.Gyr = Gyr;
+            
+            transformData = acctransformation(temp,ID(n),SN);
+            name = char(TrialNames(g));
+            AllFeatures.(name){1,SN} = staticBalance(transformData,t);
+            
+            %Sway Features
+            f50_ML(g,:) = AllFeatures.(name){1,1}.data.f50_ML;
+            f50_AP(g,:) = AllFeatures.(name){1,1}.data.f50_AP;
+            f95_ML(g,:) = AllFeatures.(name){1,1}.data.f95_ML;
+            f95_AP(g,:) = AllFeatures.(name){1,1}.data.f95_AP;
+            spectral_centroid_AP(g,:) = AllFeatures.(name){1,1}.data.spectral_centroid_AP;
+            spectral_centroid_ML(g,:) = AllFeatures.(name){1,1}.data.spectral_centroid_ML;
+            max_accAP(g,:) = AllFeatures.(name){1,1}.data.max_accAP;
+            max_accML(g,:) = AllFeatures.(name){1,1}.data.max_accML;
+            mean_accAP(g,:) = AllFeatures.(name){1,1}.data.mean_accAP;
+            mean_accML(g,:) = AllFeatures.(name){1,1}.data.mean_accML;
+            rms_AP(g,:) = AllFeatures.(name){1,1}.data.rms_AP;
+            rms_ML(g,:) = AllFeatures.(name){1,1}.data.rms_ML;
+            jerk_AP(g,:) = AllFeatures.(name){1,1}.data.jerk_AP;
+            jerk_ML(g,:) = AllFeatures.(name){1,1}.data.jerk_ML;
+            mean_velAP(g,:) = AllFeatures.(name){1,1}.data.mean_velAP;
+            mean_velML(g,:) = AllFeatures.(name){1,1}.data.mean_velML;
+            length_swayAPAcc(g,:) = AllFeatures.(name){1,1}.data.length_swayAPAcc;
+            length_swayMLAcc(g,:) = AllFeatures.(name){1,1}.data.length_swayMLAcc;
+                
         end
-        
         
     end
     %BBS feature matrix in long format
@@ -392,7 +463,10 @@ for n = 1:1:length(ID)
         SC_Gyr_x_DAmp, SC_Gyr_x_DFreq, SC_Gyr_x_PSD_mean, SC_Gyr_x_PSD_std, SC_Gyr_x_PSD_skew, SC_Gyr_x_PSD_kurtosis, ...
         SC_Gyr_y_DAmp, SC_Gyr_y_DFreq, SC_Gyr_y_PSD_mean, SC_Gyr_y_PSD_std, SC_Gyr_y_PSD_skew, SC_Gyr_y_PSD_kurtosis, ...
         SC_Gyr_z_DAmp, SC_Gyr_z_DFreq, SC_Gyr_z_PSD_mean, SC_Gyr_z_PSD_std, SC_Gyr_z_PSD_skew, SC_Gyr_z_PSD_kurtosis, ...
-        SC_Gyr_norm_DAmp, SC_Gyr_norm_DFreq, SC_Gyr_norm_PSD_mean, SC_Gyr_norm_PSD_std, SC_Gyr_norm_PSD_skew, SC_Gyr_norm_PSD_kurtosis)
+        SC_Gyr_norm_DAmp, SC_Gyr_norm_DFreq, SC_Gyr_norm_PSD_mean, SC_Gyr_norm_PSD_std, SC_Gyr_norm_PSD_skew, SC_Gyr_norm_PSD_kurtosis, ...
+        f50_ML, f50_AP, f95_ML, f95_AP, spectral_centroid_AP, spectral_centroid_ML, max_accAP,...
+        max_accML, mean_accAP, mean_accML, rms_AP, rms_ML, jerk_AP, jerk_ML,...
+        mean_velAP, mean_velML, length_swayAPAcc, length_swayMLAcc)
     BBS_table = [BBS_table; BBS_table_temp]
 end
 
@@ -417,9 +491,11 @@ variableList = {'trialtime',...
     'SC_Gyr_x_DAmp', 'SC_Gyr_x_DFreq', 'SC_Gyr_x_PSD_mean', 'SC_Gyr_x_PSD_std', 'SC_Gyr_x_PSD_skew', 'SC_Gyr_x_PSD_kurtosis', ...
     'SC_Gyr_y_DAmp', 'SC_Gyr_y_DFreq', 'SC_Gyr_y_PSD_mean', 'SC_Gyr_y_PSD_std', 'SC_Gyr_y_PSD_skew', 'SC_Gyr_y_PSD_kurtosis', ...
     'SC_Gyr_z_DAmp', 'SC_Gyr_z_DFreq', 'SC_Gyr_z_PSD_mean', 'SC_Gyr_z_PSD_std', 'SC_Gyr_z_PSD_skew', 'SC_Gyr_z_PSD_kurtosis', ...
-    'SC_Gyr_norm_DAmp', 'SC_Gyr_norm_DFreq', 'SC_Gyr_norm_PSD_mean', 'SC_Gyr_norm_PSD_std', 'SC_Gyr_norm_PSD_skew', 'SC_Gyr_norm_PSD_kurtosis'};
+    'SC_Gyr_norm_DAmp', 'SC_Gyr_norm_DFreq', 'SC_Gyr_norm_PSD_mean', 'SC_Gyr_norm_PSD_std', 'SC_Gyr_norm_PSD_skew', 'SC_Gyr_norm_PSD_kurtosis', ...
+    'f50_ML', 'f50_AP', 'f95_ML', 'f95_AP', 'spectral_centroid_AP', 'spectral_centroid_ML', 'max_accAP',...
+    'max_accML', 'mean_accAP', 'mean_accML', 'rms_AP', 'rms_ML', 'jerk_AP', 'jerk_ML', ...
+    'mean_velAP', 'mean_velML', 'length_swayAPAcc', 'length_swayMLAcc'};
 BBS_table_wide = unstack(BBS_table,variableList,'trial_No')
 
-% writetable(BBS_table,'General_Feature_Matrix_Admission_BBS_CVA_longformat_061720.csv','Delimiter',',','QuoteStrings',true)
-% writetable(BBS_table_wide,'General_Feature_Matrix_Admission_CVA_061720.csv','Delimiter',',','QuoteStrings',true)
-
+% writetable(BBS_table,'General_Feature_Matrix_Admission_BBS_CVA_longformat_062220.csv','Delimiter',',','QuoteStrings',true)
+% writetable(BBS_table_wide,'General_Feature_Matrix_Admission_CVA_062220.csv','Delimiter',',','QuoteStrings',true)
