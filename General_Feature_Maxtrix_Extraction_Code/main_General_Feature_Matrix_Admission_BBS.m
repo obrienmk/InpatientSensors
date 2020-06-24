@@ -88,13 +88,13 @@ for h = 1:1:length(Type_of_Subject)
                 if strcmp(Type_of_Subject_Group,'CVA')
                     SubjectID=['CVA0' str];
                 else strcmp(Type_of_Subject_Group,'CONTROLS')
-                    SubjectID=['HOA0' str];
+                    SubjectID=['HC0' str];
                 end
             else
                 if strcmp(Type_of_Subject_Group,'CVA')
                     SubjectID=['CVA' str];
                 else strcmp(Type_of_Subject_Group,'CONTROLS')
-                    SubjectID=['HOA' str];
+                    SubjectID=['HC' str];
                 end
             end
         end
@@ -115,7 +115,7 @@ for h = 1:1:length(Type_of_Subject)
                 if isempty(N_index) == 1
                     
                     %Trial Information
-                    subject(g,:) = SubjectID;
+                    subject(g,:) = {SubjectID};
                     group(g,:) = Type_of_Subject(h);
                     activity(g,:) = Activity;
                     trial_No(g,:) = TrialNumbers(j);
@@ -240,7 +240,7 @@ for h = 1:1:length(Type_of_Subject)
                     
                 else
                     %Trial Information
-                    subject(g,:) = SubjectID;
+                    subject(g,:) = {SubjectID};
                     group(g,:) = Type_of_Subject(h);
                     activity(g,:) = Activity;
                     trial_No(g,:) = TrialNumbers(j);
