@@ -12,8 +12,13 @@
 %   sampen.m
 %   staticBalance.m
 %
-% This script processes features for the BBS at different
-% cuttoff times from the Inpatient Sensor Data.
+% Description:
+%   1. Loops through clean extracted data of BBS inpatient sensor data for
+%   CVA and HC and extracts general balance features
+%   2. Extracts features for all 14 activities of the BBS at 15 second
+%   cutoffs (15-120, and 200 seconds)
+%   3. Extracts BBS scores for all activities and the total score for each
+%   participant
 %
 %------------------------------------------------------------------
 
@@ -21,10 +26,10 @@ clc
 clear all
 close all
 
-
-%ID = [1]; %enter ID or range of ID's to be processed CONTROLS [1:51]; CVA [1:55]
-Type_of_Subject = {'CVA', 'CONTROLS'}; % enter CONTROLS or CVA
+%% Define variables
+Type_of_Subject = {'CVA', 'CONTROLS'}; % enter CONTROLS and/or CVA
 Activity = 'BBS'; %Activity Selection
+SN=1; %admission session
 
 Hz = 31.25;
 dt = 1/Hz;
@@ -60,23 +65,27 @@ TrialNumbers = {'N01', ...
     'N13', ...
     'N14'};
 
-TrialTimes = [15, 30, 45, 60, 75, 90, 105, 120];
+% cuttoff times for processing; 200 is used to get all of the data from the
+% trial; no activity should exceed more than 122 seconds
+TrialTimes = [15, 30, 45, 60, 75, 90, 105, 120, 200]; 
 
 %directory
 path = '\\fs2.smpp.local\RTO\Inpatient Sensors -Stroke\MC10 Study\Data analysis\2_Clean_Data_Extracted\';
 
-SN=1; %admission session
+%% Main Loop: identifies group, subject ID, trial names, and then trial times
 
-for h = 1:1:length(Type_of_Subject)
+for h = 1:1:length(Type_of_Subject) % Identify group to loop through
     if strcmp(Type_of_Subject{h}, 'CVA') == 1
-        ID = [1];
+        ID = [1:55]; %[1:55]
         Type_of_Subject_Group = 'CVA';
+        BBS_path = '\\fs2.smpp.local\RTO\Inpatient Sensors -Stroke\MC10 Study\Outcome Measures\individual_tests_CVA\scores_cva_BBS.xlsx';
     elseif strcmp(Type_of_Subject{h}, 'CONTROLS') == 1
-        ID = [1];
+        ID = [1:51]; %[1:51]
         Type_of_Subject_Group = 'CONTROLS';
+        BBS_path = '\\fs2.smpp.local\RTO\Inpatient Sensors -Stroke\MC10 Study\Outcome Measures\individual_tests_HC\scores_hc_BBS.xlsx';
     end
     
-    for n = 1:1:length(ID)
+    for n = 1:1:length(ID) % Loop through IDs for the specified group
         file_input = [path Activity '\' Type_of_Subject_Group '_' Activity '_ID' sprintf('%.2d',ID(n)) '.mat'];
         load(file_input);
         data
@@ -99,21 +108,20 @@ for h = 1:1:length(Type_of_Subject)
             end
         end
         
+        %load BBS clinical scores
+        BBS = xlsread(BBS_path, SubjectID);
+        BBS(isnan(BBS))=0;
         
-        for j = 1:1:length(TrialNames)
-            
-            
+        for j = 1:1:length(TrialNames) % Loop through all BBS activities
             %Trial N
-            if isfield(data, 'Session_trials') == 0
+            if isfield(data, 'Session_trials') == 0 % check for data; if empty participant will get NaN
                 N_index = [];
             else
                 N_index = find(strcmp(data.Session_trials{SN}, TrialNames(j)));
             end
             
-            for g = 1:1:length(TrialTimes)
-                
+            for g = 1:1:length(TrialTimes) % Export features at different time cutoffs
                 if isempty(N_index) == 1
-                    
                     %Trial Information
                     subject(g,:) = {SubjectID};
                     group(g,:) = Type_of_Subject(h);
@@ -121,6 +129,8 @@ for h = 1:1:length(Type_of_Subject)
                     trial_No(g,:) = TrialNumbers(j);
                     cutoff(g,:) = TrialTimes(g);
                     trialtime(g,:) = nan;
+                    BBS_TotalScore(g,:) = sum(BBS(1:14));
+                    BBS_Subscore(g,:) = BBS(j);
                     
                     
                     %General Features
@@ -245,6 +255,8 @@ for h = 1:1:length(Type_of_Subject)
                     activity(g,:) = Activity;
                     trial_No(g,:) = TrialNumbers(j);
                     cutoff(g,:) = TrialTimes(g);
+                    BBS_TotalScore(g,:) = sum(BBS(1:14));
+                    BBS_Subscore(g,:) = BBS(j);
                     
                     
                     % Gyroscope data
@@ -445,7 +457,7 @@ for h = 1:1:length(Type_of_Subject)
             
             
             %BBS feature matrix in long format
-            BBS_table_temp = table(subject, group, activity, trial_No, cutoff, trialtime, ...
+            BBS_table_temp = table(subject, group, activity, trial_No, cutoff, trialtime, BBS_TotalScore, BBS_Subscore, ...
                 SC_Gyr_x_mean, SC_Gyr_y_mean, SC_Gyr_z_mean, SC_Gyr_norm_mean, ...
                 SC_Gyr_x_range, SC_Gyr_y_range, SC_Gyr_z_range, SC_Gyr_norm_range, ...
                 SC_Gyr_x_rms, SC_Gyr_y_rms, SC_Gyr_z_rms, SC_Gyr_norm_rms, ...
@@ -473,32 +485,7 @@ for h = 1:1:length(Type_of_Subject)
     end
 end
 
+%% Export .csv of feature matrix
 
-%tranpose feature matrix to wide format by trial number
-% variableList = {'trialtime',...
-%     'SC_Gyr_x_mean', 'SC_Gyr_y_mean', 'SC_Gyr_z_mean', 'SC_Gyr_norm_mean', ...
-%     'SC_Gyr_x_range', 'SC_Gyr_y_range', 'SC_Gyr_z_range', 'SC_Gyr_norm_range', ...
-%     'SC_Gyr_x_rms', 'SC_Gyr_y_rms', 'SC_Gyr_z_rms', 'SC_Gyr_norm_rms', ...
-%     'SC_Gyr_x_std', 'SC_Gyr_y_std', 'SC_Gyr_z_std', 'SC_Gyr_norm_std', ...
-%     'SC_Gyr_x_skew', 'SC_Gyr_y_skew', 'SC_Gyr_z_skew', 'SC_Gyr_norm_skew', ...
-%     'SC_Gyr_x_kurtosis', 'SC_Gyr_y_kurtosis', 'SC_Gyr_z_kurtosis', 'SC_Gyr_norm_kurtosis', ...
-%     'dSC_Gyr_x_mean', 'dSC_Gyr_y_mean', 'dSC_Gyr_z_mean', 'dSC_Gyr_norm_mean', ...
-%     'dSC_Gyr_x_range', 'dSC_Gyr_y_range', 'dSC_Gyr_z_range', 'dSC_Gyr_norm_range', ...
-%     'dSC_Gyr_x_rms', 'dSC_Gyr_y_rms', 'dSC_Gyr_z_rms', 'dSC_Gyr_norm_rms', ...
-%     'dSC_Gyr_x_std', 'dSC_Gyr_y_std', 'dSC_Gyr_z_std', 'dSC_Gyr_norm_std', ...
-%     'dSC_Gyr_x_skew', 'dSC_Gyr_y_skew', 'dSC_Gyr_z_skew', 'dSC_Gyr_norm_skew', ...
-%     'dSC_Gyr_x_kurtosis', 'dSC_Gyr_y_kurtosis', 'dSC_Gyr_z_kurtosis', 'dSC_Gyr_norm_kurtosis', ...
-%     'SC_Gyr_corr_xy', 'SC_Gyr_corr_xz', 'SC_Gyr_corr_yz', ...
-%     'SC_Gyr_x_SamEn', 'SC_Gyr_y_SamEn', 'SC_Gyr_z_SamEn', 'SC_Gyr_norm_SamEn', ...
-%     'SC_Gyr_x_DAmp', 'SC_Gyr_x_DFreq', 'SC_Gyr_x_PSD_mean', 'SC_Gyr_x_PSD_std', 'SC_Gyr_x_PSD_skew', 'SC_Gyr_x_PSD_kurtosis', ...
-%     'SC_Gyr_y_DAmp', 'SC_Gyr_y_DFreq', 'SC_Gyr_y_PSD_mean', 'SC_Gyr_y_PSD_std', 'SC_Gyr_y_PSD_skew', 'SC_Gyr_y_PSD_kurtosis', ...
-%     'SC_Gyr_z_DAmp', 'SC_Gyr_z_DFreq', 'SC_Gyr_z_PSD_mean', 'SC_Gyr_z_PSD_std', 'SC_Gyr_z_PSD_skew', 'SC_Gyr_z_PSD_kurtosis', ...
-%     'SC_Gyr_norm_DAmp', 'SC_Gyr_norm_DFreq', 'SC_Gyr_norm_PSD_mean', 'SC_Gyr_norm_PSD_std', 'SC_Gyr_norm_PSD_skew', 'SC_Gyr_norm_PSD_kurtosis', ...
-%     'f50_ML', 'f50_AP', 'f95_ML', 'f95_AP', 'spectral_centroid_AP', 'spectral_centroid_ML', 'max_accAP',...
-%     'max_accML', 'mean_accAP', 'mean_accML', 'rms_AP', 'rms_ML', 'jerk_AP', 'jerk_ML', ...
-%     'mean_velAP', 'mean_velML', 'length_swayAPAcc', 'length_swayMLAcc'};
-% BBS_table_wide = unstack(BBS_table,variableList,'cutoff')
-%
-% writetable(BBS_table,'General_Feature_Matrix_Admission_BBS_StandUnsupported_CVA_longformat_062220.csv','Delimiter',',','QuoteStrings',true)
-% writetable(BBS_table_wide,'General_Feature_Matrix_Admission_BBS_StandUnsupported_CVA_062220.csv','Delimiter',',','QuoteStrings',true)
+writetable(BBS_table,'General_Feature_Matrix_Admission_BBS_062520.csv','Delimiter',',','QuoteStrings',true)
 
