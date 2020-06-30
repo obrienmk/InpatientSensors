@@ -50,3 +50,13 @@ CVA Demographic Information: "\\fs2.smpp.local\RTO\Inpatient Sensors -Stroke\MC1
 HC Demographic Information: "\\fs2.smpp.local\RTO\Inpatient Sensors -Stroke\MC10 Study\Outcome Measures\HC_Clinical Outcome Measure Scores Master Sheet-updated 1-11-18.xlsx"
 
 # Final data file and location:
+
+------------------------------------------------
+Adding Clinical Outcome Scores
+------------------------------------------------
+# Steps to add clinical outcome scores:
+1. These may be matched based on multiple criteria in order to add values from different session for each participant. Add appropriate columns to the feature matrix.
+2. Use the following formula (example below) to match based on multiple criteria. To execute this formula you must press ctrl + shift + enter after you have finished entering the formula.
+
+=INDEX(BBS_ClinicalScores.csv!$G$2:$G$127,MATCH(1,(A2=BBS_ClinicalScores.csv!$A$2:$A$3480)*(D2=BBS_ClinicalScores.csv!$D$2:$D$3480)*(E2=BBS_ClinicalScores.csv!$E$2:$E$3480),0))
+
