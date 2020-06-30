@@ -1,4 +1,6 @@
 Processing Stream for Extracting General and Balance Features from BBS Inpatient Sensor Data
+Adam P. Horin
+June 25, 2020
 
 ------------------------------------
 Matlab Processing
