@@ -14,10 +14,9 @@ Input files:
 
 Every clinical outcome has a maximum of 4 sessions (SN). SN1 refers to the admission session and SN4 refers to the discharge session.
 If a participant had only 2 or 3 sessions, their last session was changed to SN4. Every script identifies the date for each session and checks
-to make the sure the order of the sessions is correct. A matrix that is generated during processing that identifies any dates that were out of 
+to make the sure the order of the sessions is correct. A matrix is generated during processing that identifies any dates that were out of 
 order (List_WrongDate) so you can manually confirm the corrected order. If there were multiple trials for a single session, only the first trial
 was processed.
-
 
 -----------------------------------------------
 BBS
