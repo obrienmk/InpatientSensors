@@ -9,6 +9,10 @@ Matlab Processing
 The main_General_Feature_Matrix_Admission_BBS.m extracts general and balance features from the BBS inpatient sensor data.
 The output is a feature matrix containing groups (CVA and HC), BBS activities (1-14), and cutoff times (15-120, and 200 seconds).
 
+The main_General_Feature_Matrix_AllSessions_BBS.m extracts general and balance features from the BBS inpatient sensor data.
+The output is a feature matrix containing groups (CVA and HC), session (1-4), BBS activities (1-14), and cutoff times (15-120, and 200 seconds).
+Note: The sessions are defined SN1, SN2, SN3, and SN4; SN1 is admission, SN4 is discharge. If a participant has only 2 or 3 sessions, their last session was defined as SN4.
+
 # Input files and locations:
 BBS CVA and HC clean extracted data: "Y:\Inpatient Sensors -Stroke\MC10 Study\Data analysis\2_Clean_Data_Extracted\BBS"
 BBS CVA Scores: "\\fs2.smpp.local\RTO\Inpatient Sensors -Stroke\MC10 Study\Outcome Measures\individual_tests_CVA\scores_cva_BBS.xlsx"
