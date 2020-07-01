@@ -75,11 +75,11 @@ path = '\\fs2.smpp.local\RTO\Inpatient Sensors -Stroke\MC10 Study\Data analysis\
 
 for h = 1:1:length(Type_of_Subject) % Identify group to loop through
     if strcmp(Type_of_Subject{h}, 'CVA') == 1
-        ID = [1:55]; %[1:55]
+        ID = [12]; %[1:55]
         Type_of_Subject_Group = 'CVA';
         BBS_path = '\\fs2.smpp.local\RTO\Inpatient Sensors -Stroke\MC10 Study\Outcome Measures\individual_tests_CVA\scores_cva_BBS.xlsx';
     elseif strcmp(Type_of_Subject{h}, 'CONTROLS') == 1
-        ID = [1:51]; %[1:51]
+        ID = []; %[1:51]
         Type_of_Subject_Group = 'CONTROLS';
         BBS_path = '\\fs2.smpp.local\RTO\Inpatient Sensors -Stroke\MC10 Study\Outcome Measures\individual_tests_HC\scores_hc_BBS.xlsx';
     end
@@ -220,10 +220,10 @@ for h = 1:1:length(Type_of_Subject) % Identify group to loop through
         for s = 1:1:length(SN)  
             for j = 1:1:length(TrialNames) % Loop through all BBS activities
                 %Trial N
-                if isfield(data, 'Session_trials') == 0 % check for data; if empty participant will get NaN
+                if isfield(data, 'Session_trials') == 0 || isempty(SN{s}) == 1% check for data; if empty participant will get NaN
                     N_index = [];
                 else
-                    N_index = find(strcmp(data.Session_trials{SN{1}}, TrialNames(j)));
+                    N_index = find(strcmp(data.Session_trials{SN{s}}, TrialNames(j)));
                 end
                 
                 for g = 1:1:length(TrialTimes) % Export features at different time cutoffs
@@ -603,5 +603,5 @@ end
 
 %% Export .csv of feature matrix
 
-writetable(BBS_table,'General_Feature_Matrix_AllSessions_BBS.csv','Delimiter',',','QuoteStrings',true)
+writetable(BBS_table,'General_Feature_Matrix_AllSessions_BBS_CVA19_30.csv','Delimiter',',','QuoteStrings',true)
 
