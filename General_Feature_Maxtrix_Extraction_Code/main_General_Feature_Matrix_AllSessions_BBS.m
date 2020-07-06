@@ -68,6 +68,8 @@ TrialNumbers = {'N01', ...
 % trial; no activity should exceed more than 122 seconds
 TrialTimes = [15, 30, 45, 60, 75, 90, 105, 120, 200];
 
+List_WrongDate = [];
+
 %directory
 path = '\\fs2.smpp.local\RTO\Inpatient Sensors -Stroke\MC10 Study\Data analysis\2_Clean_Data_Extracted\';
 
@@ -75,11 +77,11 @@ path = '\\fs2.smpp.local\RTO\Inpatient Sensors -Stroke\MC10 Study\Data analysis\
 
 for h = 1:1:length(Type_of_Subject) % Identify group to loop through
     if strcmp(Type_of_Subject{h}, 'CVA') == 1
-        ID = [12]; %[1:55]
+        ID = [1:55]; %[1:55]
         Type_of_Subject_Group = 'CVA';
         BBS_path = '\\fs2.smpp.local\RTO\Inpatient Sensors -Stroke\MC10 Study\Outcome Measures\individual_tests_CVA\scores_cva_BBS.xlsx';
     elseif strcmp(Type_of_Subject{h}, 'CONTROLS') == 1
-        ID = []; %[1:51]
+        ID = [1:51]; %[1:51]
         Type_of_Subject_Group = 'CONTROLS';
         BBS_path = '\\fs2.smpp.local\RTO\Inpatient Sensors -Stroke\MC10 Study\Outcome Measures\individual_tests_HC\scores_hc_BBS.xlsx';
     end
@@ -108,48 +110,56 @@ for h = 1:1:length(Type_of_Subject) % Identify group to loop through
         end
         
         
-%-------------------------------------------------------------------------%
-% Check Dates for Session Numbers
-%
-% This section gets the index of the session date based on the number of
-% sessions. If there are only 2 or 3 sessions the last session is changed
-% to session 4. The dates orders are then checked and the index is switched
-% if necessary.
-%
-%-------------------------------------------------------------------------%
+        %-------------------------------------------------------------------------%
+        % Check Dates for Session Numbers
+        %
+        % This section gets the index of the session date based on the number of
+        % sessions. If there are only 2 or 3 sessions the last session is changed
+        % to session 4. The dates orders are then checked and the index is switched
+        % if necessary.
+        %
+        %-------------------------------------------------------------------------%
         % first get the value of each date and define the index
         SN1_start=1;
-        for k = 1:1:length(data.Session_date)
-            if length(data.Session_date) == 1
-                SN1 = 1;
-                SN2 = [];
-                SN3 = [];
-                SN4 = [];
-            elseif length(data.Session_date) == 2
-                SN1 = 1;
-                SN2 = 2;
-                SN3 = [];
-                SN4 = [];
-            elseif length(data.Session_date) == 3
-                SN1 = 1;
-                SN2 = 2;
-                SN3 = 3;
-                SN4 = [];
-            elseif length(data.Session_date) == 4
-                SN1 = 1;
-                SN2 = 2;
-                SN3 = 3;
-                SN4 = 4;
+        if isfield(data, 'Session_trials') == 0
+            SN1 = [];
+            SN2 = [];
+            SN3 = [];
+            SN4 = [];
+        else
+            for k = 1:1:length(data.Session_date)
+                if length(data.Session_date) == 1
+                    SN1 = 1;
+                    SN2 = [];
+                    SN3 = [];
+                    SN4 = [];
+                elseif length(data.Session_date) == 2
+                    SN1 = 1;
+                    SN2 = 2;
+                    SN3 = [];
+                    SN4 = [];
+                elseif length(data.Session_date) == 3
+                    SN1 = 1;
+                    SN2 = 2;
+                    SN3 = 3;
+                    SN4 = [];
+                elseif length(data.Session_date) == 4
+                    SN1 = 1;
+                    SN2 = 2;
+                    SN3 = 3;
+                    SN4 = 4;
+                end
+                
             end
-            
         end
         
         SN = {SN1, SN2, SN3, SN4};
-
+        
         % check to make sure the the dates are in the correct order
         % make the last session SN4
-        
-        if isempty(SN2) == 1 && isempty(SN3) == 1 && isempty(SN4) == 1
+        if isempty(SN1) == 1
+            order = 1;
+        elseif isempty(SN2) == 1 && isempty(SN3) == 1 && isempty(SN4) == 1
             dates = [datenum(data.Session_date(1))];
             order = 1;
         elseif isempty(SN2) == 0 && isempty(SN3) == 1 && isempty(SN4) == 1
@@ -213,11 +223,11 @@ for h = 1:1:length(Type_of_Subject) % Identify group to loop through
         end
         
         % Redefine SN in case dates were out of order
-        SN = {SN1, SN2, SN3, SN4}
+        SN = {SN1, SN2, SN3, SN4};
         
-     
-% Extract features for each session and trial
-        for s = 1:1:length(SN)  
+        
+        % Extract features for each session and trial
+        for s = 1:1:length(SN)
             for j = 1:1:length(TrialNames) % Loop through all BBS activities
                 %Trial N
                 if isfield(data, 'Session_trials') == 0 || isempty(SN{s}) == 1% check for data; if empty participant will get NaN
@@ -229,6 +239,7 @@ for h = 1:1:length(Type_of_Subject) % Identify group to loop through
                 for g = 1:1:length(TrialTimes) % Export features at different time cutoffs
                     if isempty(N_index) == 1 || isempty(SN{s}) == 1
                         %Trial Information
+                        progress = [{SubjectID}, s, TrialNumbers(j)]
                         subject(g,:) = {SubjectID};
                         group(g,:) = Type_of_Subject(h);
                         activity(g,:) = Activity;
@@ -354,9 +365,30 @@ for h = 1:1:length(Type_of_Subject) % Identify group to loop through
                         SC_Gyr_norm_PSD_skew(g,:) = nan;
                         SC_Gyr_norm_PSD_kurtosis(g,:) = nan;
                         
+                        %Sway Features
+                        f50_ML(g,:) = nan;
+                        f50_AP(g,:) = nan;
+                        f95_ML(g,:) = nan;
+                        f95_AP(g,:) = nan;
+                        spectral_centroid_AP(g,:) = nan;
+                        spectral_centroid_ML(g,:) = nan;
+                        max_accAP(g,:) = nan;
+                        max_accML(g,:) = nan;
+                        mean_accAP(g,:) = nan;
+                        mean_accML(g,:) = nan;
+                        rms_AP(g,:) = nan;
+                        rms_ML(g,:) = nan;
+                        jerk_AP(g,:) = nan;
+                        jerk_ML(g,:) = nan;
+                        mean_velAP(g,:) = nan;
+                        mean_velML(g,:) = nan;
+                        length_swayAPAcc(g,:) = nan;
+                        length_swayMLAcc(g,:) = nan;
+                        
                         
                     else
                         %Trial Information
+                        progress = [{SubjectID}, s, TrialNumbers(j)]
                         subject(g,:) = {SubjectID};
                         group(g,:) = Type_of_Subject(h);
                         activity(g,:) = Activity;
@@ -393,173 +425,309 @@ for h = 1:1:length(Type_of_Subject) % Identify group to loop through
                         end
                         
                         
-                        % Norm of Gyro and Acc Data
-                        
-                        for i = 1:1:length(Time)
-                            SC_Gyr_norm(i,:) = norm(SC_Gyr(i,:));
-                            SC_Acc_norm(i,:) = norm(SC_Acc(i,:));
+                        % if the max time is the same as previous cutoff, use the
+                        % previous values
+                        if g > 1 && trialtime(g) == trialtime(g-1)
+                            %General Features
+                            %Gyro mean
+                            SC_Gyr_x_mean(g,:) = SC_Gyr_x_mean(g-1);
+                            SC_Gyr_y_mean(g,:) = SC_Gyr_y_mean(g-1);
+                            SC_Gyr_z_mean(g,:) = SC_Gyr_z_mean(g-1);
+                            SC_Gyr_norm_mean(g,:) = SC_Gyr_norm_mean(g-1);
                             
+                            % Range
+                            SC_Gyr_x_range(g,:) = SC_Gyr_x_range(g-1);
+                            SC_Gyr_y_range(g,:) = SC_Gyr_y_range(g-1);
+                            SC_Gyr_z_range(g,:) = SC_Gyr_z_range(g-1);
+                            SC_Gyr_norm_range(g,:) = SC_Gyr_norm_range(g-1);
+                            
+                            % RMS
+                            SC_Gyr_x_rms(g,:) = SC_Gyr_x_rms(g-1);
+                            SC_Gyr_y_rms(g,:) = SC_Gyr_y_rms(g-1);
+                            SC_Gyr_z_rms(g,:) = SC_Gyr_z_rms(g-1);
+                            SC_Gyr_norm_rms(g,:) = SC_Gyr_norm_rms(g-1);
+                            
+                            % Standard Deviation
+                            SC_Gyr_x_std(g,:) = SC_Gyr_x_std(g-1);
+                            SC_Gyr_y_std(g,:) = SC_Gyr_y_std(g-1);
+                            SC_Gyr_z_std(g,:) = SC_Gyr_z_std(g-1);
+                            SC_Gyr_norm_std(g,:) = SC_Gyr_norm_std(g-1);
+                            
+                            % Skew
+                            SC_Gyr_x_skew(g,:) = SC_Gyr_x_skew(g-1);
+                            SC_Gyr_y_skew(g,:) = SC_Gyr_y_skew(g-1);
+                            SC_Gyr_z_skew(g,:) = SC_Gyr_z_skew(g-1);
+                            SC_Gyr_norm_skew(g,:) = SC_Gyr_norm_skew(g-1);
+                            
+                            % Kurtosis
+                            SC_Gyr_x_kurtosis(g,:) = SC_Gyr_x_kurtosis(g-1);
+                            SC_Gyr_y_kurtosis(g,:) = SC_Gyr_y_kurtosis(g-1);
+                            SC_Gyr_z_kurtosis(g,:) = SC_Gyr_z_kurtosis(g-1);
+                            SC_Gyr_norm_kurtosis(g,:) = SC_Gyr_norm_kurtosis(g-1);
+                            
+                            % Derivative
+                            % Gyro mean
+                            dSC_Gyr_x_mean(g,:) = dSC_Gyr_x_mean(g-1);
+                            dSC_Gyr_y_mean(g,:) = dSC_Gyr_y_mean(g-1);
+                            dSC_Gyr_z_mean(g,:) = dSC_Gyr_z_mean(g-1);
+                            dSC_Gyr_norm_mean(g,:) = dSC_Gyr_norm_mean(g-1);
+                            
+                            % Range
+                            dSC_Gyr_x_range(g,:) = dSC_Gyr_x_range(g-1);
+                            dSC_Gyr_y_range(g,:) = dSC_Gyr_y_range(g-1);
+                            dSC_Gyr_z_range(g,:) = dSC_Gyr_z_range(g-1);
+                            dSC_Gyr_norm_range(g,:) = dSC_Gyr_norm_range(g-1);
+                            
+                            % RMS
+                            dSC_Gyr_x_rms(g,:) = dSC_Gyr_x_rms(g-1);
+                            dSC_Gyr_y_rms(g,:) = dSC_Gyr_y_rms(g-1);
+                            dSC_Gyr_z_rms(g,:) = dSC_Gyr_z_rms(g-1);
+                            dSC_Gyr_norm_rms(g,:) = dSC_Gyr_norm_rms(g-1);
+                            
+                            % Standard Deviation
+                            dSC_Gyr_x_std(g,:) = dSC_Gyr_x_std(g-1);
+                            dSC_Gyr_y_std(g,:) = dSC_Gyr_y_std(g-1);
+                            dSC_Gyr_z_std(g,:) = dSC_Gyr_z_std(g-1);
+                            dSC_Gyr_norm_std(g,:) = dSC_Gyr_norm_std(g-1);
+                            
+                            % Skew
+                            dSC_Gyr_x_skew(g,:) = dSC_Gyr_x_skew(g-1);
+                            dSC_Gyr_y_skew(g,:) = dSC_Gyr_y_skew(g-1);
+                            dSC_Gyr_z_skew(g,:) = dSC_Gyr_z_skew(g-1);
+                            dSC_Gyr_norm_skew(g,:) = dSC_Gyr_norm_skew(g-1);
+                            
+                            % Kurtosis
+                            dSC_Gyr_x_kurtosis(g,:) = dSC_Gyr_x_kurtosis(g-1);
+                            dSC_Gyr_y_kurtosis(g,:) = dSC_Gyr_y_kurtosis(g-1);
+                            dSC_Gyr_z_kurtosis(g,:) = dSC_Gyr_z_kurtosis(g-1);
+                            dSC_Gyr_norm_kurtosis(g,:) = dSC_Gyr_norm_kurtosis(g-1);
+                            
+                            % Pearson correlation coefficient
+                            SC_Gyr_corr_xy(g,:) = SC_Gyr_corr_xy(g-1);
+                            SC_Gyr_corr_xz(g,:) = SC_Gyr_corr_xz(g-1);
+                            SC_Gyr_corr_yz(g,:) = SC_Gyr_corr_yz(g-1);
+                            
+                            % Sample Entropy
+                            SC_Gyr_x_SamEn(g,:) = SC_Gyr_x_SamEn(g-1);
+                            SC_Gyr_y_SamEn(g,:) = SC_Gyr_y_SamEn(g-1);
+                            SC_Gyr_z_SamEn(g,:) = SC_Gyr_z_SamEn(g-1);
+                            SC_Gyr_norm_SamEn(g,:) = SC_Gyr_norm_SamEn(g-1);
+                            
+                            % Frequency Domain
+                            SC_Gyr_x_DAmp(g,:) = SC_Gyr_x_DAmp(g-1);
+                            SC_Gyr_x_DFreq(g,:) = SC_Gyr_x_DFreq(g-1);
+                            SC_Gyr_x_PSD_mean(g,:) = SC_Gyr_x_PSD_mean(g-1);
+                            SC_Gyr_x_PSD_std(g,:) = SC_Gyr_x_PSD_std(g-1);
+                            SC_Gyr_x_PSD_skew(g,:) = SC_Gyr_x_PSD_skew(g-1);
+                            SC_Gyr_x_PSD_kurtosis(g,:) = SC_Gyr_x_PSD_kurtosis(g-1);
+                            
+                            SC_Gyr_y_DAmp(g,:) = SC_Gyr_y_DAmp(g-1);
+                            SC_Gyr_y_DFreq(g,:) = SC_Gyr_y_DFreq(g-1);
+                            SC_Gyr_y_PSD_mean(g,:) = SC_Gyr_y_PSD_mean(g-1);
+                            SC_Gyr_y_PSD_std(g,:) = SC_Gyr_y_PSD_std(g-1);
+                            SC_Gyr_y_PSD_skew(g,:) = SC_Gyr_y_PSD_skew(g-1);
+                            SC_Gyr_y_PSD_kurtosis(g,:) = SC_Gyr_y_PSD_kurtosis(g-1);
+                            
+                            SC_Gyr_z_DAmp(g,:) = SC_Gyr_z_DAmp(g-1);
+                            SC_Gyr_z_DFreq(g,:) = SC_Gyr_z_DFreq(g-1);
+                            SC_Gyr_z_PSD_mean(g,:) = SC_Gyr_z_PSD_mean(g-1);
+                            SC_Gyr_z_PSD_std(g,:) = SC_Gyr_z_PSD_std(g-1);
+                            SC_Gyr_z_PSD_skew(g,:) = SC_Gyr_z_PSD_skew(g-1);
+                            SC_Gyr_z_PSD_kurtosis(g,:) = SC_Gyr_z_PSD_kurtosis(g-1);
+                            
+                            SC_Gyr_norm_DAmp(g,:) = SC_Gyr_norm_DAmp(g-1);
+                            SC_Gyr_norm_DFreq(g,:) = SC_Gyr_norm_DFreq(g-1);
+                            SC_Gyr_norm_PSD_mean(g,:) = SC_Gyr_norm_PSD_mean(g-1);
+                            SC_Gyr_norm_PSD_std(g,:) = SC_Gyr_norm_PSD_std(g-1);
+                            SC_Gyr_norm_PSD_skew(g,:) = SC_Gyr_norm_PSD_skew(g-1);
+                            SC_Gyr_norm_PSD_kurtosis(g,:) = SC_Gyr_norm_PSD_kurtosis(g-1);
+                            
+                            %Sway Features
+                            f50_ML(g,:) = f50_ML(g-1);
+                            f50_AP(g,:) = f50_AP(g-1);
+                            f95_ML(g,:) = f95_ML(g-1);
+                            f95_AP(g,:) = f95_AP(g-1);
+                            spectral_centroid_AP(g,:) = spectral_centroid_AP(g-1);
+                            spectral_centroid_ML(g,:) = spectral_centroid_ML(g-1);
+                            max_accAP(g,:) = max_accAP(g-1);
+                            max_accML(g,:) = max_accML(g-1);
+                            mean_accAP(g,:) = mean_accAP(g-1);
+                            mean_accML(g,:) = mean_accML(g-1);
+                            rms_AP(g,:) = rms_AP(g-1);
+                            rms_ML(g,:) = rms_ML(g-1);
+                            jerk_AP(g,:) = jerk_AP(g-1);
+                            jerk_ML(g,:) = jerk_ML(g-1);
+                            mean_velAP(g,:) = mean_velAP(g-1);
+                            mean_velML(g,:) = mean_velML(g-1);
+                            length_swayAPAcc(g,:) = length_swayAPAcc(g-1);
+                            length_swayMLAcc(g,:) = length_swayMLAcc(g-1);
+                        else
+                            % Norm of Gyro and Acc Data
+                            for i = 1:1:length(Time)
+                                SC_Gyr_norm(i,:) = norm(SC_Gyr(i,:));
+                                SC_Acc_norm(i,:) = norm(SC_Acc(i,:));
+                                
+                            end
+                            
+                            %General Features
+                            %Gyro Mean
+                            SC_Gyr_x_mean(g,:) = mean(SC_Gyr(:,1));
+                            SC_Gyr_y_mean(g,:) = mean(SC_Gyr(:,2));
+                            SC_Gyr_z_mean(g,:) = mean(SC_Gyr(:,3));
+                            SC_Gyr_norm_mean(g,:) = mean(SC_Gyr_norm);
+                            
+                            % Range
+                            SC_Gyr_x_range(g,:) = range(SC_Gyr(:,1));
+                            SC_Gyr_y_range(g,:) = range(SC_Gyr(:,2));
+                            SC_Gyr_z_range(g,:) = range(SC_Gyr(:,3));
+                            SC_Gyr_norm_range(g,:) = range(SC_Gyr_norm);
+                            
+                            % RMS
+                            SC_Gyr_x_rms(g,:) = rms(SC_Gyr(:,1));
+                            SC_Gyr_y_rms(g,:) = rms(SC_Gyr(:,2));
+                            SC_Gyr_z_rms(g,:) = rms(SC_Gyr(:,3));
+                            SC_Gyr_norm_rms(g,:) = rms(SC_Gyr_norm);
+                            
+                            % Standard Deviation
+                            SC_Gyr_x_std(g,:) = std(SC_Gyr(:,1));
+                            SC_Gyr_y_std(g,:) = std(SC_Gyr(:,2));
+                            SC_Gyr_z_std(g,:) = std(SC_Gyr(:,3));
+                            SC_Gyr_norm_std(g,:) = std(SC_Gyr_norm);
+                            
+                            % Skew
+                            SC_Gyr_x_skew(g,:) = skewness(SC_Gyr(:,1));
+                            SC_Gyr_y_skew(g,:) = skewness(SC_Gyr(:,2));
+                            SC_Gyr_z_skew(g,:) = skewness(SC_Gyr(:,3));
+                            SC_Gyr_norm_skew(g,:) = skewness(SC_Gyr_norm);
+                            
+                            % Kurtosis
+                            SC_Gyr_x_kurtosis(g,:) = kurtosis(SC_Gyr(:,1));
+                            SC_Gyr_y_kurtosis(g,:) = kurtosis(SC_Gyr(:,2));
+                            SC_Gyr_z_kurtosis(g,:) = kurtosis(SC_Gyr(:,3));
+                            SC_Gyr_norm_kurtosis(g,:) = kurtosis(SC_Gyr_norm);
+                            
+                            % Derivative
+                            % Gyro mean
+                            dSC_Gyr_x_mean(g,:) = mean(diff(SC_Gyr(:,1))/dt);
+                            dSC_Gyr_y_mean(g,:) = mean(diff(SC_Gyr(:,2))/dt);
+                            dSC_Gyr_z_mean(g,:) = mean(diff(SC_Gyr(:,3))/dt);
+                            dSC_Gyr_norm_mean(g,:) = mean(diff(SC_Gyr_norm)/dt);
+                            
+                            % Range
+                            dSC_Gyr_x_range(g,:) = range(diff(SC_Gyr(:,1))/dt);
+                            dSC_Gyr_y_range(g,:) = range(diff(SC_Gyr(:,2))/dt);
+                            dSC_Gyr_z_range(g,:) = range(diff(SC_Gyr(:,3))/dt);
+                            dSC_Gyr_norm_range(g,:) = range(diff(SC_Gyr_norm)/dt);
+                            
+                            % RMS
+                            dSC_Gyr_x_rms(g,:) = rms(diff(SC_Gyr(:,1))/dt);
+                            dSC_Gyr_y_rms(g,:) = rms(diff(SC_Gyr(:,2))/dt);
+                            dSC_Gyr_z_rms(g,:) = rms(diff(SC_Gyr(:,3))/dt);
+                            dSC_Gyr_norm_rms(g,:) = rms(diff(SC_Gyr_norm)/dt);
+                            
+                            % Standard Deviation
+                            dSC_Gyr_x_std(g,:) = std(diff(SC_Gyr(:,1))/dt);
+                            dSC_Gyr_y_std(g,:) = std(diff(SC_Gyr(:,2))/dt);
+                            dSC_Gyr_z_std(g,:) = std(diff(SC_Gyr(:,3))/dt);
+                            dSC_Gyr_norm_std(g,:) = std(diff(SC_Gyr_norm)/dt);
+                            
+                            % Skew
+                            dSC_Gyr_x_skew(g,:) = skewness(diff(SC_Gyr(:,1))/dt);
+                            dSC_Gyr_y_skew(g,:) = skewness(diff(SC_Gyr(:,2))/dt);
+                            dSC_Gyr_z_skew(g,:) = skewness(diff(SC_Gyr(:,3))/dt);
+                            dSC_Gyr_norm_skew(g,:) = skewness(diff(SC_Gyr_norm)/dt);
+                            
+                            % Kurtosis
+                            dSC_Gyr_x_kurtosis(g,:) = kurtosis(diff(SC_Gyr(:,1))/dt);
+                            dSC_Gyr_y_kurtosis(g,:) = kurtosis(diff(SC_Gyr(:,2))/dt);
+                            dSC_Gyr_z_kurtosis(g,:) = kurtosis(diff(SC_Gyr(:,3))/dt);
+                            dSC_Gyr_norm_kurtosis(g,:) = kurtosis(diff(SC_Gyr_norm)/dt);
+                            
+                            % Pearson correlation coefficient
+                            SC_Gyr_corr_xy(g,:) = corr(SC_Gyr(:,1),SC_Gyr(:,2));
+                            SC_Gyr_corr_xz(g,:) = corr(SC_Gyr(:,1),SC_Gyr(:,3));
+                            SC_Gyr_corr_yz(g,:) = corr(SC_Gyr(:,2),SC_Gyr(:,3));
+                            
+                            % Sample Entropy
+                            r = 0.2;
+                            SC_Gyr_x_SamEn(g,:) = sampen(SC_Gyr(:,1),1,r);
+                            SC_Gyr_y_SamEn(g,:) = sampen(SC_Gyr(:,2),1,r);
+                            SC_Gyr_z_SamEn(g,:) = sampen(SC_Gyr(:,3),1,r);
+                            SC_Gyr_norm_SamEn(g,:) = sampen(SC_Gyr_norm,1,r);
+                            
+                            % Frequency Domain
+                            ff = FFeatures(SC_Gyr(:,1), Hz);
+                            SC_Gyr_x_DAmp(g,:) = ff(1);
+                            SC_Gyr_x_DFreq(g,:) = ff(2);
+                            SC_Gyr_x_PSD_mean(g,:) = ff(3);
+                            SC_Gyr_x_PSD_std(g,:) = ff(4);
+                            SC_Gyr_x_PSD_skew(g,:) = ff(5);
+                            SC_Gyr_x_PSD_kurtosis(g,:) = ff(6);
+                            
+                            ff = FFeatures(SC_Gyr(:,2), Hz);
+                            SC_Gyr_y_DAmp(g,:) = ff(1);
+                            SC_Gyr_y_DFreq(g,:) = ff(2);
+                            SC_Gyr_y_PSD_mean(g,:) = ff(3);
+                            SC_Gyr_y_PSD_std(g,:) = ff(4);
+                            SC_Gyr_y_PSD_skew(g,:) = ff(5);
+                            SC_Gyr_y_PSD_kurtosis(g,:) = ff(6);
+                            
+                            ff = FFeatures(SC_Gyr(:,3), Hz);
+                            SC_Gyr_z_DAmp(g,:) = ff(1);
+                            SC_Gyr_z_DFreq(g,:) = ff(2);
+                            SC_Gyr_z_PSD_mean(g,:) = ff(3);
+                            SC_Gyr_z_PSD_std(g,:) = ff(4);
+                            SC_Gyr_z_PSD_skew(g,:) = ff(5);
+                            SC_Gyr_z_PSD_kurtosis(g,:) = ff(6);
+                            
+                            ff = FFeatures(SC_Gyr_norm, Hz);
+                            SC_Gyr_norm_DAmp(g,:) = ff(1);
+                            SC_Gyr_norm_DFreq(g,:) = ff(2);
+                            SC_Gyr_norm_PSD_mean(g,:) = ff(3);
+                            SC_Gyr_norm_PSD_std(g,:) = ff(4);
+                            SC_Gyr_norm_PSD_skew(g,:) = ff(5);
+                            SC_Gyr_norm_PSD_kurtosis(g,:) = ff(6);
+                            
+                            % To compute balance features
+                            %Code from main_computeFeatures_Sway
+                            t = Time;
+                            AccData_sacrum = data.Session{SN{s}}.Motion.SC.Acc{N_index};
+                            Acc.x = SC_Acc(:,1);
+                            Acc.y = SC_Acc(:,2);
+                            Acc.z = SC_Acc(:,3);
+                            
+                            GyrData_sacrum = data.Session{SN{s}}.Motion.SC.Gyr{N_index};
+                            Gyr.x = SC_Gyr(:,1);
+                            Gyr.y = SC_Gyr(:,2);
+                            Gyr.z = SC_Gyr(:,3);
+                            
+                            temp.Acc = Acc;
+                            temp.Gyr = Gyr;
+                            
+                            transformData = acctransformation(temp,ID(n),SN{s});
+                            name = char(TrialNames(g));
+                            AllFeatures.(name){1,SN{s}} = staticBalance(transformData,t);
+                            
+                            %Sway Features
+                            f50_ML(g,:) = AllFeatures.(name){1,1}.data.f50_ML;
+                            f50_AP(g,:) = AllFeatures.(name){1,1}.data.f50_AP;
+                            f95_ML(g,:) = AllFeatures.(name){1,1}.data.f95_ML;
+                            f95_AP(g,:) = AllFeatures.(name){1,1}.data.f95_AP;
+                            spectral_centroid_AP(g,:) = AllFeatures.(name){1,1}.data.spectral_centroid_AP;
+                            spectral_centroid_ML(g,:) = AllFeatures.(name){1,1}.data.spectral_centroid_ML;
+                            max_accAP(g,:) = AllFeatures.(name){1,1}.data.max_accAP;
+                            max_accML(g,:) = AllFeatures.(name){1,1}.data.max_accML;
+                            mean_accAP(g,:) = AllFeatures.(name){1,1}.data.mean_accAP;
+                            mean_accML(g,:) = AllFeatures.(name){1,1}.data.mean_accML;
+                            rms_AP(g,:) = AllFeatures.(name){1,1}.data.rms_AP;
+                            rms_ML(g,:) = AllFeatures.(name){1,1}.data.rms_ML;
+                            jerk_AP(g,:) = AllFeatures.(name){1,1}.data.jerk_AP;
+                            jerk_ML(g,:) = AllFeatures.(name){1,1}.data.jerk_ML;
+                            mean_velAP(g,:) = AllFeatures.(name){1,1}.data.mean_velAP;
+                            mean_velML(g,:) = AllFeatures.(name){1,1}.data.mean_velML;
+                            length_swayAPAcc(g,:) = AllFeatures.(name){1,1}.data.length_swayAPAcc;
+                            length_swayMLAcc(g,:) = AllFeatures.(name){1,1}.data.length_swayMLAcc;
                         end
-                        
-                        %General Features
-                        %Gyro Mean
-                        SC_Gyr_x_mean(g,:) = mean(SC_Gyr(:,1));
-                        SC_Gyr_y_mean(g,:) = mean(SC_Gyr(:,2));
-                        SC_Gyr_z_mean(g,:) = mean(SC_Gyr(:,3));
-                        SC_Gyr_norm_mean(g,:) = mean(SC_Gyr_norm);
-                        
-                        % Range
-                        SC_Gyr_x_range(g,:) = range(SC_Gyr(:,1));
-                        SC_Gyr_y_range(g,:) = range(SC_Gyr(:,2));
-                        SC_Gyr_z_range(g,:) = range(SC_Gyr(:,3));
-                        SC_Gyr_norm_range(g,:) = range(SC_Gyr_norm);
-                        
-                        % RMS
-                        SC_Gyr_x_rms(g,:) = rms(SC_Gyr(:,1));
-                        SC_Gyr_y_rms(g,:) = rms(SC_Gyr(:,2));
-                        SC_Gyr_z_rms(g,:) = rms(SC_Gyr(:,3));
-                        SC_Gyr_norm_rms(g,:) = rms(SC_Gyr_norm);
-                        
-                        % Standard Deviation
-                        SC_Gyr_x_std(g,:) = std(SC_Gyr(:,1));
-                        SC_Gyr_y_std(g,:) = std(SC_Gyr(:,2));
-                        SC_Gyr_z_std(g,:) = std(SC_Gyr(:,3));
-                        SC_Gyr_norm_std(g,:) = std(SC_Gyr_norm);
-                        
-                        % Skew
-                        SC_Gyr_x_skew(g,:) = skewness(SC_Gyr(:,1));
-                        SC_Gyr_y_skew(g,:) = skewness(SC_Gyr(:,2));
-                        SC_Gyr_z_skew(g,:) = skewness(SC_Gyr(:,3));
-                        SC_Gyr_norm_skew(g,:) = skewness(SC_Gyr_norm);
-                        
-                        % Kurtosis
-                        SC_Gyr_x_kurtosis(g,:) = kurtosis(SC_Gyr(:,1));
-                        SC_Gyr_y_kurtosis(g,:) = kurtosis(SC_Gyr(:,2));
-                        SC_Gyr_z_kurtosis(g,:) = kurtosis(SC_Gyr(:,3));
-                        SC_Gyr_norm_kurtosis(g,:) = kurtosis(SC_Gyr_norm);
-                        
-                        % Derivative
-                        % Gyro mean
-                        dSC_Gyr_x_mean(g,:) = mean(diff(SC_Gyr(:,1))/dt);
-                        dSC_Gyr_y_mean(g,:) = mean(diff(SC_Gyr(:,2))/dt);
-                        dSC_Gyr_z_mean(g,:) = mean(diff(SC_Gyr(:,3))/dt);
-                        dSC_Gyr_norm_mean(g,:) = mean(diff(SC_Gyr_norm)/dt);
-                        
-                        % Range
-                        dSC_Gyr_x_range(g,:) = range(diff(SC_Gyr(:,1))/dt);
-                        dSC_Gyr_y_range(g,:) = range(diff(SC_Gyr(:,2))/dt);
-                        dSC_Gyr_z_range(g,:) = range(diff(SC_Gyr(:,3))/dt);
-                        dSC_Gyr_norm_range(g,:) = range(diff(SC_Gyr_norm)/dt);
-                        
-                        % RMS
-                        dSC_Gyr_x_rms(g,:) = rms(diff(SC_Gyr(:,1))/dt);
-                        dSC_Gyr_y_rms(g,:) = rms(diff(SC_Gyr(:,2))/dt);
-                        dSC_Gyr_z_rms(g,:) = rms(diff(SC_Gyr(:,3))/dt);
-                        dSC_Gyr_norm_rms(g,:) = rms(diff(SC_Gyr_norm)/dt);
-                        
-                        % Standard Deviation
-                        dSC_Gyr_x_std(g,:) = std(diff(SC_Gyr(:,1))/dt);
-                        dSC_Gyr_y_std(g,:) = std(diff(SC_Gyr(:,2))/dt);
-                        dSC_Gyr_z_std(g,:) = std(diff(SC_Gyr(:,3))/dt);
-                        dSC_Gyr_norm_std(g,:) = std(diff(SC_Gyr_norm)/dt);
-                        
-                        % Skew
-                        dSC_Gyr_x_skew(g,:) = skewness(diff(SC_Gyr(:,1))/dt);
-                        dSC_Gyr_y_skew(g,:) = skewness(diff(SC_Gyr(:,2))/dt);
-                        dSC_Gyr_z_skew(g,:) = skewness(diff(SC_Gyr(:,3))/dt);
-                        dSC_Gyr_norm_skew(g,:) = skewness(diff(SC_Gyr_norm)/dt);
-                        
-                        % Kurtosis
-                        dSC_Gyr_x_kurtosis(g,:) = kurtosis(diff(SC_Gyr(:,1))/dt);
-                        dSC_Gyr_y_kurtosis(g,:) = kurtosis(diff(SC_Gyr(:,2))/dt);
-                        dSC_Gyr_z_kurtosis(g,:) = kurtosis(diff(SC_Gyr(:,3))/dt);
-                        dSC_Gyr_norm_kurtosis(g,:) = kurtosis(diff(SC_Gyr_norm)/dt);
-                        
-                        % Pearson correlation coefficient
-                        SC_Gyr_corr_xy(g,:) = corr(SC_Gyr(:,1),SC_Gyr(:,2));
-                        SC_Gyr_corr_xz(g,:) = corr(SC_Gyr(:,1),SC_Gyr(:,3));
-                        SC_Gyr_corr_yz(g,:) = corr(SC_Gyr(:,2),SC_Gyr(:,3));
-                        
-                        % Sample Entropy
-                        r = 0.2;
-                        SC_Gyr_x_SamEn(g,:) = sampen(SC_Gyr(:,1),1,r);
-                        SC_Gyr_y_SamEn(g,:) = sampen(SC_Gyr(:,2),1,r);
-                        SC_Gyr_z_SamEn(g,:) = sampen(SC_Gyr(:,3),1,r);
-                        SC_Gyr_norm_SamEn(g,:) = sampen(SC_Gyr_norm,1,r);
-                        
-                        % Frequency Domain
-                        ff = FFeatures(SC_Gyr(:,1), Hz);
-                        SC_Gyr_x_DAmp(g,:) = ff(1);
-                        SC_Gyr_x_DFreq(g,:) = ff(2);
-                        SC_Gyr_x_PSD_mean(g,:) = ff(3);
-                        SC_Gyr_x_PSD_std(g,:) = ff(4);
-                        SC_Gyr_x_PSD_skew(g,:) = ff(5);
-                        SC_Gyr_x_PSD_kurtosis(g,:) = ff(6);
-                        
-                        ff = FFeatures(SC_Gyr(:,2), Hz);
-                        SC_Gyr_y_DAmp(g,:) = ff(1);
-                        SC_Gyr_y_DFreq(g,:) = ff(2);
-                        SC_Gyr_y_PSD_mean(g,:) = ff(3);
-                        SC_Gyr_y_PSD_std(g,:) = ff(4);
-                        SC_Gyr_y_PSD_skew(g,:) = ff(5);
-                        SC_Gyr_y_PSD_kurtosis(g,:) = ff(6);
-                        
-                        ff = FFeatures(SC_Gyr(:,3), Hz);
-                        SC_Gyr_z_DAmp(g,:) = ff(1);
-                        SC_Gyr_z_DFreq(g,:) = ff(2);
-                        SC_Gyr_z_PSD_mean(g,:) = ff(3);
-                        SC_Gyr_z_PSD_std(g,:) = ff(4);
-                        SC_Gyr_z_PSD_skew(g,:) = ff(5);
-                        SC_Gyr_z_PSD_kurtosis(g,:) = ff(6);
-                        
-                        ff = FFeatures(SC_Gyr_norm, Hz);
-                        SC_Gyr_norm_DAmp(g,:) = ff(1);
-                        SC_Gyr_norm_DFreq(g,:) = ff(2);
-                        SC_Gyr_norm_PSD_mean(g,:) = ff(3);
-                        SC_Gyr_norm_PSD_std(g,:) = ff(4);
-                        SC_Gyr_norm_PSD_skew(g,:) = ff(5);
-                        SC_Gyr_norm_PSD_kurtosis(g,:) = ff(6);
-                        
-                        % To compute balance features
-                        %Code from main_computeFeatures_Sway
-                        t = Time;
-                        AccData_sacrum = data.Session{SN{s}}.Motion.SC.Acc{N_index};
-                        Acc.x = SC_Acc(:,1);
-                        Acc.y = SC_Acc(:,2);
-                        Acc.z = SC_Acc(:,3);
-                        
-                        GyrData_sacrum = data.Session{SN{s}}.Motion.SC.Gyr{N_index};
-                        Gyr.x = SC_Gyr(:,1);
-                        Gyr.y = SC_Gyr(:,2);
-                        Gyr.z = SC_Gyr(:,3);
-                        
-                        temp.Acc = Acc;
-                        temp.Gyr = Gyr;
-                        
-                        transformData = acctransformation(temp,ID(n),SN{s});
-                        name = char(TrialNames(g));
-                        AllFeatures.(name){1,SN{s}} = staticBalance(transformData,t);
-                        
-                        %Sway Features
-                        f50_ML(g,:) = AllFeatures.(name){1,1}.data.f50_ML;
-                        f50_AP(g,:) = AllFeatures.(name){1,1}.data.f50_AP;
-                        f95_ML(g,:) = AllFeatures.(name){1,1}.data.f95_ML;
-                        f95_AP(g,:) = AllFeatures.(name){1,1}.data.f95_AP;
-                        spectral_centroid_AP(g,:) = AllFeatures.(name){1,1}.data.spectral_centroid_AP;
-                        spectral_centroid_ML(g,:) = AllFeatures.(name){1,1}.data.spectral_centroid_ML;
-                        max_accAP(g,:) = AllFeatures.(name){1,1}.data.max_accAP;
-                        max_accML(g,:) = AllFeatures.(name){1,1}.data.max_accML;
-                        mean_accAP(g,:) = AllFeatures.(name){1,1}.data.mean_accAP;
-                        mean_accML(g,:) = AllFeatures.(name){1,1}.data.mean_accML;
-                        rms_AP(g,:) = AllFeatures.(name){1,1}.data.rms_AP;
-                        rms_ML(g,:) = AllFeatures.(name){1,1}.data.rms_ML;
-                        jerk_AP(g,:) = AllFeatures.(name){1,1}.data.jerk_AP;
-                        jerk_ML(g,:) = AllFeatures.(name){1,1}.data.jerk_ML;
-                        mean_velAP(g,:) = AllFeatures.(name){1,1}.data.mean_velAP;
-                        mean_velML(g,:) = AllFeatures.(name){1,1}.data.mean_velML;
-                        length_swayAPAcc(g,:) = AllFeatures.(name){1,1}.data.length_swayAPAcc;
-                        length_swayMLAcc(g,:) = AllFeatures.(name){1,1}.data.length_swayMLAcc;
-                        
                     end
                 end
                 
@@ -587,7 +755,7 @@ for h = 1:1:length(Type_of_Subject) % Identify group to loop through
                     f50_ML, f50_AP, f95_ML, f95_AP, spectral_centroid_AP, spectral_centroid_ML, max_accAP,...
                     max_accML, mean_accAP, mean_accML, rms_AP, rms_ML, jerk_AP, jerk_ML,...
                     mean_velAP, mean_velML, length_swayAPAcc, length_swayMLAcc);
-                BBS_table = [BBS_table; BBS_table_temp]
+                BBS_table = [BBS_table; BBS_table_temp];
                 
                 % Check if any date orders needed to be changed
                 if order(1) == 0
@@ -603,5 +771,5 @@ end
 
 %% Export .csv of feature matrix
 
-writetable(BBS_table,'General_Feature_Matrix_AllSessions_BBS_CVA19_30.csv','Delimiter',',','QuoteStrings',true)
+%writetable(BBS_table,'General_Feature_Matrix_AllSessions_BBS_070620.csv','Delimiter',',','QuoteStrings',true)
 
