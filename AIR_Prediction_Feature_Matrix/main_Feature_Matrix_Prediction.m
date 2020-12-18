@@ -459,9 +459,15 @@ for k = 1:1:length(TS)
                 final = Hz*TS(k);  
                 Time_ = [data.Session{SN}.Motion.Time{1}; data.Session{SN}.Motion.Time{2}]
                 Time = Time_(1:final,:);
+                
                 SC_Gyr = SC_Gyr(1:final,:);
-                DLS_R_Gyr = DLS_R_Gyr(1:final,:);
+                PLS_R_Gyr = DLS_R_Gyr(1:final,:);
                 DLS_L_Gyr = DLS_L_Gyr(1:final,:);
+
+                SC_Acc = SC_Acc(1:final,:);
+                DLS_R_Acc = DLS_R_Acc(1:final,:);
+                DLS_L_Acc = DLS_L_Acc(1:final,:);
+                
             else
                 
                 % Gyroscope data
@@ -479,9 +485,15 @@ for k = 1:1:length(TS)
                 final = Hz*TS(k);  
 
                 Time = data.Session{SN}.Motion.Time{TN}(1:final,:);
+                
                 SC_Gyr = SC_Gyr(1:final,:);
                 DLS_R_Gyr = DLS_R_Gyr(1:final,:);
                 DLS_L_Gyr = DLS_L_Gyr(1:final,:);
+                
+                SC_Acc = SC_Acc(1:final,:);
+                DLS_R_Acc = DLS_R_Acc(1:final,:);
+                DLS_L_Acc = DLS_L_Acc(1:final,:);
+                
             end
 
 
