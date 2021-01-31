@@ -55,109 +55,109 @@ for k = 1:1:length(TS)
             SC_Gyr_y_mean(n,:) = nan;
             SC_Gyr_z_mean(n,:) = nan;
             SC_Gyr_norm_mean(n,:) = nan;
-            DLS_R_Gyr_x_mean(n,:) = nan;
-            DLS_R_Gyr_y_mean(n,:) = nan;
-            DLS_R_Gyr_z_mean(n,:) = nan;
-            DLS_R_Gyr_norm_mean(n,:) = nan;
-            DLS_L_Gyr_x_mean(n,:) = nan;
-            DLS_L_Gyr_y_mean(n,:) = nan;
-            DLS_L_Gyr_z_mean(n,:) = nan;
-            DLS_L_Gyr_norm_mean(n,:) = nan;
+            DLS_US_Gyr_x_mean(n,:) = nan;
+            DLS_US_Gyr_y_mean(n,:) = nan;
+            DLS_US_Gyr_z_mean(n,:) = nan;
+            DLS_US_Gyr_norm_mean(n,:) = nan;
+            DLS_AS_Gyr_x_mean(n,:) = nan;
+            DLS_AS_Gyr_y_mean(n,:) = nan;
+            DLS_AS_Gyr_z_mean(n,:) = nan;
+            DLS_AS_Gyr_norm_mean(n,:) = nan;
 
             % Range
             SC_Gyr_x_range(n,:) = nan;
             SC_Gyr_y_range(n,:) = nan;
             SC_Gyr_z_range(n,:) = nan;
             SC_Gyr_norm_range(n,:) = nan;
-            DLS_R_Gyr_x_range(n,:) = nan;
-            DLS_R_Gyr_y_range(n,:) = nan;
-            DLS_R_Gyr_z_range(n,:) = nan;
-            DLS_R_Gyr_norm_range(n,:) = nan;
-            DLS_L_Gyr_x_range(n,:) = nan;
-            DLS_L_Gyr_y_range(n,:) = nan;
-            DLS_L_Gyr_z_range(n,:) = nan;
-            DLS_L_Gyr_norm_range(n,:) = nan;
+            DLS_US_Gyr_x_range(n,:) = nan;
+            DLS_US_Gyr_y_range(n,:) = nan;
+            DLS_US_Gyr_z_range(n,:) = nan;
+            DLS_US_Gyr_norm_range(n,:) = nan;
+            DLS_AS_Gyr_x_range(n,:) = nan;
+            DLS_AS_Gyr_y_range(n,:) = nan;
+            DLS_AS_Gyr_z_range(n,:) = nan;
+            DLS_AS_Gyr_norm_range(n,:) = nan;
 
             % RMS
             SC_Gyr_x_rms(n,:) = nan;
             SC_Gyr_y_rms(n,:) = nan;
             SC_Gyr_z_rms(n,:) = nan;
             SC_Gyr_norm_rms(n,:) = nan;
-            DLS_R_Gyr_x_rms(n,:) = nan;
-            DLS_R_Gyr_y_rms(n,:) = nan;
-            DLS_R_Gyr_z_rms(n,:) = nan;
-            DLS_R_Gyr_norm_rms(n,:) = nan;
-            DLS_L_Gyr_x_rms(n,:) = nan;
-            DLS_L_Gyr_y_rms(n,:) = nan;
-            DLS_L_Gyr_z_rms(n,:) = nan;
-            DLS_L_Gyr_norm_rms(n,:) = nan;
+            DLS_US_Gyr_x_rms(n,:) = nan;
+            DLS_US_Gyr_y_rms(n,:) = nan;
+            DLS_US_Gyr_z_rms(n,:) = nan;
+            DLS_US_Gyr_norm_rms(n,:) = nan;
+            DLS_AS_Gyr_x_rms(n,:) = nan;
+            DLS_AS_Gyr_y_rms(n,:) = nan;
+            DLS_AS_Gyr_z_rms(n,:) = nan;
+            DLS_AS_Gyr_norm_rms(n,:) = nan;
 
             % Standard Deviation
             SC_Gyr_x_std(n,:) = nan;
             SC_Gyr_y_std(n,:) = nan;
             SC_Gyr_z_std(n,:) = nan;
             SC_Gyr_norm_std(n,:) = nan;
-            DLS_R_Gyr_x_std(n,:) = nan;
-            DLS_R_Gyr_y_std(n,:) = nan;
-            DLS_R_Gyr_z_std(n,:) = nan;
-            DLS_R_Gyr_norm_std(n,:) = nan;
-            DLS_L_Gyr_x_std(n,:) = nan;
-            DLS_L_Gyr_y_std(n,:) = nan;
-            DLS_L_Gyr_z_std(n,:) = nan;
-            DLS_L_Gyr_norm_std(n,:) = nan;
+            DLS_US_Gyr_x_std(n,:) = nan;
+            DLS_US_Gyr_y_std(n,:) = nan;
+            DLS_US_Gyr_z_std(n,:) = nan;
+            DLS_US_Gyr_norm_std(n,:) = nan;
+            DLS_AS_Gyr_x_std(n,:) = nan;
+            DLS_AS_Gyr_y_std(n,:) = nan;
+            DLS_AS_Gyr_z_std(n,:) = nan;
+            DLS_AS_Gyr_norm_std(n,:) = nan;
 
             % Skew
             SC_Gyr_x_skew(n,:) = nan;
             SC_Gyr_y_skew(n,:) = nan;
             SC_Gyr_z_skew(n,:) = nan;
             SC_Gyr_norm_skew(n,:) = nan;
-            DLS_R_Gyr_x_skew(n,:) = nan;
-            DLS_R_Gyr_y_skew(n,:) = nan;
-            DLS_R_Gyr_z_skew(n,:) = nan;
-            DLS_R_Gyr_norm_skew(n,:) = nan;
-            DLS_L_Gyr_x_skew(n,:) = nan;
-            DLS_L_Gyr_y_skew(n,:) = nan;
-            DLS_L_Gyr_z_skew(n,:) = nan;
-            DLS_L_Gyr_norm_skew(n,:) = nan;
+            DLS_US_Gyr_x_skew(n,:) = nan;
+            DLS_US_Gyr_y_skew(n,:) = nan;
+            DLS_US_Gyr_z_skew(n,:) = nan;
+            DLS_US_Gyr_norm_skew(n,:) = nan;
+            DLS_AS_Gyr_x_skew(n,:) = nan;
+            DLS_AS_Gyr_y_skew(n,:) = nan;
+            DLS_AS_Gyr_z_skew(n,:) = nan;
+            DLS_AS_Gyr_norm_skew(n,:) = nan;
 
             % Kurtosis
             SC_Gyr_x_kurtosis(n,:) = nan;
             SC_Gyr_y_kurtosis(n,:) = nan;
             SC_Gyr_z_kurtosis(n,:) = nan;
             SC_Gyr_norm_kurtosis(n,:) = nan;
-            DLS_R_Gyr_x_kurtosis(n,:) = nan;
-            DLS_R_Gyr_y_kurtosis(n,:) = nan;
-            DLS_R_Gyr_z_kurtosis(n,:) = nan;
-            DLS_R_Gyr_norm_kurtosis(n,:) = nan;
-            DLS_L_Gyr_x_kurtosis(n,:) = nan;
-            DLS_L_Gyr_y_kurtosis(n,:) = nan;
-            DLS_L_Gyr_z_kurtosis(n,:) = nan;
-            DLS_L_Gyr_norm_kurtosis(n,:) = nan;
+            DLS_US_Gyr_x_kurtosis(n,:) = nan;
+            DLS_US_Gyr_y_kurtosis(n,:) = nan;
+            DLS_US_Gyr_z_kurtosis(n,:) = nan;
+            DLS_US_Gyr_norm_kurtosis(n,:) = nan;
+            DLS_AS_Gyr_x_kurtosis(n,:) = nan;
+            DLS_AS_Gyr_y_kurtosis(n,:) = nan;
+            DLS_AS_Gyr_z_kurtosis(n,:) = nan;
+            DLS_AS_Gyr_norm_kurtosis(n,:) = nan;
 
             % Pearson correlation coefficient
             SC_Gyr_corr_xy(n,:) = nan;
             SC_Gyr_corr_xz(n,:) = nan;
             SC_Gyr_corr_yz(n,:) = nan;
-            DLS_R_Gyr_corr_xy(n,:) = nan;
-            DLS_R_Gyr_corr_xz(n,:) = nan;
-            DLS_R_Gyr_corr_yz(n,:) = nan;
-            DLS_L_Gyr_corr_xy(n,:) = nan;
-            DLS_L_Gyr_corr_xz(n,:) = nan;
-            DLS_L_Gyr_corr_yz(n,:) = nan;
+            DLS_US_Gyr_corr_xy(n,:) = nan;
+            DLS_US_Gyr_corr_xz(n,:) = nan;
+            DLS_US_Gyr_corr_yz(n,:) = nan;
+            DLS_AS_Gyr_corr_xy(n,:) = nan;
+            DLS_AS_Gyr_corr_xz(n,:) = nan;
+            DLS_AS_Gyr_corr_yz(n,:) = nan;
 
             % Sample Entropy
             SC_Gyr_x_SamEn(n,:) = nan;
             SC_Gyr_y_SamEn(n,:) = nan;
             SC_Gyr_z_SamEn(n,:) = nan;
             SC_Gyr_norm_SamEn(n,:) = nan;
-            DLS_R_Gyr_x_SamEn(n,:) = nan;
-            DLS_R_Gyr_y_SamEn(n,:) = nan;
-            DLS_R_Gyr_z_SamEn(n,:) = nan;
-            DLS_R_Gyr_norm_SamEn(n,:) = nan;
-            DLS_L_Gyr_x_SamEn(n,:) = nan;
-            DLS_L_Gyr_y_SamEn(n,:) = nan;
-            DLS_L_Gyr_z_SamEn(n,:) = nan;
-            DLS_L_Gyr_norm_SamEn(n,:) = nan;
+            DLS_US_Gyr_x_SamEn(n,:) = nan;
+            DLS_US_Gyr_y_SamEn(n,:) = nan;
+            DLS_US_Gyr_z_SamEn(n,:) = nan;
+            DLS_US_Gyr_norm_SamEn(n,:) = nan;
+            DLS_AS_Gyr_x_SamEn(n,:) = nan;
+            DLS_AS_Gyr_y_SamEn(n,:) = nan;
+            DLS_AS_Gyr_z_SamEn(n,:) = nan;
+            DLS_AS_Gyr_norm_SamEn(n,:) = nan;
 
             % Frequency Domain
             SC_Gyr_x_DAmp(n,:) = nan;
@@ -188,61 +188,61 @@ for k = 1:1:length(TS)
             SC_Gyr_norm_PSD_skew(n,:) = nan;
             SC_Gyr_norm_PSD_kurtosis(n,:) = nan;
 
-            DLS_R_Gyr_x_DAmp(n,:) = nan;
-            DLS_R_Gyr_x_DFreq(n,:) = nan;
-            DLS_R_Gyr_x_PSD_mean(n,:) = nan;
-            DLS_R_Gyr_x_PSD_std(n,:) = nan;
-            DLS_R_Gyr_x_PSD_skew(n,:) = nan;
-            DLS_R_Gyr_x_PSD_kurtosis(n,:) = nan;
+            DLS_US_Gyr_x_DAmp(n,:) = nan;
+            DLS_US_Gyr_x_DFreq(n,:) = nan;
+            DLS_US_Gyr_x_PSD_mean(n,:) = nan;
+            DLS_US_Gyr_x_PSD_std(n,:) = nan;
+            DLS_US_Gyr_x_PSD_skew(n,:) = nan;
+            DLS_US_Gyr_x_PSD_kurtosis(n,:) = nan;
 
-            DLS_R_Gyr_y_DAmp(n,:) = nan;
-            DLS_R_Gyr_y_DFreq(n,:) = nan;
-            DLS_R_Gyr_y_PSD_mean(n,:) = nan;
-            DLS_R_Gyr_y_PSD_std(n,:) = nan;
-            DLS_R_Gyr_y_PSD_skew(n,:) = nan;
-            DLS_R_Gyr_y_PSD_kurtosis(n,:) = nan;
+            DLS_US_Gyr_y_DAmp(n,:) = nan;
+            DLS_US_Gyr_y_DFreq(n,:) = nan;
+            DLS_US_Gyr_y_PSD_mean(n,:) = nan;
+            DLS_US_Gyr_y_PSD_std(n,:) = nan;
+            DLS_US_Gyr_y_PSD_skew(n,:) = nan;
+            DLS_US_Gyr_y_PSD_kurtosis(n,:) = nan;
 
-            DLS_R_Gyr_z_DAmp(n,:) = nan;
-            DLS_R_Gyr_z_DFreq(n,:) = nan;
-            DLS_R_Gyr_z_PSD_mean(n,:) = nan;
-            DLS_R_Gyr_z_PSD_std(n,:) = nan;
-            DLS_R_Gyr_z_PSD_skew(n,:) = nan;
-            DLS_R_Gyr_z_PSD_kurtosis(n,:) = nan;
+            DLS_US_Gyr_z_DAmp(n,:) = nan;
+            DLS_US_Gyr_z_DFreq(n,:) = nan;
+            DLS_US_Gyr_z_PSD_mean(n,:) = nan;
+            DLS_US_Gyr_z_PSD_std(n,:) = nan;
+            DLS_US_Gyr_z_PSD_skew(n,:) = nan;
+            DLS_US_Gyr_z_PSD_kurtosis(n,:) = nan;
 
-            DLS_R_Gyr_norm_DAmp(n,:) = nan;
-            DLS_R_Gyr_norm_DFreq(n,:) = nan;
-            DLS_R_Gyr_norm_PSD_mean(n,:) = nan;
-            DLS_R_Gyr_norm_PSD_std(n,:) = nan;
-            DLS_R_Gyr_norm_PSD_skew(n,:) = nan;
-            DLS_R_Gyr_norm_PSD_kurtosis(n,:) = nan;
+            DLS_US_Gyr_norm_DAmp(n,:) = nan;
+            DLS_US_Gyr_norm_DFreq(n,:) = nan;
+            DLS_US_Gyr_norm_PSD_mean(n,:) = nan;
+            DLS_US_Gyr_norm_PSD_std(n,:) = nan;
+            DLS_US_Gyr_norm_PSD_skew(n,:) = nan;
+            DLS_US_Gyr_norm_PSD_kurtosis(n,:) = nan;
 
-            DLS_L_Gyr_x_DAmp(n,:) = nan;
-            DLS_L_Gyr_x_DFreq(n,:) = nan;
-            DLS_L_Gyr_x_PSD_mean(n,:) = nan;
-            DLS_L_Gyr_x_PSD_std(n,:) = nan;
-            DLS_L_Gyr_x_PSD_skew(n,:) = nan;
-            DLS_L_Gyr_x_PSD_kurtosis(n,:) = nan;
+            DLS_AS_Gyr_x_DAmp(n,:) = nan;
+            DLS_AS_Gyr_x_DFreq(n,:) = nan;
+            DLS_AS_Gyr_x_PSD_mean(n,:) = nan;
+            DLS_AS_Gyr_x_PSD_std(n,:) = nan;
+            DLS_AS_Gyr_x_PSD_skew(n,:) = nan;
+            DLS_AS_Gyr_x_PSD_kurtosis(n,:) = nan;
 
-            DLS_L_Gyr_y_DAmp(n,:) = nan;
-            DLS_L_Gyr_y_DFreq(n,:) = nan;
-            DLS_L_Gyr_y_PSD_mean(n,:) = nan;
-            DLS_L_Gyr_y_PSD_std(n,:) = nan;
-            DLS_L_Gyr_y_PSD_skew(n,:) = nan;
-            DLS_L_Gyr_y_PSD_kurtosis(n,:) = nan;
+            DLS_AS_Gyr_y_DAmp(n,:) = nan;
+            DLS_AS_Gyr_y_DFreq(n,:) = nan;
+            DLS_AS_Gyr_y_PSD_mean(n,:) = nan;
+            DLS_AS_Gyr_y_PSD_std(n,:) = nan;
+            DLS_AS_Gyr_y_PSD_skew(n,:) = nan;
+            DLS_AS_Gyr_y_PSD_kurtosis(n,:) = nan;
 
-            DLS_L_Gyr_z_DAmp(n,:) = nan;
-            DLS_L_Gyr_z_DFreq(n,:) = nan;
-            DLS_L_Gyr_z_PSD_mean(n,:) = nan;
-            DLS_L_Gyr_z_PSD_std(n,:) = nan;
-            DLS_L_Gyr_z_PSD_skew(n,:) = nan;
-            DLS_L_Gyr_z_PSD_kurtosis(n,:) = nan;
+            DLS_AS_Gyr_z_DAmp(n,:) = nan;
+            DLS_AS_Gyr_z_DFreq(n,:) = nan;
+            DLS_AS_Gyr_z_PSD_mean(n,:) = nan;
+            DLS_AS_Gyr_z_PSD_std(n,:) = nan;
+            DLS_AS_Gyr_z_PSD_skew(n,:) = nan;
+            DLS_AS_Gyr_z_PSD_kurtosis(n,:) = nan;
 
-            DLS_L_Gyr_norm_DAmp(n,:) = nan;
-            DLS_L_Gyr_norm_DFreq(n,:) = nan;
-            DLS_L_Gyr_norm_PSD_mean(n,:) = nan;
-            DLS_L_Gyr_norm_PSD_std(n,:) = nan;
-            DLS_L_Gyr_norm_PSD_skew(n,:) = nan;
-            DLS_L_Gyr_norm_PSD_kurtosis(n,:) = nan;
+            DLS_AS_Gyr_norm_DAmp(n,:) = nan;
+            DLS_AS_Gyr_norm_DFreq(n,:) = nan;
+            DLS_AS_Gyr_norm_PSD_mean(n,:) = nan;
+            DLS_AS_Gyr_norm_PSD_std(n,:) = nan;
+            DLS_AS_Gyr_norm_PSD_skew(n,:) = nan;
+            DLS_AS_Gyr_norm_PSD_kurtosis(n,:) = nan;
 
 
 
@@ -251,109 +251,109 @@ for k = 1:1:length(TS)
             SC_Acc_y_mean(n,:) = nan;
             SC_Acc_z_mean(n,:) = nan;
             SC_Acc_norm_mean(n,:) = nan;
-            DLS_R_Acc_x_mean(n,:) = nan;
-            DLS_R_Acc_y_mean(n,:) = nan;
-            DLS_R_Acc_z_mean(n,:) = nan;
-            DLS_R_Acc_norm_mean(n,:) = nan;
-            DLS_L_Acc_x_mean(n,:) = nan;
-            DLS_L_Acc_y_mean(n,:) = nan;
-            DLS_L_Acc_z_mean(n,:) = nan;
-            DLS_L_Acc_norm_mean(n,:) = nan;
+            DLS_US_Acc_x_mean(n,:) = nan;
+            DLS_US_Acc_y_mean(n,:) = nan;
+            DLS_US_Acc_z_mean(n,:) = nan;
+            DLS_US_Acc_norm_mean(n,:) = nan;
+            DLS_AS_Acc_x_mean(n,:) = nan;
+            DLS_AS_Acc_y_mean(n,:) = nan;
+            DLS_AS_Acc_z_mean(n,:) = nan;
+            DLS_AS_Acc_norm_mean(n,:) = nan;
 
             % Range
             SC_Acc_x_range(n,:) = nan;
             SC_Acc_y_range(n,:) = nan;
             SC_Acc_z_range(n,:) = nan;
             SC_Acc_norm_range(n,:) = nan;
-            DLS_R_Acc_x_range(n,:) = nan;
-            DLS_R_Acc_y_range(n,:) = nan;
-            DLS_R_Acc_z_range(n,:) = nan;
-            DLS_R_Acc_norm_range(n,:) = nan;
-            DLS_L_Acc_x_range(n,:) = nan;
-            DLS_L_Acc_y_range(n,:) = nan;
-            DLS_L_Acc_z_range(n,:) = nan;
-            DLS_L_Acc_norm_range(n,:) = nan;
+            DLS_US_Acc_x_range(n,:) = nan;
+            DLS_US_Acc_y_range(n,:) = nan;
+            DLS_US_Acc_z_range(n,:) = nan;
+            DLS_US_Acc_norm_range(n,:) = nan;
+            DLS_AS_Acc_x_range(n,:) = nan;
+            DLS_AS_Acc_y_range(n,:) = nan;
+            DLS_AS_Acc_z_range(n,:) = nan;
+            DLS_AS_Acc_norm_range(n,:) = nan;
 
             % RMS
             SC_Acc_x_rms(n,:) = nan;
             SC_Acc_y_rms(n,:) = nan;
             SC_Acc_z_rms(n,:) = nan;
             SC_Acc_norm_rms(n,:) = nan;
-            DLS_R_Acc_x_rms(n,:) = nan;
-            DLS_R_Acc_y_rms(n,:) = nan;
-            DLS_R_Acc_z_rms(n,:) = nan;
-            DLS_R_Acc_norm_rms(n,:) = nan;
-            DLS_L_Acc_x_rms(n,:) = nan;
-            DLS_L_Acc_y_rms(n,:) = nan;
-            DLS_L_Acc_z_rms(n,:) = nan;
-            DLS_L_Acc_norm_rms(n,:) = nan;
+            DLS_US_Acc_x_rms(n,:) = nan;
+            DLS_US_Acc_y_rms(n,:) = nan;
+            DLS_US_Acc_z_rms(n,:) = nan;
+            DLS_US_Acc_norm_rms(n,:) = nan;
+            DLS_AS_Acc_x_rms(n,:) = nan;
+            DLS_AS_Acc_y_rms(n,:) = nan;
+            DLS_AS_Acc_z_rms(n,:) = nan;
+            DLS_AS_Acc_norm_rms(n,:) = nan;
 
             % Standard Deviation
             SC_Acc_x_std(n,:) = nan;
             SC_Acc_y_std(n,:) = nan;
             SC_Acc_z_std(n,:) = nan;
             SC_Acc_norm_std(n,:) = nan;
-            DLS_R_Acc_x_std(n,:) = nan;
-            DLS_R_Acc_y_std(n,:) = nan;
-            DLS_R_Acc_z_std(n,:) = nan;
-            DLS_R_Acc_norm_std(n,:) = nan;
-            DLS_L_Acc_x_std(n,:) = nan;
-            DLS_L_Acc_y_std(n,:) = nan;
-            DLS_L_Acc_z_std(n,:) = nan;
-            DLS_L_Acc_norm_std(n,:) = nan;
+            DLS_US_Acc_x_std(n,:) = nan;
+            DLS_US_Acc_y_std(n,:) = nan;
+            DLS_US_Acc_z_std(n,:) = nan;
+            DLS_US_Acc_norm_std(n,:) = nan;
+            DLS_AS_Acc_x_std(n,:) = nan;
+            DLS_AS_Acc_y_std(n,:) = nan;
+            DLS_AS_Acc_z_std(n,:) = nan;
+            DLS_AS_Acc_norm_std(n,:) = nan;
 
             % Skew
             SC_Acc_x_skew(n,:) = nan;
             SC_Acc_y_skew(n,:) = nan;
             SC_Acc_z_skew(n,:) = nan;
             SC_Acc_norm_skew(n,:) = nan;
-            DLS_R_Acc_x_skew(n,:) = nan;
-            DLS_R_Acc_y_skew(n,:) = nan;
-            DLS_R_Acc_z_skew(n,:) = nan;
-            DLS_R_Acc_norm_skew(n,:) = nan;
-            DLS_L_Acc_x_skew(n,:) = nan;
-            DLS_L_Acc_y_skew(n,:) = nan;
-            DLS_L_Acc_z_skew(n,:) = nan;
-            DLS_L_Acc_norm_skew(n,:) = nan;
+            DLS_US_Acc_x_skew(n,:) = nan;
+            DLS_US_Acc_y_skew(n,:) = nan;
+            DLS_US_Acc_z_skew(n,:) = nan;
+            DLS_US_Acc_norm_skew(n,:) = nan;
+            DLS_AS_Acc_x_skew(n,:) = nan;
+            DLS_AS_Acc_y_skew(n,:) = nan;
+            DLS_AS_Acc_z_skew(n,:) = nan;
+            DLS_AS_Acc_norm_skew(n,:) = nan;
 
             % Kurtosis
             SC_Acc_x_kurtosis(n,:) = nan;
             SC_Acc_y_kurtosis(n,:) = nan;
             SC_Acc_z_kurtosis(n,:) = nan;
             SC_Acc_norm_kurtosis(n,:) = nan;
-            DLS_R_Acc_x_kurtosis(n,:) = nan;
-            DLS_R_Acc_y_kurtosis(n,:) = nan;
-            DLS_R_Acc_z_kurtosis(n,:) = nan;
-            DLS_R_Acc_norm_kurtosis(n,:) = nan;
-            DLS_L_Acc_x_kurtosis(n,:) = nan;
-            DLS_L_Acc_y_kurtosis(n,:) = nan;
-            DLS_L_Acc_z_kurtosis(n,:) = nan;
-            DLS_L_Acc_norm_kurtosis(n,:) = nan;
+            DLS_US_Acc_x_kurtosis(n,:) = nan;
+            DLS_US_Acc_y_kurtosis(n,:) = nan;
+            DLS_US_Acc_z_kurtosis(n,:) = nan;
+            DLS_US_Acc_norm_kurtosis(n,:) = nan;
+            DLS_AS_Acc_x_kurtosis(n,:) = nan;
+            DLS_AS_Acc_y_kurtosis(n,:) = nan;
+            DLS_AS_Acc_z_kurtosis(n,:) = nan;
+            DLS_AS_Acc_norm_kurtosis(n,:) = nan;
 
             % Pearson correlation coefficient
             SC_Acc_corr_xy(n,:) = nan;
             SC_Acc_corr_xz(n,:) = nan;
             SC_Acc_corr_yz(n,:) = nan;
-            DLS_R_Acc_corr_xy(n,:) = nan;
-            DLS_R_Acc_corr_xz(n,:) = nan;
-            DLS_R_Acc_corr_yz(n,:) = nan;
-            DLS_L_Acc_corr_xy(n,:) = nan;
-            DLS_L_Acc_corr_xz(n,:) = nan;
-            DLS_L_Acc_corr_yz(n,:) = nan;
+            DLS_US_Acc_corr_xy(n,:) = nan;
+            DLS_US_Acc_corr_xz(n,:) = nan;
+            DLS_US_Acc_corr_yz(n,:) = nan;
+            DLS_AS_Acc_corr_xy(n,:) = nan;
+            DLS_AS_Acc_corr_xz(n,:) = nan;
+            DLS_AS_Acc_corr_yz(n,:) = nan;
 
             % Sample Entropy
             SC_Acc_x_SamEn(n,:) = nan;
             SC_Acc_y_SamEn(n,:) = nan;
             SC_Acc_z_SamEn(n,:) = nan;
             SC_Acc_norm_SamEn(n,:) = nan;
-            DLS_R_Acc_x_SamEn(n,:) = nan;
-            DLS_R_Acc_y_SamEn(n,:) = nan;
-            DLS_R_Acc_z_SamEn(n,:) = nan;
-            DLS_R_Acc_norm_SamEn(n,:) = nan;
-            DLS_L_Acc_x_SamEn(n,:) = nan;
-            DLS_L_Acc_y_SamEn(n,:) = nan;
-            DLS_L_Acc_z_SamEn(n,:) = nan;
-            DLS_L_Acc_norm_SamEn(n,:) = nan;
+            DLS_US_Acc_x_SamEn(n,:) = nan;
+            DLS_US_Acc_y_SamEn(n,:) = nan;
+            DLS_US_Acc_z_SamEn(n,:) = nan;
+            DLS_US_Acc_norm_SamEn(n,:) = nan;
+            DLS_AS_Acc_x_SamEn(n,:) = nan;
+            DLS_AS_Acc_y_SamEn(n,:) = nan;
+            DLS_AS_Acc_z_SamEn(n,:) = nan;
+            DLS_AS_Acc_norm_SamEn(n,:) = nan;
 
             % Frequency Domain
             SC_Acc_x_DAmp(n,:) = nan;
@@ -384,61 +384,61 @@ for k = 1:1:length(TS)
             SC_Acc_norm_PSD_skew(n,:) = nan;
             SC_Acc_norm_PSD_kurtosis(n,:) = nan;
 
-            DLS_R_Acc_x_DAmp(n,:) = nan;
-            DLS_R_Acc_x_DFreq(n,:) = nan;
-            DLS_R_Acc_x_PSD_mean(n,:) = nan;
-            DLS_R_Acc_x_PSD_std(n,:) = nan;
-            DLS_R_Acc_x_PSD_skew(n,:) = nan;
-            DLS_R_Acc_x_PSD_kurtosis(n,:) = nan;
+            DLS_US_Acc_x_DAmp(n,:) = nan;
+            DLS_US_Acc_x_DFreq(n,:) = nan;
+            DLS_US_Acc_x_PSD_mean(n,:) = nan;
+            DLS_US_Acc_x_PSD_std(n,:) = nan;
+            DLS_US_Acc_x_PSD_skew(n,:) = nan;
+            DLS_US_Acc_x_PSD_kurtosis(n,:) = nan;
 
-            DLS_R_Acc_y_DAmp(n,:) = nan;
-            DLS_R_Acc_y_DFreq(n,:) = nan;
-            DLS_R_Acc_y_PSD_mean(n,:) = nan;
-            DLS_R_Acc_y_PSD_std(n,:) = nan;
-            DLS_R_Acc_y_PSD_skew(n,:) = nan;
-            DLS_R_Acc_y_PSD_kurtosis(n,:) = nan;
+            DLS_US_Acc_y_DAmp(n,:) = nan;
+            DLS_US_Acc_y_DFreq(n,:) = nan;
+            DLS_US_Acc_y_PSD_mean(n,:) = nan;
+            DLS_US_Acc_y_PSD_std(n,:) = nan;
+            DLS_US_Acc_y_PSD_skew(n,:) = nan;
+            DLS_US_Acc_y_PSD_kurtosis(n,:) = nan;
 
-            DLS_R_Acc_z_DAmp(n,:) = nan;
-            DLS_R_Acc_z_DFreq(n,:) = nan;
-            DLS_R_Acc_z_PSD_mean(n,:) = nan;
-            DLS_R_Acc_z_PSD_std(n,:) = nan;
-            DLS_R_Acc_z_PSD_skew(n,:) = nan;
-            DLS_R_Acc_z_PSD_kurtosis(n,:) = nan;
+            DLS_US_Acc_z_DAmp(n,:) = nan;
+            DLS_US_Acc_z_DFreq(n,:) = nan;
+            DLS_US_Acc_z_PSD_mean(n,:) = nan;
+            DLS_US_Acc_z_PSD_std(n,:) = nan;
+            DLS_US_Acc_z_PSD_skew(n,:) = nan;
+            DLS_US_Acc_z_PSD_kurtosis(n,:) = nan;
 
-            DLS_R_Acc_norm_DAmp(n,:) = nan;
-            DLS_R_Acc_norm_DFreq(n,:) = nan;
-            DLS_R_Acc_norm_PSD_mean(n,:) = nan;
-            DLS_R_Acc_norm_PSD_std(n,:) = nan;
-            DLS_R_Acc_norm_PSD_skew(n,:) = nan;
-            DLS_R_Acc_norm_PSD_kurtosis(n,:) = nan;
+            DLS_US_Acc_norm_DAmp(n,:) = nan;
+            DLS_US_Acc_norm_DFreq(n,:) = nan;
+            DLS_US_Acc_norm_PSD_mean(n,:) = nan;
+            DLS_US_Acc_norm_PSD_std(n,:) = nan;
+            DLS_US_Acc_norm_PSD_skew(n,:) = nan;
+            DLS_US_Acc_norm_PSD_kurtosis(n,:) = nan;
 
-            DLS_L_Acc_x_DAmp(n,:) = nan;
-            DLS_L_Acc_x_DFreq(n,:) = nan;
-            DLS_L_Acc_x_PSD_mean(n,:) = nan;
-            DLS_L_Acc_x_PSD_std(n,:) = nan;
-            DLS_L_Acc_x_PSD_skew(n,:) = nan;
-            DLS_L_Acc_x_PSD_kurtosis(n,:) = nan;
+            DLS_AS_Acc_x_DAmp(n,:) = nan;
+            DLS_AS_Acc_x_DFreq(n,:) = nan;
+            DLS_AS_Acc_x_PSD_mean(n,:) = nan;
+            DLS_AS_Acc_x_PSD_std(n,:) = nan;
+            DLS_AS_Acc_x_PSD_skew(n,:) = nan;
+            DLS_AS_Acc_x_PSD_kurtosis(n,:) = nan;
 
-            DLS_L_Acc_y_DAmp(n,:) = nan;
-            DLS_L_Acc_y_DFreq(n,:) = nan;
-            DLS_L_Acc_y_PSD_mean(n,:) = nan;
-            DLS_L_Acc_y_PSD_std(n,:) = nan;
-            DLS_L_Acc_y_PSD_skew(n,:) = nan;
-            DLS_L_Acc_y_PSD_kurtosis(n,:) = nan;
+            DLS_AS_Acc_y_DAmp(n,:) = nan;
+            DLS_AS_Acc_y_DFreq(n,:) = nan;
+            DLS_AS_Acc_y_PSD_mean(n,:) = nan;
+            DLS_AS_Acc_y_PSD_std(n,:) = nan;
+            DLS_AS_Acc_y_PSD_skew(n,:) = nan;
+            DLS_AS_Acc_y_PSD_kurtosis(n,:) = nan;
 
-            DLS_L_Acc_z_DAmp(n,:) = nan;
-            DLS_L_Acc_z_DFreq(n,:) = nan;
-            DLS_L_Acc_z_PSD_mean(n,:) = nan;
-            DLS_L_Acc_z_PSD_std(n,:) = nan;
-            DLS_L_Acc_z_PSD_skew(n,:) = nan;
-            DLS_L_Acc_z_PSD_kurtosis(n,:) = nan;
+            DLS_AS_Acc_z_DAmp(n,:) = nan;
+            DLS_AS_Acc_z_DFreq(n,:) = nan;
+            DLS_AS_Acc_z_PSD_mean(n,:) = nan;
+            DLS_AS_Acc_z_PSD_std(n,:) = nan;
+            DLS_AS_Acc_z_PSD_skew(n,:) = nan;
+            DLS_AS_Acc_z_PSD_kurtosis(n,:) = nan;
 
-            DLS_L_Acc_norm_DAmp(n,:) = nan;
-            DLS_L_Acc_norm_DFreq(n,:) = nan;
-            DLS_L_Acc_norm_PSD_mean(n,:) = nan;
-            DLS_L_Acc_norm_PSD_std(n,:) = nan;
-            DLS_L_Acc_norm_PSD_skew(n,:) = nan;
-            DLS_L_Acc_norm_PSD_kurtosis(n,:) = nan;
+            DLS_AS_Acc_norm_DAmp(n,:) = nan;
+            DLS_AS_Acc_norm_DFreq(n,:) = nan;
+            DLS_AS_Acc_norm_PSD_mean(n,:) = nan;
+            DLS_AS_Acc_norm_PSD_std(n,:) = nan;
+            DLS_AS_Acc_norm_PSD_skew(n,:) = nan;
+            DLS_AS_Acc_norm_PSD_kurtosis(n,:) = nan;
 
         else
             SN = 1;
@@ -544,110 +544,216 @@ for k = 1:1:length(TS)
             SC_Gyr_y_mean(n,:) = mean(SC_Gyr(:,2));
             SC_Gyr_z_mean(n,:) = mean(SC_Gyr(:,3));
             SC_Gyr_norm_mean(n,:) = mean(SC_Gyr_norm);
-            DLS_R_Gyr_x_mean(n,:) = mean(DLS_R_Gyr(:,1));
-            DLS_R_Gyr_y_mean(n,:) = mean(DLS_R_Gyr(:,2));
-            DLS_R_Gyr_z_mean(n,:) = mean(DLS_R_Gyr(:,3));
-            DLS_R_Gyr_norm_mean(n,:) = mean(DLS_R_Gyr_norm);
-            DLS_L_Gyr_x_mean(n,:) = mean(DLS_L_Gyr(:,1));
-            DLS_L_Gyr_y_mean(n,:) = mean(DLS_L_Gyr(:,2));
-            DLS_L_Gyr_z_mean(n,:) = mean(DLS_L_Gyr(:,3));
-            DLS_L_Gyr_norm_mean(n,:) = mean(DLS_L_Gyr_norm);
+            
+            if strcmp(AS,'L') == 1
+                DLS_US_Gyr_x_mean(n,:) = mean(DLS_R_Gyr(:,1));
+                DLS_US_Gyr_y_mean(n,:) = mean(DLS_R_Gyr(:,2));
+                DLS_US_Gyr_z_mean(n,:) = mean(DLS_R_Gyr(:,3));
+                DLS_US_Gyr_norm_mean(n,:) = mean(DLS_R_Gyr_norm);
+                DLS_AS_Gyr_x_mean(n,:) = mean(DLS_L_Gyr(:,1));
+                DLS_AS_Gyr_y_mean(n,:) = mean(DLS_L_Gyr(:,2));
+                DLS_AS_Gyr_z_mean(n,:) = mean(DLS_L_Gyr(:,3));
+                DLS_AS_Gyr_norm_mean(n,:) = mean(DLS_L_Gyr_norm);
+
+            elseif strcmp(AS,'R') == 1
+                DLS_AS_Gyr_x_mean(n,:) = mean(DLS_R_Gyr(:,1));
+                DLS_AS_Gyr_y_mean(n,:) = mean(DLS_R_Gyr(:,2));
+                DLS_AS_Gyr_z_mean(n,:) = mean(DLS_R_Gyr(:,3));
+                DLS_AS_Gyr_norm_mean(n,:) = mean(DLS_R_Gyr_norm);
+                DLS_US_Gyr_x_mean(n,:) = mean(DLS_L_Gyr(:,1));
+                DLS_US_Gyr_y_mean(n,:) = mean(DLS_L_Gyr(:,2));
+                DLS_US_Gyr_z_mean(n,:) = mean(DLS_L_Gyr(:,3));
+                DLS_US_Gyr_norm_mean(n,:) = mean(DLS_L_Gyr_norm);
+            end 
 
             % Range
             SC_Gyr_x_range(n,:) = range(SC_Gyr(:,1));
             SC_Gyr_y_range(n,:) = range(SC_Gyr(:,2));
             SC_Gyr_z_range(n,:) = range(SC_Gyr(:,3));
             SC_Gyr_norm_range(n,:) = range(SC_Gyr_norm);
-            DLS_R_Gyr_x_range(n,:) = range(DLS_R_Gyr(:,1));
-            DLS_R_Gyr_y_range(n,:) = range(DLS_R_Gyr(:,2));
-            DLS_R_Gyr_z_range(n,:) = range(DLS_R_Gyr(:,3));
-            DLS_R_Gyr_norm_range(n,:) = range(DLS_R_Gyr_norm);
-            DLS_L_Gyr_x_range(n,:) = range(DLS_L_Gyr(:,1));
-            DLS_L_Gyr_y_range(n,:) = range(DLS_L_Gyr(:,2));
-            DLS_L_Gyr_z_range(n,:) = range(DLS_L_Gyr(:,3));
-            DLS_L_Gyr_norm_range(n,:) = range(DLS_L_Gyr_norm);
+            
+            if strcmp(AS,'L') == 1
+                DLS_US_Gyr_x_range(n,:) = range(DLS_R_Gyr(:,1));
+                DLS_US_Gyr_y_range(n,:) = range(DLS_R_Gyr(:,2));
+                DLS_US_Gyr_z_range(n,:) = range(DLS_R_Gyr(:,3));
+                DLS_US_Gyr_norm_range(n,:) = range(DLS_R_Gyr_norm);
+                DLS_AS_Gyr_x_range(n,:) = range(DLS_L_Gyr(:,1));
+                DLS_AS_Gyr_y_range(n,:) = range(DLS_L_Gyr(:,2));
+                DLS_AS_Gyr_z_range(n,:) = range(DLS_L_Gyr(:,3));
+                DLS_AS_Gyr_norm_range(n,:) = range(DLS_L_Gyr_norm);
+
+            elseif strcmp(AS,'R') == 1
+                DLS_AS_Gyr_x_range(n,:) = range(DLS_R_Gyr(:,1));
+                DLS_AS_Gyr_y_range(n,:) = range(DLS_R_Gyr(:,2));
+                DLS_AS_Gyr_z_range(n,:) = range(DLS_R_Gyr(:,3));
+                DLS_AS_Gyr_norm_range(n,:) = range(DLS_R_Gyr_norm);
+                DLS_US_Gyr_x_range(n,:) = range(DLS_L_Gyr(:,1));
+                DLS_US_Gyr_y_range(n,:) = range(DLS_L_Gyr(:,2));
+                DLS_US_Gyr_z_range(n,:) = range(DLS_L_Gyr(:,3));
+                DLS_US_Gyr_norm_range(n,:) = range(DLS_L_Gyr_norm);
+            end 
 
             % RMS
             SC_Gyr_x_rms(n,:) = rms(SC_Gyr(:,1));
             SC_Gyr_y_rms(n,:) = rms(SC_Gyr(:,2));
             SC_Gyr_z_rms(n,:) = rms(SC_Gyr(:,3));
             SC_Gyr_norm_rms(n,:) = rms(SC_Gyr_norm);
-            DLS_R_Gyr_x_rms(n,:) = rms(DLS_R_Gyr(:,1));
-            DLS_R_Gyr_y_rms(n,:) = rms(DLS_R_Gyr(:,2));
-            DLS_R_Gyr_z_rms(n,:) = rms(DLS_R_Gyr(:,3));
-            DLS_R_Gyr_norm_rms(n,:) = rms(DLS_R_Gyr_norm);
-            DLS_L_Gyr_x_rms(n,:) = rms(DLS_L_Gyr(:,1));
-            DLS_L_Gyr_y_rms(n,:) = rms(DLS_L_Gyr(:,2));
-            DLS_L_Gyr_z_rms(n,:) = rms(DLS_L_Gyr(:,3));
-            DLS_L_Gyr_norm_rms(n,:) = rms(DLS_L_Gyr_norm);
+            
+            if strcmp(AS,'L') == 1
+                DLS_US_Gyr_x_rms(n,:) = rms(DLS_R_Gyr(:,1));
+                DLS_US_Gyr_y_rms(n,:) = rms(DLS_R_Gyr(:,2));
+                DLS_US_Gyr_z_rms(n,:) = rms(DLS_R_Gyr(:,3));
+                DLS_US_Gyr_norm_rms(n,:) = rms(DLS_R_Gyr_norm);
+                DLS_AS_Gyr_x_rms(n,:) = rms(DLS_L_Gyr(:,1));
+                DLS_AS_Gyr_y_rms(n,:) = rms(DLS_L_Gyr(:,2));
+                DLS_AS_Gyr_z_rms(n,:) = rms(DLS_L_Gyr(:,3));
+                DLS_AS_Gyr_norm_rms(n,:) = rms(DLS_L_Gyr_norm);
+
+            elseif strcmp(AS,'R') == 1
+                DLS_AS_Gyr_x_rms(n,:) = rms(DLS_R_Gyr(:,1));
+                DLS_AS_Gyr_y_rms(n,:) = rms(DLS_R_Gyr(:,2));
+                DLS_AS_Gyr_z_rms(n,:) = rms(DLS_R_Gyr(:,3));
+                DLS_AS_Gyr_norm_rms(n,:) = rms(DLS_R_Gyr_norm);
+                DLS_US_Gyr_x_rms(n,:) = rms(DLS_L_Gyr(:,1));
+                DLS_US_Gyr_y_rms(n,:) = rms(DLS_L_Gyr(:,2));
+                DLS_US_Gyr_z_rms(n,:) = rms(DLS_L_Gyr(:,3));
+                DLS_US_Gyr_norm_rms(n,:) = rms(DLS_L_Gyr_norm);
+            end 
 
             % Standard Deviation
             SC_Gyr_x_std(n,:) = std(SC_Gyr(:,1));
             SC_Gyr_y_std(n,:) = std(SC_Gyr(:,2));
             SC_Gyr_z_std(n,:) = std(SC_Gyr(:,3));
             SC_Gyr_norm_std(n,:) = std(SC_Gyr_norm);
-            DLS_R_Gyr_x_std(n,:) = std(DLS_R_Gyr(:,1));
-            DLS_R_Gyr_y_std(n,:) = std(DLS_R_Gyr(:,2));
-            DLS_R_Gyr_z_std(n,:) = std(DLS_R_Gyr(:,3));
-            DLS_R_Gyr_norm_std(n,:) = std(DLS_R_Gyr_norm);
-            DLS_L_Gyr_x_std(n,:) = std(DLS_L_Gyr(:,1));
-            DLS_L_Gyr_y_std(n,:) = std(DLS_L_Gyr(:,2));
-            DLS_L_Gyr_z_std(n,:) = std(DLS_L_Gyr(:,3));
-            DLS_L_Gyr_norm_std(n,:) = std(DLS_L_Gyr_norm);
+            
+            if strcmp(AS,'L') == 1
+                DLS_US_Gyr_x_std(n,:) = std(DLS_R_Gyr(:,1));
+                DLS_US_Gyr_y_std(n,:) = std(DLS_R_Gyr(:,2));
+                DLS_US_Gyr_z_std(n,:) = std(DLS_R_Gyr(:,3));
+                DLS_US_Gyr_norm_std(n,:) = std(DLS_R_Gyr_norm);
+                DLS_AS_Gyr_x_std(n,:) = std(DLS_L_Gyr(:,1));
+                DLS_AS_Gyr_y_std(n,:) = std(DLS_L_Gyr(:,2));
+                DLS_AS_Gyr_z_std(n,:) = std(DLS_L_Gyr(:,3));
+                DLS_AS_Gyr_norm_std(n,:) = std(DLS_L_Gyr_norm);
+
+            elseif strcmp(AS,'R') == 1                
+                DLS_AS_Gyr_x_std(n,:) = std(DLS_R_Gyr(:,1));
+                DLS_AS_Gyr_y_std(n,:) = std(DLS_R_Gyr(:,2));
+                DLS_AS_Gyr_z_std(n,:) = std(DLS_R_Gyr(:,3));
+                DLS_AS_Gyr_norm_std(n,:) = std(DLS_R_Gyr_norm);
+                DLS_US_Gyr_x_std(n,:) = std(DLS_L_Gyr(:,1));
+                DLS_US_Gyr_y_std(n,:) = std(DLS_L_Gyr(:,2));
+                DLS_US_Gyr_z_std(n,:) = std(DLS_L_Gyr(:,3));
+                DLS_US_Gyr_norm_std(n,:) = std(DLS_L_Gyr_norm);
+            end 
 
             % Skew
             SC_Gyr_x_skew(n,:) = skewness(SC_Gyr(:,1));
             SC_Gyr_y_skew(n,:) = skewness(SC_Gyr(:,2));
             SC_Gyr_z_skew(n,:) = skewness(SC_Gyr(:,3));
             SC_Gyr_norm_skew(n,:) = skewness(SC_Gyr_norm);
-            DLS_R_Gyr_x_skew(n,:) = skewness(DLS_R_Gyr(:,1));
-            DLS_R_Gyr_y_skew(n,:) = skewness(DLS_R_Gyr(:,2));
-            DLS_R_Gyr_z_skew(n,:) = skewness(DLS_R_Gyr(:,3));
-            DLS_R_Gyr_norm_skew(n,:) = skewness(DLS_R_Gyr_norm);
-            DLS_L_Gyr_x_skew(n,:) = skewness(DLS_L_Gyr(:,1));
-            DLS_L_Gyr_y_skew(n,:) = skewness(DLS_L_Gyr(:,2));
-            DLS_L_Gyr_z_skew(n,:) = skewness(DLS_L_Gyr(:,3));
-            DLS_L_Gyr_norm_skew(n,:) = skewness(DLS_L_Gyr_norm);
-
+            
+            if strcmp(AS,'L') == 1
+                DLS_US_Gyr_x_skew(n,:) = skewness(DLS_R_Gyr(:,1));
+                DLS_US_Gyr_y_skew(n,:) = skewness(DLS_R_Gyr(:,2));
+                DLS_US_Gyr_z_skew(n,:) = skewness(DLS_R_Gyr(:,3));
+                DLS_US_Gyr_norm_skew(n,:) = skewness(DLS_R_Gyr_norm);
+                DLS_AS_Gyr_x_skew(n,:) = skewness(DLS_L_Gyr(:,1));
+                DLS_AS_Gyr_y_skew(n,:) = skewness(DLS_L_Gyr(:,2));
+                DLS_AS_Gyr_z_skew(n,:) = skewness(DLS_L_Gyr(:,3));
+                DLS_AS_Gyr_norm_skew(n,:) = skewness(DLS_L_Gyr_norm);
+                
+            elseif strcmp(AS,'R') == 1                
+                DLS_AS_Gyr_x_skew(n,:) = skewness(DLS_R_Gyr(:,1));
+                DLS_AS_Gyr_y_skew(n,:) = skewness(DLS_R_Gyr(:,2));
+                DLS_AS_Gyr_z_skew(n,:) = skewness(DLS_R_Gyr(:,3));
+                DLS_AS_Gyr_norm_skew(n,:) = skewness(DLS_R_Gyr_norm);
+                DLS_US_Gyr_x_skew(n,:) = skewness(DLS_L_Gyr(:,1));
+                DLS_US_Gyr_y_skew(n,:) = skewness(DLS_L_Gyr(:,2));
+                DLS_US_Gyr_z_skew(n,:) = skewness(DLS_L_Gyr(:,3));
+                DLS_US_Gyr_norm_skew(n,:) = skewness(DLS_L_Gyr_norm);
+            end 
+            
+            
             % Kurtosis
             SC_Gyr_x_kurtosis(n,:) = kurtosis(SC_Gyr(:,1));
             SC_Gyr_y_kurtosis(n,:) = kurtosis(SC_Gyr(:,2));
             SC_Gyr_z_kurtosis(n,:) = kurtosis(SC_Gyr(:,3));
             SC_Gyr_norm_kurtosis(n,:) = kurtosis(SC_Gyr_norm);
-            DLS_R_Gyr_x_kurtosis(n,:) = kurtosis(DLS_R_Gyr(:,1));
-            DLS_R_Gyr_y_kurtosis(n,:) = kurtosis(DLS_R_Gyr(:,2));
-            DLS_R_Gyr_z_kurtosis(n,:) = kurtosis(DLS_R_Gyr(:,3));
-            DLS_R_Gyr_norm_kurtosis(n,:) = kurtosis(DLS_R_Gyr_norm);
-            DLS_L_Gyr_x_kurtosis(n,:) = kurtosis(DLS_L_Gyr(:,1));
-            DLS_L_Gyr_y_kurtosis(n,:) = kurtosis(DLS_L_Gyr(:,2));
-            DLS_L_Gyr_z_kurtosis(n,:) = kurtosis(DLS_L_Gyr(:,3));
-            DLS_L_Gyr_norm_kurtosis(n,:) = kurtosis(DLS_L_Gyr_norm);
+            
+            if strcmp(AS,'L') == 1                
+                DLS_US_Gyr_x_kurtosis(n,:) = kurtosis(DLS_R_Gyr(:,1));
+                DLS_US_Gyr_y_kurtosis(n,:) = kurtosis(DLS_R_Gyr(:,2));
+                DLS_US_Gyr_z_kurtosis(n,:) = kurtosis(DLS_R_Gyr(:,3));
+                DLS_US_Gyr_norm_kurtosis(n,:) = kurtosis(DLS_R_Gyr_norm);
+                DLS_AS_Gyr_x_kurtosis(n,:) = kurtosis(DLS_L_Gyr(:,1));
+                DLS_AS_Gyr_y_kurtosis(n,:) = kurtosis(DLS_L_Gyr(:,2));
+                DLS_AS_Gyr_z_kurtosis(n,:) = kurtosis(DLS_L_Gyr(:,3));
+                DLS_AS_Gyr_norm_kurtosis(n,:) = kurtosis(DLS_L_Gyr_norm);
+                
+            elseif strcmp(AS,'R') == 1                
+                DLS_AS_Gyr_x_kurtosis(n,:) = kurtosis(DLS_R_Gyr(:,1));
+                DLS_AS_Gyr_y_kurtosis(n,:) = kurtosis(DLS_R_Gyr(:,2));
+                DLS_AS_Gyr_z_kurtosis(n,:) = kurtosis(DLS_R_Gyr(:,3));
+                DLS_AS_Gyr_norm_kurtosis(n,:) = kurtosis(DLS_R_Gyr_norm);
+                DLS_US_Gyr_x_kurtosis(n,:) = kurtosis(DLS_L_Gyr(:,1));
+                DLS_US_Gyr_y_kurtosis(n,:) = kurtosis(DLS_L_Gyr(:,2));
+                DLS_US_Gyr_z_kurtosis(n,:) = kurtosis(DLS_L_Gyr(:,3));
+                DLS_US_Gyr_norm_kurtosis(n,:) = kurtosis(DLS_L_Gyr_norm);
+            end             
+            
 
             % Pearson correlation coefficient
             SC_Gyr_corr_xy(n,:) = corr(SC_Gyr(:,1),SC_Gyr(:,2));
             SC_Gyr_corr_xz(n,:) = corr(SC_Gyr(:,1),SC_Gyr(:,3));
             SC_Gyr_corr_yz(n,:) = corr(SC_Gyr(:,2),SC_Gyr(:,3));
-            DLS_R_Gyr_corr_xy(n,:) = corr(DLS_R_Gyr(:,1),DLS_R_Gyr(:,2));
-            DLS_R_Gyr_corr_xz(n,:) = corr(DLS_R_Gyr(:,1),DLS_R_Gyr(:,3));
-            DLS_R_Gyr_corr_yz(n,:) = corr(DLS_R_Gyr(:,2),DLS_R_Gyr(:,3));
-            DLS_L_Gyr_corr_xy(n,:) = corr(DLS_L_Gyr(:,1),DLS_L_Gyr(:,2));
-            DLS_L_Gyr_corr_xz(n,:) = corr(DLS_L_Gyr(:,1),DLS_L_Gyr(:,3));
-            DLS_L_Gyr_corr_yz(n,:) = corr(DLS_L_Gyr(:,2),DLS_L_Gyr(:,3));
+            
+            if strcmp(AS,'L') == 1                
+                DLS_US_Gyr_corr_xy(n,:) = corr(DLS_R_Gyr(:,1),DLS_R_Gyr(:,2));
+                DLS_US_Gyr_corr_xz(n,:) = corr(DLS_R_Gyr(:,1),DLS_R_Gyr(:,3));
+                DLS_US_Gyr_corr_yz(n,:) = corr(DLS_R_Gyr(:,2),DLS_R_Gyr(:,3));
+                DLS_AS_Gyr_corr_xy(n,:) = corr(DLS_L_Gyr(:,1),DLS_L_Gyr(:,2));
+                DLS_AS_Gyr_corr_xz(n,:) = corr(DLS_L_Gyr(:,1),DLS_L_Gyr(:,3));
+                DLS_AS_Gyr_corr_yz(n,:) = corr(DLS_L_Gyr(:,2),DLS_L_Gyr(:,3));
 
+                
+            elseif strcmp(AS,'R') == 1                
+                DLS_AS_Gyr_corr_xy(n,:) = corr(DLS_R_Gyr(:,1),DLS_R_Gyr(:,2));
+                DLS_AS_Gyr_corr_xz(n,:) = corr(DLS_R_Gyr(:,1),DLS_R_Gyr(:,3));
+                DLS_AS_Gyr_corr_yz(n,:) = corr(DLS_R_Gyr(:,2),DLS_R_Gyr(:,3));
+                DLS_US_Gyr_corr_xy(n,:) = corr(DLS_L_Gyr(:,1),DLS_L_Gyr(:,2));
+                DLS_US_Gyr_corr_xz(n,:) = corr(DLS_L_Gyr(:,1),DLS_L_Gyr(:,3));
+                DLS_US_Gyr_corr_yz(n,:) = corr(DLS_L_Gyr(:,2),DLS_L_Gyr(:,3));
+            end 
+            
+            
             % Sample Entropy
             r = 0.2;
             SC_Gyr_x_SamEn(n,:) = sampen(SC_Gyr(:,1),1,r);
             SC_Gyr_y_SamEn(n,:) = sampen(SC_Gyr(:,2),1,r);
             SC_Gyr_z_SamEn(n,:) = sampen(SC_Gyr(:,3),1,r);
             SC_Gyr_norm_SamEn(n,:) = sampen(SC_Gyr_norm,1,r);
-            DLS_R_Gyr_x_SamEn(n,:) = sampen(DLS_R_Gyr(:,1),1,r);
-            DLS_R_Gyr_y_SamEn(n,:) = sampen(DLS_R_Gyr(:,2),1,r);
-            DLS_R_Gyr_z_SamEn(n,:) = sampen(DLS_R_Gyr(:,3),1,r);
-            DLS_R_Gyr_norm_SamEn(n,:) = sampen(DLS_R_Gyr_norm,1,r);
-            DLS_L_Gyr_x_SamEn(n,:) = sampen(DLS_L_Gyr(:,1),1,r);
-            DLS_L_Gyr_y_SamEn(n,:) = sampen(DLS_L_Gyr(:,2),1,r);
-            DLS_L_Gyr_z_SamEn(n,:) = sampen(DLS_L_Gyr(:,3),1,r);
-            DLS_L_Gyr_norm_SamEn(n,:) = sampen(DLS_L_Gyr_norm,1,r);
+            
+            if strcmp(AS,'L') == 1                
+                DLS_US_Gyr_x_SamEn(n,:) = sampen(DLS_R_Gyr(:,1),1,r);
+                DLS_US_Gyr_y_SamEn(n,:) = sampen(DLS_R_Gyr(:,2),1,r);
+                DLS_US_Gyr_z_SamEn(n,:) = sampen(DLS_R_Gyr(:,3),1,r);
+                DLS_US_Gyr_norm_SamEn(n,:) = sampen(DLS_R_Gyr_norm,1,r);
+                DLS_AS_Gyr_x_SamEn(n,:) = sampen(DLS_L_Gyr(:,1),1,r);
+                DLS_AS_Gyr_y_SamEn(n,:) = sampen(DLS_L_Gyr(:,2),1,r);
+                DLS_AS_Gyr_z_SamEn(n,:) = sampen(DLS_L_Gyr(:,3),1,r);
+                DLS_AS_Gyr_norm_SamEn(n,:) = sampen(DLS_L_Gyr_norm,1,r);
+                
+            elseif strcmp(AS,'R') == 1                            
+                DLS_AS_Gyr_x_SamEn(n,:) = sampen(DLS_R_Gyr(:,1),1,r);
+                DLS_AS_Gyr_y_SamEn(n,:) = sampen(DLS_R_Gyr(:,2),1,r);
+                DLS_AS_Gyr_z_SamEn(n,:) = sampen(DLS_R_Gyr(:,3),1,r);
+                DLS_AS_Gyr_norm_SamEn(n,:) = sampen(DLS_R_Gyr_norm,1,r);
+                DLS_US_Gyr_x_SamEn(n,:) = sampen(DLS_L_Gyr(:,1),1,r);
+                DLS_US_Gyr_y_SamEn(n,:) = sampen(DLS_L_Gyr(:,2),1,r);
+                DLS_US_Gyr_z_SamEn(n,:) = sampen(DLS_L_Gyr(:,3),1,r);
+                DLS_US_Gyr_norm_SamEn(n,:) = sampen(DLS_L_Gyr_norm,1,r);
+            end    
             
             
             % Frequency Domain
@@ -682,166 +788,335 @@ for k = 1:1:length(TS)
             SC_Gyr_norm_PSD_std(n,:) = ff(4);
             SC_Gyr_norm_PSD_skew(n,:) = ff(5);
             SC_Gyr_norm_PSD_kurtosis(n,:) = ff(6);
+            
+            
+            if strcmp(AS,'L') == 1                
+                ff = FFeatures(DLS_R_Gyr(:,1), Hz);
+                DLS_US_Gyr_x_DAmp(n,:) = ff(1);
+                DLS_US_Gyr_x_DFreq(n,:) = ff(2);
+                DLS_US_Gyr_x_PSD_mean(n,:) = ff(3);
+                DLS_US_Gyr_x_PSD_std(n,:) = ff(4);
+                DLS_US_Gyr_x_PSD_skew(n,:) = ff(5);
+                DLS_US_Gyr_x_PSD_kurtosis(n,:) = ff(6);
 
-            ff = FFeatures(DLS_R_Gyr(:,1), Hz);
-            DLS_R_Gyr_x_DAmp(n,:) = ff(1);
-            DLS_R_Gyr_x_DFreq(n,:) = ff(2);
-            DLS_R_Gyr_x_PSD_mean(n,:) = ff(3);
-            DLS_R_Gyr_x_PSD_std(n,:) = ff(4);
-            DLS_R_Gyr_x_PSD_skew(n,:) = ff(5);
-            DLS_R_Gyr_x_PSD_kurtosis(n,:) = ff(6);
+                ff = FFeatures(DLS_R_Gyr(:,2), Hz);
+                DLS_US_Gyr_y_DAmp(n,:) = ff(1);
+                DLS_US_Gyr_y_DFreq(n,:) = ff(2);
+                DLS_US_Gyr_y_PSD_mean(n,:) = ff(3);
+                DLS_US_Gyr_y_PSD_std(n,:) = ff(4);
+                DLS_US_Gyr_y_PSD_skew(n,:) = ff(5);
+                DLS_US_Gyr_y_PSD_kurtosis(n,:) = ff(6);
 
-            ff = FFeatures(DLS_R_Gyr(:,2), Hz);
-            DLS_R_Gyr_y_DAmp(n,:) = ff(1);
-            DLS_R_Gyr_y_DFreq(n,:) = ff(2);
-            DLS_R_Gyr_y_PSD_mean(n,:) = ff(3);
-            DLS_R_Gyr_y_PSD_std(n,:) = ff(4);
-            DLS_R_Gyr_y_PSD_skew(n,:) = ff(5);
-            DLS_R_Gyr_y_PSD_kurtosis(n,:) = ff(6);
+                ff = FFeatures(DLS_R_Gyr(:,3), Hz);
+                DLS_US_Gyr_z_DAmp(n,:) = ff(1);
+                DLS_US_Gyr_z_DFreq(n,:) = ff(2);
+                DLS_US_Gyr_z_PSD_mean(n,:) = ff(3);
+                DLS_US_Gyr_z_PSD_std(n,:) = ff(4);
+                DLS_US_Gyr_z_PSD_skew(n,:) = ff(5);
+                DLS_US_Gyr_z_PSD_kurtosis(n,:) = ff(6);
 
-            ff = FFeatures(DLS_R_Gyr(:,3), Hz);
-            DLS_R_Gyr_z_DAmp(n,:) = ff(1);
-            DLS_R_Gyr_z_DFreq(n,:) = ff(2);
-            DLS_R_Gyr_z_PSD_mean(n,:) = ff(3);
-            DLS_R_Gyr_z_PSD_std(n,:) = ff(4);
-            DLS_R_Gyr_z_PSD_skew(n,:) = ff(5);
-            DLS_R_Gyr_z_PSD_kurtosis(n,:) = ff(6);
+                ff = FFeatures(DLS_R_Gyr_norm, Hz);
+                DLS_US_Gyr_norm_DAmp(n,:) = ff(1);
+                DLS_US_Gyr_norm_DFreq(n,:) = ff(2);
+                DLS_US_Gyr_norm_PSD_mean(n,:) = ff(3);
+                DLS_US_Gyr_norm_PSD_std(n,:) = ff(4);
+                DLS_US_Gyr_norm_PSD_skew(n,:) = ff(5);
+                DLS_US_Gyr_norm_PSD_kurtosis(n,:) = ff(6);
 
-            ff = FFeatures(DLS_R_Gyr_norm, Hz);
-            DLS_R_Gyr_norm_DAmp(n,:) = ff(1);
-            DLS_R_Gyr_norm_DFreq(n,:) = ff(2);
-            DLS_R_Gyr_norm_PSD_mean(n,:) = ff(3);
-            DLS_R_Gyr_norm_PSD_std(n,:) = ff(4);
-            DLS_R_Gyr_norm_PSD_skew(n,:) = ff(5);
-            DLS_R_Gyr_norm_PSD_kurtosis(n,:) = ff(6);
+                ff = FFeatures(DLS_L_Gyr(:,1), Hz);
+                DLS_AS_Gyr_x_DAmp(n,:) = ff(1);
+                DLS_AS_Gyr_x_DFreq(n,:) = ff(2);
+                DLS_AS_Gyr_x_PSD_mean(n,:) = ff(3);
+                DLS_AS_Gyr_x_PSD_std(n,:) = ff(4);
+                DLS_AS_Gyr_x_PSD_skew(n,:) = ff(5);
+                DLS_AS_Gyr_x_PSD_kurtosis(n,:) = ff(6);
 
-            ff = FFeatures(DLS_L_Gyr(:,1), Hz);
-            DLS_L_Gyr_x_DAmp(n,:) = ff(1);
-            DLS_L_Gyr_x_DFreq(n,:) = ff(2);
-            DLS_L_Gyr_x_PSD_mean(n,:) = ff(3);
-            DLS_L_Gyr_x_PSD_std(n,:) = ff(4);
-            DLS_L_Gyr_x_PSD_skew(n,:) = ff(5);
-            DLS_L_Gyr_x_PSD_kurtosis(n,:) = ff(6);
+                ff = FFeatures(DLS_L_Gyr(:,2), Hz);
+                DLS_AS_Gyr_y_DAmp(n,:) = ff(1);
+                DLS_AS_Gyr_y_DFreq(n,:) = ff(2);
+                DLS_AS_Gyr_y_PSD_mean(n,:) = ff(3);
+                DLS_AS_Gyr_y_PSD_std(n,:) = ff(4);
+                DLS_AS_Gyr_y_PSD_skew(n,:) = ff(5);
+                DLS_AS_Gyr_y_PSD_kurtosis(n,:) = ff(6);
 
-            ff = FFeatures(DLS_L_Gyr(:,2), Hz);
-            DLS_L_Gyr_y_DAmp(n,:) = ff(1);
-            DLS_L_Gyr_y_DFreq(n,:) = ff(2);
-            DLS_L_Gyr_y_PSD_mean(n,:) = ff(3);
-            DLS_L_Gyr_y_PSD_std(n,:) = ff(4);
-            DLS_L_Gyr_y_PSD_skew(n,:) = ff(5);
-            DLS_L_Gyr_y_PSD_kurtosis(n,:) = ff(6);
+                ff = FFeatures(DLS_L_Gyr(:,3), Hz);
+                DLS_AS_Gyr_z_DAmp(n,:) = ff(1);
+                DLS_AS_Gyr_z_DFreq(n,:) = ff(2);
+                DLS_AS_Gyr_z_PSD_mean(n,:) = ff(3);
+                DLS_AS_Gyr_z_PSD_std(n,:) = ff(4);
+                DLS_AS_Gyr_z_PSD_skew(n,:) = ff(5);
+                DLS_AS_Gyr_z_PSD_kurtosis(n,:) = ff(6);
 
-            ff = FFeatures(DLS_L_Gyr(:,3), Hz);
-            DLS_L_Gyr_z_DAmp(n,:) = ff(1);
-            DLS_L_Gyr_z_DFreq(n,:) = ff(2);
-            DLS_L_Gyr_z_PSD_mean(n,:) = ff(3);
-            DLS_L_Gyr_z_PSD_std(n,:) = ff(4);
-            DLS_L_Gyr_z_PSD_skew(n,:) = ff(5);
-            DLS_L_Gyr_z_PSD_kurtosis(n,:) = ff(6);
+                ff = FFeatures(DLS_L_Gyr_norm, Hz);
+                DLS_AS_Gyr_norm_DAmp(n,:) = ff(1);
+                DLS_AS_Gyr_norm_DFreq(n,:) = ff(2);
+                DLS_AS_Gyr_norm_PSD_mean(n,:) = ff(3);
+                DLS_AS_Gyr_norm_PSD_std(n,:) = ff(4);
+                DLS_AS_Gyr_norm_PSD_skew(n,:) = ff(5);
+                DLS_AS_Gyr_norm_PSD_kurtosis(n,:) = ff(6);
 
-            ff = FFeatures(DLS_L_Gyr_norm, Hz);
-            DLS_L_Gyr_norm_DAmp(n,:) = ff(1);
-            DLS_L_Gyr_norm_DFreq(n,:) = ff(2);
-            DLS_L_Gyr_norm_PSD_mean(n,:) = ff(3);
-            DLS_L_Gyr_norm_PSD_std(n,:) = ff(4);
-            DLS_L_Gyr_norm_PSD_skew(n,:) = ff(5);
-            DLS_L_Gyr_norm_PSD_kurtosis(n,:) = ff(6);
+                
+            elseif strcmp(AS,'R') == 1                            
+                ff = FFeatures(DLS_R_Gyr(:,1), Hz);
+                DLS_AS_Gyr_x_DAmp(n,:) = ff(1);
+                DLS_AS_Gyr_x_DFreq(n,:) = ff(2);
+                DLS_AS_Gyr_x_PSD_mean(n,:) = ff(3);
+                DLS_AS_Gyr_x_PSD_std(n,:) = ff(4);
+                DLS_AS_Gyr_x_PSD_skew(n,:) = ff(5);
+                DLS_AS_Gyr_x_PSD_kurtosis(n,:) = ff(6);
 
+                ff = FFeatures(DLS_R_Gyr(:,2), Hz);
+                DLS_AS_Gyr_y_DAmp(n,:) = ff(1);
+                DLS_AS_Gyr_y_DFreq(n,:) = ff(2);
+                DLS_AS_Gyr_y_PSD_mean(n,:) = ff(3);
+                DLS_AS_Gyr_y_PSD_std(n,:) = ff(4);
+                DLS_AS_Gyr_y_PSD_skew(n,:) = ff(5);
+                DLS_AS_Gyr_y_PSD_kurtosis(n,:) = ff(6);
 
+                ff = FFeatures(DLS_R_Gyr(:,3), Hz);
+                DLS_AS_Gyr_z_DAmp(n,:) = ff(1);
+                DLS_AS_Gyr_z_DFreq(n,:) = ff(2);
+                DLS_AS_Gyr_z_PSD_mean(n,:) = ff(3);
+                DLS_AS_Gyr_z_PSD_std(n,:) = ff(4);
+                DLS_AS_Gyr_z_PSD_skew(n,:) = ff(5);
+                DLS_AS_Gyr_z_PSD_kurtosis(n,:) = ff(6);
+
+                ff = FFeatures(DLS_R_Gyr_norm, Hz);
+                DLS_AS_Gyr_norm_DAmp(n,:) = ff(1);
+                DLS_AS_Gyr_norm_DFreq(n,:) = ff(2);
+                DLS_AS_Gyr_norm_PSD_mean(n,:) = ff(3);
+                DLS_AS_Gyr_norm_PSD_std(n,:) = ff(4);
+                DLS_AS_Gyr_norm_PSD_skew(n,:) = ff(5);
+                DLS_AS_Gyr_norm_PSD_kurtosis(n,:) = ff(6);
+
+                ff = FFeatures(DLS_L_Gyr(:,1), Hz);
+                DLS_US_Gyr_x_DAmp(n,:) = ff(1);
+                DLS_US_Gyr_x_DFreq(n,:) = ff(2);
+                DLS_US_Gyr_x_PSD_mean(n,:) = ff(3);
+                DLS_US_Gyr_x_PSD_std(n,:) = ff(4);
+                DLS_US_Gyr_x_PSD_skew(n,:) = ff(5);
+                DLS_US_Gyr_x_PSD_kurtosis(n,:) = ff(6);
+
+                ff = FFeatures(DLS_L_Gyr(:,2), Hz);
+                DLS_US_Gyr_y_DAmp(n,:) = ff(1);
+                DLS_US_Gyr_y_DFreq(n,:) = ff(2);
+                DLS_US_Gyr_y_PSD_mean(n,:) = ff(3);
+                DLS_US_Gyr_y_PSD_std(n,:) = ff(4);
+                DLS_US_Gyr_y_PSD_skew(n,:) = ff(5);
+                DLS_US_Gyr_y_PSD_kurtosis(n,:) = ff(6);
+
+                ff = FFeatures(DLS_L_Gyr(:,3), Hz);
+                DLS_US_Gyr_z_DAmp(n,:) = ff(1);
+                DLS_US_Gyr_z_DFreq(n,:) = ff(2);
+                DLS_US_Gyr_z_PSD_mean(n,:) = ff(3);
+                DLS_US_Gyr_z_PSD_std(n,:) = ff(4);
+                DLS_US_Gyr_z_PSD_skew(n,:) = ff(5);
+                DLS_US_Gyr_z_PSD_kurtosis(n,:) = ff(6);
+
+                ff = FFeatures(DLS_L_Gyr_norm, Hz);
+                DLS_US_Gyr_norm_DAmp(n,:) = ff(1);
+                DLS_US_Gyr_norm_DFreq(n,:) = ff(2);
+                DLS_US_Gyr_norm_PSD_mean(n,:) = ff(3);
+                DLS_US_Gyr_norm_PSD_std(n,:) = ff(4);
+                DLS_US_Gyr_norm_PSD_skew(n,:) = ff(5);
+                DLS_US_Gyr_norm_PSD_kurtosis(n,:) = ff(6);
+
+            end  
+            
             % Acc mean
             SC_Acc_x_mean(n,:) = mean(SC_Acc(:,1));
             SC_Acc_y_mean(n,:) = mean(SC_Acc(:,2));
             SC_Acc_z_mean(n,:) = mean(SC_Acc(:,3));
             SC_Acc_norm_mean(n,:) = mean(SC_Acc_norm);
-            DLS_R_Acc_x_mean(n,:) = mean(DLS_R_Acc(:,1));
-            DLS_R_Acc_y_mean(n,:) = mean(DLS_R_Acc(:,2));
-            DLS_R_Acc_z_mean(n,:) = mean(DLS_R_Acc(:,3));
-            DLS_R_Acc_norm_mean(n,:) = mean(DLS_R_Acc_norm);
-            DLS_L_Acc_x_mean(n,:) = mean(DLS_L_Acc(:,1));
-            DLS_L_Acc_y_mean(n,:) = mean(DLS_L_Acc(:,2));
-            DLS_L_Acc_z_mean(n,:) = mean(DLS_L_Acc(:,3));
-            DLS_L_Acc_norm_mean(n,:) = mean(DLS_L_Acc_norm);
+     
+            if strcmp(AS,'L') == 1                
+                DLS_US_Acc_x_mean(n,:) = mean(DLS_R_Acc(:,1));
+                DLS_US_Acc_y_mean(n,:) = mean(DLS_R_Acc(:,2));
+                DLS_US_Acc_z_mean(n,:) = mean(DLS_R_Acc(:,3));
+                DLS_US_Acc_norm_mean(n,:) = mean(DLS_R_Acc_norm);
+                DLS_AS_Acc_x_mean(n,:) = mean(DLS_L_Acc(:,1));
+                DLS_AS_Acc_y_mean(n,:) = mean(DLS_L_Acc(:,2));
+                DLS_AS_Acc_z_mean(n,:) = mean(DLS_L_Acc(:,3));
+                DLS_AS_Acc_norm_mean(n,:) = mean(DLS_L_Acc_norm);
+
+                
+            elseif strcmp(AS,'R') == 1                
+                DLS_AS_Acc_x_mean(n,:) = mean(DLS_R_Acc(:,1));
+                DLS_AS_Acc_y_mean(n,:) = mean(DLS_R_Acc(:,2));
+                DLS_AS_Acc_z_mean(n,:) = mean(DLS_R_Acc(:,3));
+                DLS_AS_Acc_norm_mean(n,:) = mean(DLS_R_Acc_norm);
+                DLS_US_Acc_x_mean(n,:) = mean(DLS_L_Acc(:,1));
+                DLS_US_Acc_y_mean(n,:) = mean(DLS_L_Acc(:,2));
+                DLS_US_Acc_z_mean(n,:) = mean(DLS_L_Acc(:,3));
+                DLS_US_Acc_norm_mean(n,:) = mean(DLS_L_Acc_norm);
+            end  
+            
 
             % Range
             SC_Acc_x_range(n,:) = range(SC_Acc(:,1));
             SC_Acc_y_range(n,:) = range(SC_Acc(:,2));
             SC_Acc_z_range(n,:) = range(SC_Acc(:,3));
             SC_Acc_norm_range(n,:) = range(SC_Acc_norm);
-            DLS_R_Acc_x_range(n,:) = range(DLS_R_Acc(:,1));
-            DLS_R_Acc_y_range(n,:) = range(DLS_R_Acc(:,2));
-            DLS_R_Acc_z_range(n,:) = range(DLS_R_Acc(:,3));
-            DLS_R_Acc_norm_range(n,:) = range(DLS_R_Acc_norm);
-            DLS_L_Acc_x_range(n,:) = range(DLS_L_Acc(:,1));
-            DLS_L_Acc_y_range(n,:) = range(DLS_L_Acc(:,2));
-            DLS_L_Acc_z_range(n,:) = range(DLS_L_Acc(:,3));
-            DLS_L_Acc_norm_range(n,:) = range(DLS_L_Acc_norm);
+            
+            if strcmp(AS,'L') == 1                
+                DLS_US_Acc_x_range(n,:) = range(DLS_R_Acc(:,1));
+                DLS_US_Acc_y_range(n,:) = range(DLS_R_Acc(:,2));
+                DLS_US_Acc_z_range(n,:) = range(DLS_R_Acc(:,3));
+                DLS_US_Acc_norm_range(n,:) = range(DLS_R_Acc_norm);
+                DLS_AS_Acc_x_range(n,:) = range(DLS_L_Acc(:,1));
+                DLS_AS_Acc_y_range(n,:) = range(DLS_L_Acc(:,2));
+                DLS_AS_Acc_z_range(n,:) = range(DLS_L_Acc(:,3));
+                DLS_AS_Acc_norm_range(n,:) = range(DLS_L_Acc_norm);
+
+                
+            elseif strcmp(AS,'R') == 1                
+                DLS_AS_Acc_x_range(n,:) = range(DLS_R_Acc(:,1));
+                DLS_AS_Acc_y_range(n,:) = range(DLS_R_Acc(:,2));
+                DLS_AS_Acc_z_range(n,:) = range(DLS_R_Acc(:,3));
+                DLS_AS_Acc_norm_range(n,:) = range(DLS_R_Acc_norm);
+                DLS_US_Acc_x_range(n,:) = range(DLS_L_Acc(:,1));
+                DLS_US_Acc_y_range(n,:) = range(DLS_L_Acc(:,2));
+                DLS_US_Acc_z_range(n,:) = range(DLS_L_Acc(:,3));
+                DLS_US_Acc_norm_range(n,:) = range(DLS_L_Acc_norm);
+            end 
+            
 
             % RMS
             SC_Acc_x_rms(n,:) = rms(SC_Acc(:,1));
             SC_Acc_y_rms(n,:) = rms(SC_Acc(:,2));
             SC_Acc_z_rms(n,:) = rms(SC_Acc(:,3));
             SC_Acc_norm_rms(n,:) = rms(SC_Acc_norm);
-            DLS_R_Acc_x_rms(n,:) = rms(DLS_R_Acc(:,1));
-            DLS_R_Acc_y_rms(n,:) = rms(DLS_R_Acc(:,2));
-            DLS_R_Acc_z_rms(n,:) = rms(DLS_R_Acc(:,3));
-            DLS_R_Acc_norm_rms(n,:) = rms(DLS_R_Acc_norm);
-            DLS_L_Acc_x_rms(n,:) = rms(DLS_L_Acc(:,1));
-            DLS_L_Acc_y_rms(n,:) = rms(DLS_L_Acc(:,2));
-            DLS_L_Acc_z_rms(n,:) = rms(DLS_L_Acc(:,3));
-            DLS_L_Acc_norm_rms(n,:) = rms(DLS_L_Acc_norm);
+            
+            if strcmp(AS,'L') == 1                
+                DLS_US_Acc_x_rms(n,:) = rms(DLS_R_Acc(:,1));
+                DLS_US_Acc_y_rms(n,:) = rms(DLS_R_Acc(:,2));
+                DLS_US_Acc_z_rms(n,:) = rms(DLS_R_Acc(:,3));
+                DLS_US_Acc_norm_rms(n,:) = rms(DLS_R_Acc_norm);
+                DLS_AS_Acc_x_rms(n,:) = rms(DLS_L_Acc(:,1));
+                DLS_AS_Acc_y_rms(n,:) = rms(DLS_L_Acc(:,2));
+                DLS_AS_Acc_z_rms(n,:) = rms(DLS_L_Acc(:,3));
+                DLS_AS_Acc_norm_rms(n,:) = rms(DLS_L_Acc_norm);
+
+            elseif strcmp(AS,'R') == 1                
+                DLS_AS_Acc_x_rms(n,:) = rms(DLS_R_Acc(:,1));
+                DLS_AS_Acc_y_rms(n,:) = rms(DLS_R_Acc(:,2));
+                DLS_AS_Acc_z_rms(n,:) = rms(DLS_R_Acc(:,3));
+                DLS_AS_Acc_norm_rms(n,:) = rms(DLS_R_Acc_norm);
+                DLS_US_Acc_x_rms(n,:) = rms(DLS_L_Acc(:,1));
+                DLS_US_Acc_y_rms(n,:) = rms(DLS_L_Acc(:,2));
+                DLS_US_Acc_z_rms(n,:) = rms(DLS_L_Acc(:,3));
+                DLS_US_Acc_norm_rms(n,:) = rms(DLS_L_Acc_norm);
+
+            end
+            
 
             % Standard Deviation
             SC_Acc_x_std(n,:) = std(SC_Acc(:,1));
             SC_Acc_y_std(n,:) = std(SC_Acc(:,2));
             SC_Acc_z_std(n,:) = std(SC_Acc(:,3));
             SC_Acc_norm_std(n,:) = std(SC_Acc_norm);
-            DLS_R_Acc_x_std(n,:) = std(DLS_R_Acc(:,1));
-            DLS_R_Acc_y_std(n,:) = std(DLS_R_Acc(:,2));
-            DLS_R_Acc_z_std(n,:) = std(DLS_R_Acc(:,3));
-            DLS_R_Acc_norm_std(n,:) = std(DLS_R_Acc_norm);
-            DLS_L_Acc_x_std(n,:) = std(DLS_L_Acc(:,1));
-            DLS_L_Acc_y_std(n,:) = std(DLS_L_Acc(:,2));
-            DLS_L_Acc_z_std(n,:) = std(DLS_L_Acc(:,3));
-            DLS_L_Acc_norm_std(n,:) = std(DLS_L_Acc_norm);
+            
+            if strcmp(AS,'L') == 1                
+                DLS_US_Acc_x_std(n,:) = std(DLS_R_Acc(:,1));
+                DLS_US_Acc_y_std(n,:) = std(DLS_R_Acc(:,2));
+                DLS_US_Acc_z_std(n,:) = std(DLS_R_Acc(:,3));
+                DLS_US_Acc_norm_std(n,:) = std(DLS_R_Acc_norm);
+                DLS_AS_Acc_x_std(n,:) = std(DLS_L_Acc(:,1));
+                DLS_AS_Acc_y_std(n,:) = std(DLS_L_Acc(:,2));
+                DLS_AS_Acc_z_std(n,:) = std(DLS_L_Acc(:,3));
+                DLS_AS_Acc_norm_std(n,:) = std(DLS_L_Acc_norm);
+
+            elseif strcmp(AS,'R') == 1                
+                DLS_AS_Acc_x_std(n,:) = std(DLS_R_Acc(:,1));
+                DLS_AS_Acc_y_std(n,:) = std(DLS_R_Acc(:,2));
+                DLS_AS_Acc_z_std(n,:) = std(DLS_R_Acc(:,3));
+                DLS_AS_Acc_norm_std(n,:) = std(DLS_R_Acc_norm);
+                DLS_US_Acc_x_std(n,:) = std(DLS_L_Acc(:,1));
+                DLS_US_Acc_y_std(n,:) = std(DLS_L_Acc(:,2));
+                DLS_US_Acc_z_std(n,:) = std(DLS_L_Acc(:,3));
+                DLS_US_Acc_norm_std(n,:) = std(DLS_L_Acc_norm);
+            end            
+            
+
 
             % Skew
             SC_Acc_x_skew(n,:) = skewness(SC_Acc(:,1));
             SC_Acc_y_skew(n,:) = skewness(SC_Acc(:,2));
             SC_Acc_z_skew(n,:) = skewness(SC_Acc(:,3));
             SC_Acc_norm_skew(n,:) = skewness(SC_Acc_norm);
-            DLS_R_Acc_x_skew(n,:) = skewness(DLS_R_Acc(:,1));
-            DLS_R_Acc_y_skew(n,:) = skewness(DLS_R_Acc(:,2));
-            DLS_R_Acc_z_skew(n,:) = skewness(DLS_R_Acc(:,3));
-            DLS_R_Acc_norm_skew(n,:) = skewness(DLS_R_Acc_norm);
-            DLS_L_Acc_x_skew(n,:) = skewness(DLS_L_Acc(:,1));
-            DLS_L_Acc_y_skew(n,:) = skewness(DLS_L_Acc(:,2));
-            DLS_L_Acc_z_skew(n,:) = skewness(DLS_L_Acc(:,3));
-            DLS_L_Acc_norm_skew(n,:) = skewness(DLS_L_Acc_norm);
+            
+            if strcmp(AS,'L') == 1                            
+                DLS_US_Acc_x_skew(n,:) = skewness(DLS_R_Acc(:,1));
+                DLS_US_Acc_y_skew(n,:) = skewness(DLS_R_Acc(:,2));
+                DLS_US_Acc_z_skew(n,:) = skewness(DLS_R_Acc(:,3));
+                DLS_US_Acc_norm_skew(n,:) = skewness(DLS_R_Acc_norm);
+                DLS_AS_Acc_x_skew(n,:) = skewness(DLS_L_Acc(:,1));
+                DLS_AS_Acc_y_skew(n,:) = skewness(DLS_L_Acc(:,2));
+                DLS_AS_Acc_z_skew(n,:) = skewness(DLS_L_Acc(:,3));
+                DLS_AS_Acc_norm_skew(n,:) = skewness(DLS_L_Acc_norm);
+
+            elseif strcmp(AS,'R') == 1                
+                DLS_AS_Acc_x_skew(n,:) = skewness(DLS_R_Acc(:,1));
+                DLS_AS_Acc_y_skew(n,:) = skewness(DLS_R_Acc(:,2));
+                DLS_AS_Acc_z_skew(n,:) = skewness(DLS_R_Acc(:,3));
+                DLS_AS_Acc_norm_skew(n,:) = skewness(DLS_R_Acc_norm);
+                DLS_US_Acc_x_skew(n,:) = skewness(DLS_L_Acc(:,1));
+                DLS_US_Acc_y_skew(n,:) = skewness(DLS_L_Acc(:,2));
+                DLS_US_Acc_z_skew(n,:) = skewness(DLS_L_Acc(:,3));
+                DLS_US_Acc_norm_skew(n,:) = skewness(DLS_L_Acc_norm);
+            end
+
 
             % Kurtosis
             SC_Acc_x_kurtosis(n,:) = kurtosis(SC_Acc(:,1));
             SC_Acc_y_kurtosis(n,:) = kurtosis(SC_Acc(:,2));
             SC_Acc_z_kurtosis(n,:) = kurtosis(SC_Acc(:,3));
             SC_Acc_norm_kurtosis(n,:) = kurtosis(SC_Acc_norm);
-            DLS_R_Acc_x_kurtosis(n,:) = kurtosis(DLS_R_Acc(:,1));
-            DLS_R_Acc_y_kurtosis(n,:) = kurtosis(DLS_R_Acc(:,2));
-            DLS_R_Acc_z_kurtosis(n,:) = kurtosis(DLS_R_Acc(:,3));
-            DLS_R_Acc_norm_kurtosis(n,:) = kurtosis(DLS_R_Acc_norm);
-            DLS_L_Acc_x_kurtosis(n,:) = kurtosis(DLS_L_Acc(:,1));
-            DLS_L_Acc_y_kurtosis(n,:) = kurtosis(DLS_L_Acc(:,2));
-            DLS_L_Acc_z_kurtosis(n,:) = kurtosis(DLS_L_Acc(:,3));
-            DLS_L_Acc_norm_kurtosis(n,:) = kurtosis(DLS_L_Acc_norm);
+            
+            if strcmp(AS,'L') == 1                            
+                DLS_US_Acc_x_kurtosis(n,:) = kurtosis(DLS_R_Acc(:,1));
+                DLS_US_Acc_y_kurtosis(n,:) = kurtosis(DLS_R_Acc(:,2));
+                DLS_US_Acc_z_kurtosis(n,:) = kurtosis(DLS_R_Acc(:,3));
+                DLS_US_Acc_norm_kurtosis(n,:) = kurtosis(DLS_R_Acc_norm);
+                DLS_AS_Acc_x_kurtosis(n,:) = kurtosis(DLS_L_Acc(:,1));
+                DLS_AS_Acc_y_kurtosis(n,:) = kurtosis(DLS_L_Acc(:,2));
+                DLS_AS_Acc_z_kurtosis(n,:) = kurtosis(DLS_L_Acc(:,3));
+                DLS_AS_Acc_norm_kurtosis(n,:) = kurtosis(DLS_L_Acc_norm);
 
+            elseif strcmp(AS,'R') == 1                
+                DLS_AS_Acc_x_kurtosis(n,:) = kurtosis(DLS_R_Acc(:,1));
+                DLS_AS_Acc_y_kurtosis(n,:) = kurtosis(DLS_R_Acc(:,2));
+                DLS_AS_Acc_z_kurtosis(n,:) = kurtosis(DLS_R_Acc(:,3));
+                DLS_AS_Acc_norm_kurtosis(n,:) = kurtosis(DLS_R_Acc_norm);
+                DLS_US_Acc_x_kurtosis(n,:) = kurtosis(DLS_L_Acc(:,1));
+                DLS_US_Acc_y_kurtosis(n,:) = kurtosis(DLS_L_Acc(:,2));
+                DLS_US_Acc_z_kurtosis(n,:) = kurtosis(DLS_L_Acc(:,3));
+                DLS_US_Acc_norm_kurtosis(n,:) = kurtosis(DLS_L_Acc_norm);
+            end
+            
+            
             % Pearson correlation coefficient
             SC_Acc_corr_xy(n,:) = corr(SC_Acc(:,1),SC_Acc(:,2));
             SC_Acc_corr_xz(n,:) = corr(SC_Acc(:,1),SC_Acc(:,3));
             SC_Acc_corr_yz(n,:) = corr(SC_Acc(:,2),SC_Acc(:,3));
-            DLS_R_Acc_corr_xy(n,:) = corr(DLS_R_Acc(:,1),DLS_R_Acc(:,2));
-            DLS_R_Acc_corr_xz(n,:) = corr(DLS_R_Acc(:,1),DLS_R_Acc(:,3));
-            DLS_R_Acc_corr_yz(n,:) = corr(DLS_R_Acc(:,2),DLS_R_Acc(:,3));
-            DLS_L_Acc_corr_xy(n,:) = corr(DLS_L_Acc(:,1),DLS_L_Acc(:,2));
-            DLS_L_Acc_corr_xz(n,:) = corr(DLS_L_Acc(:,1),DLS_L_Acc(:,3));
-            DLS_L_Acc_corr_yz(n,:) = corr(DLS_L_Acc(:,2),DLS_L_Acc(:,3));
+            
+            if strcmp(AS,'L') == 1                            
+                DLS_US_Acc_corr_xy(n,:) = corr(DLS_R_Acc(:,1),DLS_R_Acc(:,2));
+                DLS_US_Acc_corr_xz(n,:) = corr(DLS_R_Acc(:,1),DLS_R_Acc(:,3));
+                DLS_US_Acc_corr_yz(n,:) = corr(DLS_R_Acc(:,2),DLS_R_Acc(:,3));
+                DLS_AS_Acc_corr_xy(n,:) = corr(DLS_L_Acc(:,1),DLS_L_Acc(:,2));
+                DLS_AS_Acc_corr_xz(n,:) = corr(DLS_L_Acc(:,1),DLS_L_Acc(:,3));
+                DLS_AS_Acc_corr_yz(n,:) = corr(DLS_L_Acc(:,2),DLS_L_Acc(:,3));
+
+            elseif strcmp(AS,'R') == 1                
+                DLS_AS_Acc_corr_xy(n,:) = corr(DLS_R_Acc(:,1),DLS_R_Acc(:,2));
+                DLS_AS_Acc_corr_xz(n,:) = corr(DLS_R_Acc(:,1),DLS_R_Acc(:,3));
+                DLS_AS_Acc_corr_yz(n,:) = corr(DLS_R_Acc(:,2),DLS_R_Acc(:,3));
+                DLS_US_Acc_corr_xy(n,:) = corr(DLS_L_Acc(:,1),DLS_L_Acc(:,2));
+                DLS_US_Acc_corr_xz(n,:) = corr(DLS_L_Acc(:,1),DLS_L_Acc(:,3));
+                DLS_US_Acc_corr_yz(n,:) = corr(DLS_L_Acc(:,2),DLS_L_Acc(:,3));
+            end
+            
 
             % Sample Entropy
             r = 0.2;
@@ -849,14 +1124,29 @@ for k = 1:1:length(TS)
             SC_Acc_y_SamEn(n,:) = sampen(SC_Acc(:,2),1,r);
             SC_Acc_z_SamEn(n,:) = sampen(SC_Acc(:,3),1,r);
             SC_Acc_norm_SamEn(n,:) = sampen(SC_Acc_norm,1,r);
-            DLS_R_Acc_x_SamEn(n,:) = sampen(DLS_R_Acc(:,1),1,r);
-            DLS_R_Acc_y_SamEn(n,:) = sampen(DLS_R_Acc(:,2),1,r);
-            DLS_R_Acc_z_SamEn(n,:) = sampen(DLS_R_Acc(:,3),1,r);
-            DLS_R_Acc_norm_SamEn(n,:) = sampen(DLS_R_Acc_norm,1,r);
-            DLS_L_Acc_x_SamEn(n,:) = sampen(DLS_L_Acc(:,1),1,r);
-            DLS_L_Acc_y_SamEn(n,:) = sampen(DLS_L_Acc(:,2),1,r);
-            DLS_L_Acc_z_SamEn(n,:) = sampen(DLS_L_Acc(:,3),1,r);
-            DLS_L_Acc_norm_SamEn(n,:) = sampen(DLS_L_Acc_norm,1,r);
+            
+            if strcmp(AS,'L') == 1                            
+                DLS_US_Acc_x_SamEn(n,:) = sampen(DLS_R_Acc(:,1),1,r);
+                DLS_US_Acc_y_SamEn(n,:) = sampen(DLS_R_Acc(:,2),1,r);
+                DLS_US_Acc_z_SamEn(n,:) = sampen(DLS_R_Acc(:,3),1,r);
+                DLS_US_Acc_norm_SamEn(n,:) = sampen(DLS_R_Acc_norm,1,r);
+                DLS_AS_Acc_x_SamEn(n,:) = sampen(DLS_L_Acc(:,1),1,r);
+                DLS_AS_Acc_y_SamEn(n,:) = sampen(DLS_L_Acc(:,2),1,r);
+                DLS_AS_Acc_z_SamEn(n,:) = sampen(DLS_L_Acc(:,3),1,r);
+                DLS_AS_Acc_norm_SamEn(n,:) = sampen(DLS_L_Acc_norm,1,r);
+
+            elseif strcmp(AS,'R') == 1                
+                DLS_AS_Acc_x_SamEn(n,:) = sampen(DLS_R_Acc(:,1),1,r);
+                DLS_AS_Acc_y_SamEn(n,:) = sampen(DLS_R_Acc(:,2),1,r);
+                DLS_AS_Acc_z_SamEn(n,:) = sampen(DLS_R_Acc(:,3),1,r);
+                DLS_AS_Acc_norm_SamEn(n,:) = sampen(DLS_R_Acc_norm,1,r);
+                DLS_US_Acc_x_SamEn(n,:) = sampen(DLS_L_Acc(:,1),1,r);
+                DLS_US_Acc_y_SamEn(n,:) = sampen(DLS_L_Acc(:,2),1,r);
+                DLS_US_Acc_z_SamEn(n,:) = sampen(DLS_L_Acc(:,3),1,r);
+                DLS_US_Acc_norm_SamEn(n,:) = sampen(DLS_L_Acc_norm,1,r);
+            end
+            
+
             
             % Frequency Domain
             ff = FFeatures(SC_Acc(:,1), Hz);
@@ -890,72 +1180,141 @@ for k = 1:1:length(TS)
             SC_Acc_norm_PSD_std(n,:) = ff(4);
             SC_Acc_norm_PSD_skew(n,:) = ff(5);
             SC_Acc_norm_PSD_kurtosis(n,:) = ff(6);
+            
+            
+            if strcmp(AS,'L') == 1                            
+                ff = FFeatures(DLS_R_Acc(:,1), Hz);
+                DLS_US_Acc_x_DAmp(n,:) = ff(1);
+                DLS_US_Acc_x_DFreq(n,:) = ff(2);
+                DLS_US_Acc_x_PSD_mean(n,:) = ff(3);
+                DLS_US_Acc_x_PSD_std(n,:) = ff(4);
+                DLS_US_Acc_x_PSD_skew(n,:) = ff(5);
+                DLS_US_Acc_x_PSD_kurtosis(n,:) = ff(6);
 
-            ff = FFeatures(DLS_R_Acc(:,1), Hz);
-            DLS_R_Acc_x_DAmp(n,:) = ff(1);
-            DLS_R_Acc_x_DFreq(n,:) = ff(2);
-            DLS_R_Acc_x_PSD_mean(n,:) = ff(3);
-            DLS_R_Acc_x_PSD_std(n,:) = ff(4);
-            DLS_R_Acc_x_PSD_skew(n,:) = ff(5);
-            DLS_R_Acc_x_PSD_kurtosis(n,:) = ff(6);
+                ff = FFeatures(DLS_R_Acc(:,2), Hz);
+                DLS_US_Acc_y_DAmp(n,:) = ff(1);
+                DLS_US_Acc_y_DFreq(n,:) = ff(2);
+                DLS_US_Acc_y_PSD_mean(n,:) = ff(3);
+                DLS_US_Acc_y_PSD_std(n,:) = ff(4);
+                DLS_US_Acc_y_PSD_skew(n,:) = ff(5);
+                DLS_US_Acc_y_PSD_kurtosis(n,:) = ff(6);
 
-            ff = FFeatures(DLS_R_Acc(:,2), Hz);
-            DLS_R_Acc_y_DAmp(n,:) = ff(1);
-            DLS_R_Acc_y_DFreq(n,:) = ff(2);
-            DLS_R_Acc_y_PSD_mean(n,:) = ff(3);
-            DLS_R_Acc_y_PSD_std(n,:) = ff(4);
-            DLS_R_Acc_y_PSD_skew(n,:) = ff(5);
-            DLS_R_Acc_y_PSD_kurtosis(n,:) = ff(6);
+                ff = FFeatures(DLS_R_Acc(:,3), Hz);
+                DLS_US_Acc_z_DAmp(n,:) = ff(1);
+                DLS_US_Acc_z_DFreq(n,:) = ff(2);
+                DLS_US_Acc_z_PSD_mean(n,:) = ff(3);
+                DLS_US_Acc_z_PSD_std(n,:) = ff(4);
+                DLS_US_Acc_z_PSD_skew(n,:) = ff(5);
+                DLS_US_Acc_z_PSD_kurtosis(n,:) = ff(6);
 
-            ff = FFeatures(DLS_R_Acc(:,3), Hz);
-            DLS_R_Acc_z_DAmp(n,:) = ff(1);
-            DLS_R_Acc_z_DFreq(n,:) = ff(2);
-            DLS_R_Acc_z_PSD_mean(n,:) = ff(3);
-            DLS_R_Acc_z_PSD_std(n,:) = ff(4);
-            DLS_R_Acc_z_PSD_skew(n,:) = ff(5);
-            DLS_R_Acc_z_PSD_kurtosis(n,:) = ff(6);
+                ff = FFeatures(DLS_R_Acc_norm, Hz);
+                DLS_US_Acc_norm_DAmp(n,:) = ff(1);
+                DLS_US_Acc_norm_DFreq(n,:) = ff(2);
+                DLS_US_Acc_norm_PSD_mean(n,:) = ff(3);
+                DLS_US_Acc_norm_PSD_std(n,:) = ff(4);
+                DLS_US_Acc_norm_PSD_skew(n,:) = ff(5);
+                DLS_US_Acc_norm_PSD_kurtosis(n,:) = ff(6);
 
-            ff = FFeatures(DLS_R_Acc_norm, Hz);
-            DLS_R_Acc_norm_DAmp(n,:) = ff(1);
-            DLS_R_Acc_norm_DFreq(n,:) = ff(2);
-            DLS_R_Acc_norm_PSD_mean(n,:) = ff(3);
-            DLS_R_Acc_norm_PSD_std(n,:) = ff(4);
-            DLS_R_Acc_norm_PSD_skew(n,:) = ff(5);
-            DLS_R_Acc_norm_PSD_kurtosis(n,:) = ff(6);
+                ff = FFeatures(DLS_L_Acc(:,1), Hz);
+                DLS_AS_Acc_x_DAmp(n,:) = ff(1);
+                DLS_AS_Acc_x_DFreq(n,:) = ff(2);
+                DLS_AS_Acc_x_PSD_mean(n,:) = ff(3);
+                DLS_AS_Acc_x_PSD_std(n,:) = ff(4);
+                DLS_AS_Acc_x_PSD_skew(n,:) = ff(5);
+                DLS_AS_Acc_x_PSD_kurtosis(n,:) = ff(6);
 
-            ff = FFeatures(DLS_L_Acc(:,1), Hz);
-            DLS_L_Acc_x_DAmp(n,:) = ff(1);
-            DLS_L_Acc_x_DFreq(n,:) = ff(2);
-            DLS_L_Acc_x_PSD_mean(n,:) = ff(3);
-            DLS_L_Acc_x_PSD_std(n,:) = ff(4);
-            DLS_L_Acc_x_PSD_skew(n,:) = ff(5);
-            DLS_L_Acc_x_PSD_kurtosis(n,:) = ff(6);
+                ff = FFeatures(DLS_L_Acc(:,2), Hz);
+                DLS_AS_Acc_y_DAmp(n,:) = ff(1);
+                DLS_AS_Acc_y_DFreq(n,:) = ff(2);
+                DLS_AS_Acc_y_PSD_mean(n,:) = ff(3);
+                DLS_AS_Acc_y_PSD_std(n,:) = ff(4);
+                DLS_AS_Acc_y_PSD_skew(n,:) = ff(5);
+                DLS_AS_Acc_y_PSD_kurtosis(n,:) = ff(6);
 
-            ff = FFeatures(DLS_L_Acc(:,2), Hz);
-            DLS_L_Acc_y_DAmp(n,:) = ff(1);
-            DLS_L_Acc_y_DFreq(n,:) = ff(2);
-            DLS_L_Acc_y_PSD_mean(n,:) = ff(3);
-            DLS_L_Acc_y_PSD_std(n,:) = ff(4);
-            DLS_L_Acc_y_PSD_skew(n,:) = ff(5);
-            DLS_L_Acc_y_PSD_kurtosis(n,:) = ff(6);
+                ff = FFeatures(DLS_L_Acc(:,3), Hz);
+                DLS_AS_Acc_z_DAmp(n,:) = ff(1);
+                DLS_AS_Acc_z_DFreq(n,:) = ff(2);
+                DLS_AS_Acc_z_PSD_mean(n,:) = ff(3);
+                DLS_AS_Acc_z_PSD_std(n,:) = ff(4);
+                DLS_AS_Acc_z_PSD_skew(n,:) = ff(5);
+                DLS_AS_Acc_z_PSD_kurtosis(n,:) = ff(6);
 
-            ff = FFeatures(DLS_L_Acc(:,3), Hz);
-            DLS_L_Acc_z_DAmp(n,:) = ff(1);
-            DLS_L_Acc_z_DFreq(n,:) = ff(2);
-            DLS_L_Acc_z_PSD_mean(n,:) = ff(3);
-            DLS_L_Acc_z_PSD_std(n,:) = ff(4);
-            DLS_L_Acc_z_PSD_skew(n,:) = ff(5);
-            DLS_L_Acc_z_PSD_kurtosis(n,:) = ff(6);
-
-            ff = FFeatures(DLS_L_Acc_norm, Hz);
-            DLS_L_Acc_norm_DAmp(n,:) = ff(1);
-            DLS_L_Acc_norm_DFreq(n,:) = ff(2);
-            DLS_L_Acc_norm_PSD_mean(n,:) = ff(3);
-            DLS_L_Acc_norm_PSD_std(n,:) = ff(4);
-            DLS_L_Acc_norm_PSD_skew(n,:) = ff(5);
-            DLS_L_Acc_norm_PSD_kurtosis(n,:) = ff(6);
+                ff = FFeatures(DLS_L_Acc_norm, Hz);
+                DLS_AS_Acc_norm_DAmp(n,:) = ff(1);
+                DLS_AS_Acc_norm_DFreq(n,:) = ff(2);
+                DLS_AS_Acc_norm_PSD_mean(n,:) = ff(3);
+                DLS_AS_Acc_norm_PSD_std(n,:) = ff(4);
+                DLS_AS_Acc_norm_PSD_skew(n,:) = ff(5);
+                DLS_AS_Acc_norm_PSD_kurtosis(n,:) = ff(6);
 
 
+            elseif strcmp(AS,'R') == 1                
+                ff = FFeatures(DLS_R_Acc(:,1), Hz);
+                DLS_AS_Acc_x_DAmp(n,:) = ff(1);
+                DLS_AS_Acc_x_DFreq(n,:) = ff(2);
+                DLS_AS_Acc_x_PSD_mean(n,:) = ff(3);
+                DLS_AS_Acc_x_PSD_std(n,:) = ff(4);
+                DLS_AS_Acc_x_PSD_skew(n,:) = ff(5);
+                DLS_AS_Acc_x_PSD_kurtosis(n,:) = ff(6);
+
+                ff = FFeatures(DLS_R_Acc(:,2), Hz);
+                DLS_AS_Acc_y_DAmp(n,:) = ff(1);
+                DLS_AS_Acc_y_DFreq(n,:) = ff(2);
+                DLS_AS_Acc_y_PSD_mean(n,:) = ff(3);
+                DLS_AS_Acc_y_PSD_std(n,:) = ff(4);
+                DLS_AS_Acc_y_PSD_skew(n,:) = ff(5);
+                DLS_AS_Acc_y_PSD_kurtosis(n,:) = ff(6);
+
+                ff = FFeatures(DLS_R_Acc(:,3), Hz);
+                DLS_AS_Acc_z_DAmp(n,:) = ff(1);
+                DLS_AS_Acc_z_DFreq(n,:) = ff(2);
+                DLS_AS_Acc_z_PSD_mean(n,:) = ff(3);
+                DLS_AS_Acc_z_PSD_std(n,:) = ff(4);
+                DLS_AS_Acc_z_PSD_skew(n,:) = ff(5);
+                DLS_AS_Acc_z_PSD_kurtosis(n,:) = ff(6);
+
+                ff = FFeatures(DLS_R_Acc_norm, Hz);
+                DLS_AS_Acc_norm_DAmp(n,:) = ff(1);
+                DLS_AS_Acc_norm_DFreq(n,:) = ff(2);
+                DLS_AS_Acc_norm_PSD_mean(n,:) = ff(3);
+                DLS_AS_Acc_norm_PSD_std(n,:) = ff(4);
+                DLS_AS_Acc_norm_PSD_skew(n,:) = ff(5);
+                DLS_AS_Acc_norm_PSD_kurtosis(n,:) = ff(6);
+
+                ff = FFeatures(DLS_L_Acc(:,1), Hz);
+                DLS_US_Acc_x_DAmp(n,:) = ff(1);
+                DLS_US_Acc_x_DFreq(n,:) = ff(2);
+                DLS_US_Acc_x_PSD_mean(n,:) = ff(3);
+                DLS_US_Acc_x_PSD_std(n,:) = ff(4);
+                DLS_US_Acc_x_PSD_skew(n,:) = ff(5);
+                DLS_US_Acc_x_PSD_kurtosis(n,:) = ff(6);
+
+                ff = FFeatures(DLS_L_Acc(:,2), Hz);
+                DLS_US_Acc_y_DAmp(n,:) = ff(1);
+                DLS_US_Acc_y_DFreq(n,:) = ff(2);
+                DLS_US_Acc_y_PSD_mean(n,:) = ff(3);
+                DLS_US_Acc_y_PSD_std(n,:) = ff(4);
+                DLS_US_Acc_y_PSD_skew(n,:) = ff(5);
+                DLS_US_Acc_y_PSD_kurtosis(n,:) = ff(6);
+
+                ff = FFeatures(DLS_L_Acc(:,3), Hz);
+                DLS_US_Acc_z_DAmp(n,:) = ff(1);
+                DLS_US_Acc_z_DFreq(n,:) = ff(2);
+                DLS_US_Acc_z_PSD_mean(n,:) = ff(3);
+                DLS_US_Acc_z_PSD_std(n,:) = ff(4);
+                DLS_US_Acc_z_PSD_skew(n,:) = ff(5);
+                DLS_US_Acc_z_PSD_kurtosis(n,:) = ff(6);
+
+                ff = FFeatures(DLS_L_Acc_norm, Hz);
+                DLS_US_Acc_norm_DAmp(n,:) = ff(1);
+                DLS_US_Acc_norm_DFreq(n,:) = ff(2);
+                DLS_US_Acc_norm_PSD_mean(n,:) = ff(3);
+                DLS_US_Acc_norm_PSD_std(n,:) = ff(4);
+                DLS_US_Acc_norm_PSD_skew(n,:) = ff(5);
+                DLS_US_Acc_norm_PSD_kurtosis(n,:) = ff(6);
+            end
+
+            
         end
         subject{n,:} = ['CVA' sprintf('%02d',n)]
         activity{n,:} = ['6MWT']
@@ -1007,77 +1366,77 @@ for k = 1:1:length(TS)
         AoM_Ankle_US_x, AoM_Ankle_US_y, AoM_Ankle_US_z, AoM_Ankle_US_norm, ...
         AoM_Ankle_AS_x, AoM_Ankle_AS_y, AoM_Ankle_AS_z, AoM_Ankle_AS_norm, ...
         SC_Gyr_x_mean, SC_Gyr_y_mean, SC_Gyr_z_mean, SC_Gyr_norm_mean, ...
-        DLS_R_Gyr_x_mean, DLS_R_Gyr_y_mean, DLS_R_Gyr_z_mean, DLS_R_Gyr_norm_mean, ...
-        DLS_L_Gyr_x_mean, DLS_L_Gyr_y_mean, DLS_L_Gyr_z_mean, DLS_L_Gyr_norm_mean, ...
+        DLS_US_Gyr_x_mean, DLS_US_Gyr_y_mean, DLS_US_Gyr_z_mean, DLS_US_Gyr_norm_mean, ...
+        DLS_AS_Gyr_x_mean, DLS_AS_Gyr_y_mean, DLS_AS_Gyr_z_mean, DLS_AS_Gyr_norm_mean, ...
         SC_Gyr_x_range, SC_Gyr_y_range, SC_Gyr_z_range, SC_Gyr_norm_range, ...
-        DLS_R_Gyr_x_range, DLS_R_Gyr_y_range, DLS_R_Gyr_z_range, DLS_R_Gyr_norm_range, ...
-        DLS_L_Gyr_x_range, DLS_L_Gyr_y_range, DLS_L_Gyr_z_range, DLS_L_Gyr_norm_range, ...
+        DLS_US_Gyr_x_range, DLS_US_Gyr_y_range, DLS_US_Gyr_z_range, DLS_US_Gyr_norm_range, ...
+        DLS_AS_Gyr_x_range, DLS_AS_Gyr_y_range, DLS_AS_Gyr_z_range, DLS_AS_Gyr_norm_range, ...
         SC_Gyr_x_rms, SC_Gyr_y_rms, SC_Gyr_z_rms, SC_Gyr_norm_rms, ...
-        DLS_R_Gyr_x_rms, DLS_R_Gyr_y_rms, DLS_R_Gyr_z_rms, DLS_R_Gyr_norm_rms, ...
-        DLS_L_Gyr_x_rms, DLS_L_Gyr_y_rms, DLS_L_Gyr_z_rms, DLS_L_Gyr_norm_rms, ...
+        DLS_US_Gyr_x_rms, DLS_US_Gyr_y_rms, DLS_US_Gyr_z_rms, DLS_US_Gyr_norm_rms, ...
+        DLS_AS_Gyr_x_rms, DLS_AS_Gyr_y_rms, DLS_AS_Gyr_z_rms, DLS_AS_Gyr_norm_rms, ...
         SC_Gyr_x_std, SC_Gyr_y_std, SC_Gyr_z_std, SC_Gyr_norm_std, ...
-        DLS_R_Gyr_x_std, DLS_R_Gyr_y_std, DLS_R_Gyr_z_std, DLS_R_Gyr_norm_std, ...
-        DLS_L_Gyr_x_std, DLS_L_Gyr_y_std, DLS_L_Gyr_z_std, DLS_L_Gyr_norm_std, ...
+        DLS_US_Gyr_x_std, DLS_US_Gyr_y_std, DLS_US_Gyr_z_std, DLS_US_Gyr_norm_std, ...
+        DLS_AS_Gyr_x_std, DLS_AS_Gyr_y_std, DLS_AS_Gyr_z_std, DLS_AS_Gyr_norm_std, ...
         SC_Gyr_x_skew, SC_Gyr_y_skew, SC_Gyr_z_skew, SC_Gyr_norm_skew, ...
-        DLS_R_Gyr_x_skew, DLS_R_Gyr_y_skew, DLS_R_Gyr_z_skew, DLS_R_Gyr_norm_skew, ...
-        DLS_L_Gyr_x_skew, DLS_L_Gyr_y_skew, DLS_L_Gyr_z_skew, DLS_L_Gyr_norm_skew, ...
+        DLS_US_Gyr_x_skew, DLS_US_Gyr_y_skew, DLS_US_Gyr_z_skew, DLS_US_Gyr_norm_skew, ...
+        DLS_AS_Gyr_x_skew, DLS_AS_Gyr_y_skew, DLS_AS_Gyr_z_skew, DLS_AS_Gyr_norm_skew, ...
         SC_Gyr_x_kurtosis, SC_Gyr_y_kurtosis, SC_Gyr_z_kurtosis, SC_Gyr_norm_kurtosis, ...
-        DLS_R_Gyr_x_kurtosis, DLS_R_Gyr_y_kurtosis, DLS_R_Gyr_z_kurtosis, DLS_R_Gyr_norm_kurtosis, ...
-        DLS_L_Gyr_x_kurtosis, DLS_L_Gyr_y_kurtosis, DLS_L_Gyr_z_kurtosis, DLS_L_Gyr_norm_kurtosis, ...
+        DLS_US_Gyr_x_kurtosis, DLS_US_Gyr_y_kurtosis, DLS_US_Gyr_z_kurtosis, DLS_US_Gyr_norm_kurtosis, ...
+        DLS_AS_Gyr_x_kurtosis, DLS_AS_Gyr_y_kurtosis, DLS_AS_Gyr_z_kurtosis, DLS_AS_Gyr_norm_kurtosis, ...
         SC_Gyr_corr_xy, SC_Gyr_corr_xz, SC_Gyr_corr_yz, ...
-        DLS_R_Gyr_corr_xy, DLS_R_Gyr_corr_xz, DLS_R_Gyr_corr_yz, ...
-        DLS_L_Gyr_corr_xy, DLS_L_Gyr_corr_xz, DLS_L_Gyr_corr_yz, ...
+        DLS_US_Gyr_corr_xy, DLS_US_Gyr_corr_xz, DLS_US_Gyr_corr_yz, ...
+        DLS_AS_Gyr_corr_xy, DLS_AS_Gyr_corr_xz, DLS_AS_Gyr_corr_yz, ...
         SC_Gyr_x_SamEn, SC_Gyr_y_SamEn, SC_Gyr_z_SamEn, SC_Gyr_norm_SamEn, ...
-        DLS_R_Gyr_x_SamEn, DLS_R_Gyr_y_SamEn, DLS_R_Gyr_z_SamEn, DLS_R_Gyr_norm_SamEn, ... 
-        DLS_L_Gyr_x_SamEn, DLS_L_Gyr_y_SamEn, DLS_L_Gyr_z_SamEn, DLS_L_Gyr_norm_SamEn, ...
+        DLS_US_Gyr_x_SamEn, DLS_US_Gyr_y_SamEn, DLS_US_Gyr_z_SamEn, DLS_US_Gyr_norm_SamEn, ... 
+        DLS_AS_Gyr_x_SamEn, DLS_AS_Gyr_y_SamEn, DLS_AS_Gyr_z_SamEn, DLS_AS_Gyr_norm_SamEn, ...
         SC_Gyr_x_DAmp, SC_Gyr_x_DFreq, SC_Gyr_x_PSD_mean, SC_Gyr_x_PSD_std, SC_Gyr_x_PSD_skew, SC_Gyr_x_PSD_kurtosis, ...
         SC_Gyr_y_DAmp, SC_Gyr_y_DFreq, SC_Gyr_y_PSD_mean, SC_Gyr_y_PSD_std, SC_Gyr_y_PSD_skew, SC_Gyr_y_PSD_kurtosis, ...
         SC_Gyr_z_DAmp, SC_Gyr_z_DFreq, SC_Gyr_z_PSD_mean, SC_Gyr_z_PSD_std, SC_Gyr_z_PSD_skew, SC_Gyr_z_PSD_kurtosis, ...
         SC_Gyr_norm_DAmp, SC_Gyr_norm_DFreq, SC_Gyr_norm_PSD_mean, SC_Gyr_norm_PSD_std, SC_Gyr_norm_PSD_skew, SC_Gyr_norm_PSD_kurtosis, ...        
-        DLS_R_Gyr_x_DAmp, DLS_R_Gyr_x_DFreq, DLS_R_Gyr_x_PSD_mean, DLS_R_Gyr_x_PSD_std, DLS_R_Gyr_x_PSD_skew, DLS_R_Gyr_x_PSD_kurtosis, ...
-        DLS_R_Gyr_y_DAmp, DLS_R_Gyr_y_DFreq, DLS_R_Gyr_y_PSD_mean, DLS_R_Gyr_y_PSD_std, DLS_R_Gyr_y_PSD_skew, DLS_R_Gyr_y_PSD_kurtosis, ...
-        DLS_R_Gyr_z_DAmp, DLS_R_Gyr_z_DFreq, DLS_R_Gyr_z_PSD_mean, DLS_R_Gyr_z_PSD_std, DLS_R_Gyr_z_PSD_skew, DLS_R_Gyr_z_PSD_kurtosis, ...
-        DLS_R_Gyr_norm_DAmp, DLS_R_Gyr_norm_DFreq, DLS_R_Gyr_norm_PSD_mean, DLS_R_Gyr_norm_PSD_std, DLS_R_Gyr_norm_PSD_skew, DLS_R_Gyr_norm_PSD_kurtosis, ...
-        DLS_L_Gyr_x_DAmp, DLS_L_Gyr_x_DFreq, DLS_L_Gyr_x_PSD_mean, DLS_L_Gyr_x_PSD_std, DLS_L_Gyr_x_PSD_skew, DLS_L_Gyr_x_PSD_kurtosis, ...
-        DLS_L_Gyr_y_DAmp, DLS_L_Gyr_y_DFreq, DLS_L_Gyr_y_PSD_mean, DLS_L_Gyr_y_PSD_std, DLS_L_Gyr_y_PSD_skew, DLS_L_Gyr_y_PSD_kurtosis, ...
-        DLS_L_Gyr_z_DAmp, DLS_L_Gyr_z_DFreq, DLS_L_Gyr_z_PSD_mean, DLS_L_Gyr_z_PSD_std, DLS_L_Gyr_z_PSD_skew, DLS_L_Gyr_z_PSD_kurtosis, ...
-        DLS_L_Gyr_norm_DAmp, DLS_L_Gyr_norm_DFreq, DLS_L_Gyr_norm_PSD_mean, DLS_L_Gyr_norm_PSD_std, DLS_L_Gyr_norm_PSD_skew, DLS_L_Gyr_norm_PSD_kurtosis, ...
+        DLS_US_Gyr_x_DAmp, DLS_US_Gyr_x_DFreq, DLS_US_Gyr_x_PSD_mean, DLS_US_Gyr_x_PSD_std, DLS_US_Gyr_x_PSD_skew, DLS_US_Gyr_x_PSD_kurtosis, ...
+        DLS_US_Gyr_y_DAmp, DLS_US_Gyr_y_DFreq, DLS_US_Gyr_y_PSD_mean, DLS_US_Gyr_y_PSD_std, DLS_US_Gyr_y_PSD_skew, DLS_US_Gyr_y_PSD_kurtosis, ...
+        DLS_US_Gyr_z_DAmp, DLS_US_Gyr_z_DFreq, DLS_US_Gyr_z_PSD_mean, DLS_US_Gyr_z_PSD_std, DLS_US_Gyr_z_PSD_skew, DLS_US_Gyr_z_PSD_kurtosis, ...
+        DLS_US_Gyr_norm_DAmp, DLS_US_Gyr_norm_DFreq, DLS_US_Gyr_norm_PSD_mean, DLS_US_Gyr_norm_PSD_std, DLS_US_Gyr_norm_PSD_skew, DLS_US_Gyr_norm_PSD_kurtosis, ...
+        DLS_AS_Gyr_x_DAmp, DLS_AS_Gyr_x_DFreq, DLS_AS_Gyr_x_PSD_mean, DLS_AS_Gyr_x_PSD_std, DLS_AS_Gyr_x_PSD_skew, DLS_AS_Gyr_x_PSD_kurtosis, ...
+        DLS_AS_Gyr_y_DAmp, DLS_AS_Gyr_y_DFreq, DLS_AS_Gyr_y_PSD_mean, DLS_AS_Gyr_y_PSD_std, DLS_AS_Gyr_y_PSD_skew, DLS_AS_Gyr_y_PSD_kurtosis, ...
+        DLS_AS_Gyr_z_DAmp, DLS_AS_Gyr_z_DFreq, DLS_AS_Gyr_z_PSD_mean, DLS_AS_Gyr_z_PSD_std, DLS_AS_Gyr_z_PSD_skew, DLS_AS_Gyr_z_PSD_kurtosis, ...
+        DLS_AS_Gyr_norm_DAmp, DLS_AS_Gyr_norm_DFreq, DLS_AS_Gyr_norm_PSD_mean, DLS_AS_Gyr_norm_PSD_std, DLS_AS_Gyr_norm_PSD_skew, DLS_AS_Gyr_norm_PSD_kurtosis, ...
         SC_Acc_x_mean, SC_Acc_y_mean, SC_Acc_z_mean, SC_Acc_norm_mean, ...
-        DLS_R_Acc_x_mean, DLS_R_Acc_y_mean, DLS_R_Acc_z_mean, DLS_R_Acc_norm_mean, ...
-        DLS_L_Acc_x_mean, DLS_L_Acc_y_mean, DLS_L_Acc_z_mean, DLS_L_Acc_norm_mean, ...
+        DLS_US_Acc_x_mean, DLS_US_Acc_y_mean, DLS_US_Acc_z_mean, DLS_US_Acc_norm_mean, ...
+        DLS_AS_Acc_x_mean, DLS_AS_Acc_y_mean, DLS_AS_Acc_z_mean, DLS_AS_Acc_norm_mean, ...
         SC_Acc_x_range, SC_Acc_y_range, SC_Acc_z_range, SC_Acc_norm_range, ...
-        DLS_R_Acc_x_range, DLS_R_Acc_y_range, DLS_R_Acc_z_range, DLS_R_Acc_norm_range, ...
-        DLS_L_Acc_x_range, DLS_L_Acc_y_range, DLS_L_Acc_z_range, DLS_L_Acc_norm_range, ...
+        DLS_US_Acc_x_range, DLS_US_Acc_y_range, DLS_US_Acc_z_range, DLS_US_Acc_norm_range, ...
+        DLS_AS_Acc_x_range, DLS_AS_Acc_y_range, DLS_AS_Acc_z_range, DLS_AS_Acc_norm_range, ...
         SC_Acc_x_rms, SC_Acc_y_rms, SC_Acc_z_rms, SC_Acc_norm_rms, ...
-        DLS_R_Acc_x_rms, DLS_R_Acc_y_rms, DLS_R_Acc_z_rms, DLS_R_Acc_norm_rms, ...
-        DLS_L_Acc_x_rms, DLS_L_Acc_y_rms, DLS_L_Acc_z_rms, DLS_L_Acc_norm_rms, ...
+        DLS_US_Acc_x_rms, DLS_US_Acc_y_rms, DLS_US_Acc_z_rms, DLS_US_Acc_norm_rms, ...
+        DLS_AS_Acc_x_rms, DLS_AS_Acc_y_rms, DLS_AS_Acc_z_rms, DLS_AS_Acc_norm_rms, ...
         SC_Acc_x_std, SC_Acc_y_std, SC_Acc_z_std, SC_Acc_norm_std, ...
-        DLS_R_Acc_x_std, DLS_R_Acc_y_std, DLS_R_Acc_z_std, DLS_R_Acc_norm_std, ...
-        DLS_L_Acc_x_std, DLS_L_Acc_y_std, DLS_L_Acc_z_std, DLS_L_Acc_norm_std, ...
+        DLS_US_Acc_x_std, DLS_US_Acc_y_std, DLS_US_Acc_z_std, DLS_US_Acc_norm_std, ...
+        DLS_AS_Acc_x_std, DLS_AS_Acc_y_std, DLS_AS_Acc_z_std, DLS_AS_Acc_norm_std, ...
         SC_Acc_x_skew, SC_Acc_y_skew, SC_Acc_z_skew, SC_Acc_norm_skew, ...
-        DLS_R_Acc_x_skew, DLS_R_Acc_y_skew, DLS_R_Acc_z_skew, DLS_R_Acc_norm_skew, ...
-        DLS_L_Acc_x_skew, DLS_L_Acc_y_skew, DLS_L_Acc_z_skew, DLS_L_Acc_norm_skew, ...
+        DLS_US_Acc_x_skew, DLS_US_Acc_y_skew, DLS_US_Acc_z_skew, DLS_US_Acc_norm_skew, ...
+        DLS_AS_Acc_x_skew, DLS_AS_Acc_y_skew, DLS_AS_Acc_z_skew, DLS_AS_Acc_norm_skew, ...
         SC_Acc_x_kurtosis, SC_Acc_y_kurtosis, SC_Acc_z_kurtosis, SC_Acc_norm_kurtosis, ...
-        DLS_R_Acc_x_kurtosis, DLS_R_Acc_y_kurtosis, DLS_R_Acc_z_kurtosis, DLS_R_Acc_norm_kurtosis, ...
-        DLS_L_Acc_x_kurtosis, DLS_L_Acc_y_kurtosis, DLS_L_Acc_z_kurtosis, DLS_L_Acc_norm_kurtosis, ...
+        DLS_US_Acc_x_kurtosis, DLS_US_Acc_y_kurtosis, DLS_US_Acc_z_kurtosis, DLS_US_Acc_norm_kurtosis, ...
+        DLS_AS_Acc_x_kurtosis, DLS_AS_Acc_y_kurtosis, DLS_AS_Acc_z_kurtosis, DLS_AS_Acc_norm_kurtosis, ...
         SC_Acc_corr_xy, SC_Acc_corr_xz, SC_Acc_corr_yz, ...
-        DLS_R_Acc_corr_xy, DLS_R_Acc_corr_xz, DLS_R_Acc_corr_yz, ...
-        DLS_L_Acc_corr_xy, DLS_L_Acc_corr_xz, DLS_L_Acc_corr_yz, ...
+        DLS_US_Acc_corr_xy, DLS_US_Acc_corr_xz, DLS_US_Acc_corr_yz, ...
+        DLS_AS_Acc_corr_xy, DLS_AS_Acc_corr_xz, DLS_AS_Acc_corr_yz, ...
         SC_Acc_x_SamEn, SC_Acc_y_SamEn, SC_Acc_z_SamEn, SC_Acc_norm_SamEn, ...
-        DLS_R_Acc_x_SamEn, DLS_R_Acc_y_SamEn, DLS_R_Acc_z_SamEn, DLS_R_Acc_norm_SamEn, ... 
-        DLS_L_Acc_x_SamEn, DLS_L_Acc_y_SamEn, DLS_L_Acc_z_SamEn, DLS_L_Acc_norm_SamEn, ...
+        DLS_US_Acc_x_SamEn, DLS_US_Acc_y_SamEn, DLS_US_Acc_z_SamEn, DLS_US_Acc_norm_SamEn, ... 
+        DLS_AS_Acc_x_SamEn, DLS_AS_Acc_y_SamEn, DLS_AS_Acc_z_SamEn, DLS_AS_Acc_norm_SamEn, ...
         SC_Acc_x_DAmp, SC_Acc_x_DFreq, SC_Acc_x_PSD_mean, SC_Acc_x_PSD_std, SC_Acc_x_PSD_skew, SC_Acc_x_PSD_kurtosis, ...
         SC_Acc_y_DAmp, SC_Acc_y_DFreq, SC_Acc_y_PSD_mean, SC_Acc_y_PSD_std, SC_Acc_y_PSD_skew, SC_Acc_y_PSD_kurtosis, ...
         SC_Acc_z_DAmp, SC_Acc_z_DFreq, SC_Acc_z_PSD_mean, SC_Acc_z_PSD_std, SC_Acc_z_PSD_skew, SC_Acc_z_PSD_kurtosis, ...
         SC_Acc_norm_DAmp, SC_Acc_norm_DFreq, SC_Acc_norm_PSD_mean, SC_Acc_norm_PSD_std, SC_Acc_norm_PSD_skew, SC_Acc_norm_PSD_kurtosis, ...        
-        DLS_R_Acc_x_DAmp, DLS_R_Acc_x_DFreq, DLS_R_Acc_x_PSD_mean, DLS_R_Acc_x_PSD_std, DLS_R_Acc_x_PSD_skew, DLS_R_Acc_x_PSD_kurtosis, ...
-        DLS_R_Acc_y_DAmp, DLS_R_Acc_y_DFreq, DLS_R_Acc_y_PSD_mean, DLS_R_Acc_y_PSD_std, DLS_R_Acc_y_PSD_skew, DLS_R_Acc_y_PSD_kurtosis, ...
-        DLS_R_Acc_z_DAmp, DLS_R_Acc_z_DFreq, DLS_R_Acc_z_PSD_mean, DLS_R_Acc_z_PSD_std, DLS_R_Acc_z_PSD_skew, DLS_R_Acc_z_PSD_kurtosis, ...
-        DLS_R_Acc_norm_DAmp, DLS_R_Acc_norm_DFreq, DLS_R_Acc_norm_PSD_mean, DLS_R_Acc_norm_PSD_std, DLS_R_Acc_norm_PSD_skew, DLS_R_Acc_norm_PSD_kurtosis, ...
-        DLS_L_Acc_x_DAmp, DLS_L_Acc_x_DFreq, DLS_L_Acc_x_PSD_mean, DLS_L_Acc_x_PSD_std, DLS_L_Acc_x_PSD_skew, DLS_L_Acc_x_PSD_kurtosis, ...
-        DLS_L_Acc_y_DAmp, DLS_L_Acc_y_DFreq, DLS_L_Acc_y_PSD_mean, DLS_L_Acc_y_PSD_std, DLS_L_Acc_y_PSD_skew, DLS_L_Acc_y_PSD_kurtosis, ...
-        DLS_L_Acc_z_DAmp, DLS_L_Acc_z_DFreq, DLS_L_Acc_z_PSD_mean, DLS_L_Acc_z_PSD_std, DLS_L_Acc_z_PSD_skew, DLS_L_Acc_z_PSD_kurtosis, ...
-        DLS_L_Acc_norm_DAmp, DLS_L_Acc_norm_DFreq, DLS_L_Acc_norm_PSD_mean, DLS_L_Acc_norm_PSD_std, DLS_L_Acc_norm_PSD_skew, DLS_L_Acc_norm_PSD_kurtosis, ...
+        DLS_US_Acc_x_DAmp, DLS_US_Acc_x_DFreq, DLS_US_Acc_x_PSD_mean, DLS_US_Acc_x_PSD_std, DLS_US_Acc_x_PSD_skew, DLS_US_Acc_x_PSD_kurtosis, ...
+        DLS_US_Acc_y_DAmp, DLS_US_Acc_y_DFreq, DLS_US_Acc_y_PSD_mean, DLS_US_Acc_y_PSD_std, DLS_US_Acc_y_PSD_skew, DLS_US_Acc_y_PSD_kurtosis, ...
+        DLS_US_Acc_z_DAmp, DLS_US_Acc_z_DFreq, DLS_US_Acc_z_PSD_mean, DLS_US_Acc_z_PSD_std, DLS_US_Acc_z_PSD_skew, DLS_US_Acc_z_PSD_kurtosis, ...
+        DLS_US_Acc_norm_DAmp, DLS_US_Acc_norm_DFreq, DLS_US_Acc_norm_PSD_mean, DLS_US_Acc_norm_PSD_std, DLS_US_Acc_norm_PSD_skew, DLS_US_Acc_norm_PSD_kurtosis, ...
+        DLS_AS_Acc_x_DAmp, DLS_AS_Acc_x_DFreq, DLS_AS_Acc_x_PSD_mean, DLS_AS_Acc_x_PSD_std, DLS_AS_Acc_x_PSD_skew, DLS_AS_Acc_x_PSD_kurtosis, ...
+        DLS_AS_Acc_y_DAmp, DLS_AS_Acc_y_DFreq, DLS_AS_Acc_y_PSD_mean, DLS_AS_Acc_y_PSD_std, DLS_AS_Acc_y_PSD_skew, DLS_AS_Acc_y_PSD_kurtosis, ...
+        DLS_AS_Acc_z_DAmp, DLS_AS_Acc_z_DFreq, DLS_AS_Acc_z_PSD_mean, DLS_AS_Acc_z_PSD_std, DLS_AS_Acc_z_PSD_skew, DLS_AS_Acc_z_PSD_kurtosis, ...
+        DLS_AS_Acc_norm_DAmp, DLS_AS_Acc_norm_DFreq, DLS_AS_Acc_norm_PSD_mean, DLS_AS_Acc_norm_PSD_std, DLS_AS_Acc_norm_PSD_skew, DLS_AS_Acc_norm_PSD_kurtosis, ...
         Ambul_AD, Ambul_DC)
     
     
